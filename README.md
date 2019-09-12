@@ -1,4 +1,6 @@
-# Collection of Assignments and Coursework for COMPUTING FOR EMBEDDED SYSTEMS(Beng) - UWE University of the West of England
+# Collection of Assignments and Coursework 
+# for COMPUTING FOR EMBEDDED SYSTEMS Beng
+# - UWE University of the West of England -
 
 ## YEAR 1
 	UFCF93-30-1 	COMPUTER AND NETWORK SYSTEMS
