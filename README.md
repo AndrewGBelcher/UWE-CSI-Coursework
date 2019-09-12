@@ -1,4 +1,4 @@
-# Collection of Assignments and Coursework 
+# Collection of Coursework 
 # for COMPUTING FOR EMBEDDED SYSTEMS Beng
 # - UWE University of the West of England -
 
