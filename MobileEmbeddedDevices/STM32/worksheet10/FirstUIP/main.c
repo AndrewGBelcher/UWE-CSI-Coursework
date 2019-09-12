@@ -1,0 +1,221 @@
+	/*
+	First Uip example
+*/
+
+
+/*
+ * Creates some demo application tasks, then starts the scheduler.  The WEB
+ * documentation provides more details of the standard demo application tasks
+ * (which just exist to test the kernel port and provide an example of how to
+ * use each FreeRTOS API function).
+ *
+ * In addition to the standard demo tasks, the following tasks and tests are
+ * defined and/or created within this file:
+ *
+ * "Check" hook - This only executes fully every five seconds from the tick
+ * hook.  Its main function is to check that all the standard demo tasks are
+ * still operational.  Should any unexpected behaviour be discovered within a
+ * demo task then the tick hook will write an error to the COM port. If all the
+ * demo tasks are executing with their expected behaviour then the check task
+ * writes PASS to the COM port, as described above. NOTE: This is not used for
+ * this port and so never gets called ( configUSE_TICK_HOOK is set to 0 ) !!
+ *
+ * "LED Flash" tasks - These just demonstrate how multiple instances of a single
+ * task definition can be created.  Each LED task simply toggles an LED.  The
+ * task parameter is used to pass the number of the LED to be toggled into the
+ * task.
+ *
+ * "LED Button" tasks - These just demonstrate how multiple instances of a
+ * single task definition can be created.  Each LED task simply toggles an LED
+ * when a corresponding button is pressed. The task parameter is used to pass
+ * the number of the LED to be toggled into the task.
+ *
+ * "uIP" task -  This is the task that handles the uIP stack.  All TCP/IP
+ * processing is performed in this task.
+ *
+ * "Media Check" task - This task demonstrates basic usage of the SD card
+ * interface of the board. The task checks if a card is inserted or removed from
+ * the board, if so then a message is sent to the COM port to show this.
+ *
+ */
+
+/* Standard includes. */
+#include <stdio.h>
+
+
+/* Library includes. */
+#include <stm32f10x.h> 
+#include <stm32f10x_rcc.h> 
+#include <stm32f10x_gpio.h>
+#include <stm32f10x_tim.h>
+#include <stm32f10x_exti.h>
+#include <misc.h> 
+
+//hack by craig
+#define RCC_PLLSource_HSE_Div2           ((uint32_t)0x00030000)
+
+/* The time between cycles of the 'check' functionality (defined within the
+tick hook. */
+#define mainCHECK_DELAY						( ( portTickType ) 5000 / portTICK_RATE_MS )
+
+/* Task priorities. */
+#define tskIDLE_PRIORITY				0
+#define mainUIP_TASK_PRIORITY				( tskIDLE_PRIORITY + 3 )
+#define mainLED_TASK_PRIORITY				( tskIDLE_PRIORITY + 2 )
+#define mainMEDIA_TASK_PRIORITY				( tskIDLE_PRIORITY + 2 )
+
+
+
+
+extern void vuIP_Task();
+
+/* Private variables */
+GPIO_InitTypeDef GPIO_InitStructure;
+static int greenledval = 1;
+static int yellowledval = 0;
+
+/*-----------------------------------------------------------*/
+
+/*
+ * Configure the hardware for the demo.
+ */
+static void prvSetupHardware( void );
+void GLEDFlashTask( void );
+void YLEDFlashTask( void );
+/*-----------------------------------------------------------*/
+void configure_leds(void)
+{	 	            
+  /* GPIOC/A Periph clock enable */ 
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA |RCC_APB2Periph_GPIOC, ENABLE); 
+
+  /* Configure PC6 in output pushpull mode */ 
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7; 
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 
+  GPIO_Init(GPIOC, &GPIO_InitStructure);	
+} 
+
+int main( void )
+{
+		
+	prvSetupHardware();
+	configure_leds();
+	vCOMPortInit();
+
+	printf("\n\rFirst Uip task started, "
+			"initialising tasks...\n\r");
+	vuIP_Task();
+	
+
+	for( ;; );
+}
+
+/*-----------------------------------------------------------*/
+
+static void prvSetupHardware( void )
+{
+	/* Start with the clocks in their expected state. */
+	RCC_DeInit();
+
+	/* Enable HSE (high speed external clock). */
+	RCC_HSEConfig( RCC_HSE_ON );
+
+	/* Wait till HSE is ready. */
+	while( RCC_GetFlagStatus( RCC_FLAG_HSERDY ) == RESET )
+	{
+	}
+
+	/* 2 wait states required on the flash. */
+	*( ( unsigned long * ) 0x40022000 ) = 0x02;
+
+	/* HCLK = SYSCLK */
+	RCC_HCLKConfig( RCC_SYSCLK_Div1 );
+
+	/* PCLK2 = HCLK */
+	RCC_PCLK2Config( RCC_HCLK_Div1 );
+
+	/* PCLK1 = HCLK/2 */
+	RCC_PCLK1Config( RCC_HCLK_Div2 );
+
+	/* PLLCLK = (25MHz / 2 ) * 5 = 62.5 MHz. HSE changed to HSI for CL device craig */
+	RCC_PLLConfig( RCC_PLLSource_HSI_Div2, RCC_PLLMul_5 );
+
+	/* Enable PLL. */
+	RCC_PLLCmd( ENABLE );
+
+	/* Wait till PLL is ready. */
+	while(RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET)
+	{
+	}
+
+	/* Select PLL as system clock source. */
+	RCC_SYSCLKConfig( RCC_SYSCLKSource_PLLCLK );
+
+	/* Wait till PLL is used as system clock source. */
+	while( RCC_GetSYSCLKSource() != 0x08 )
+	{
+	}
+
+    /*
+     * PLL2 configuration: PLL2CLK = (HSE / 5) * 8 = 40 MHz (required for
+     * ethernet)
+     * CFGR2_PREDIV2_DIV5 changed to RCC_PREDIV2_Div5 craig 
+     */
+	RCC->CFGR2 |= (u32)(RCC_PREDIV2_Div5);
+
+	/* Enable GPIOA, GPIOB, GPIOC, GPIOD, GPIOE and AFIO clocks */
+	RCC_APB2PeriphClockCmd(	RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB |
+			RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOE |
+			RCC_APB2Periph_AFIO, ENABLE );
+
+	/* Set the Vector Table base address at 0x08000000 */
+	NVIC_SetVectorTable( NVIC_VectTab_FLASH, 0x0 );
+
+	/* Set the priority grouping to all 4 bits for pre-emption priority */
+	NVIC_PriorityGroupConfig( NVIC_PriorityGroup_4 );
+
+	/* Configure HCLK clock as SysTick clock source. */
+	SysTick_CLKSourceConfig( SysTick_CLKSource_HCLK );
+}
+/*-----------------------------------------------------------*/
+
+
+void GLEDFlashTask(void) 
+{
+	
+	GPIO_WriteBit(GPIOC , GPIO_Pin_6 , (greenledval) ? Bit_SET : Bit_RESET);
+	greenledval = 1 - greenledval;
+}
+
+void YLEDFlashTask(void) 
+{
+
+	GPIO_WriteBit(GPIOC , GPIO_Pin_7 , (yellowledval) ? Bit_SET : Bit_RESET);
+	yellowledval = 1 - yellowledval;
+}
+
+#ifdef  USE_FULL_ASSERT 
+
+/** 
+  * @brief  Reports the name of the source file and the source line number 
+  *         where the assert_param error has occurred. 
+  * @param  file: pointer to the source file name 
+  * @param  line: assert_param error line source number 
+  * @retval None 
+  */ 
+void assert_failed(uint8_t* file, uint32_t line) 
+{ 
+  /* User can add his own implementation to report the file name and line number, 
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */ 
+
+  /* Infinite loop */ 
+  while (1) 
+  { 
+  } 
+} 
+
+#endif 
+
+
+
+

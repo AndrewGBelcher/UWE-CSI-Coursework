@@ -1,0 +1,17 @@
+{
+ 
+
+  "name": "morse-radio",
+  "version": "1.0.0",
+  "description": "IoT  micro:bit Morse-Radio.",
+  "license": "MIT",
+  "dependencies": {
+    "microbit": "lancaster-university/microbit"
+  },
+
+  "extraIncludes": [
+"inc"],
+  "targetDependencies": {},
+  "bin": "./source"
+}
+

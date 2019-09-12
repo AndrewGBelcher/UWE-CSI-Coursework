@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/167/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver
+END
+httpd-fs.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/httpd-fs.h
+END
+emac.c.scsc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/emac.c.scsc
+END
+emac.h.scsc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/emac.h.scsc
+END
+emac.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/167/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/emac.c
+END
+http-strings.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/http-strings.c
+END
+makestrings
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/makestrings
+END
+webserver.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/webserver.h
+END
+emac.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/emac.h
+END
+http-strings.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/http-strings.h
+END
+clock-arch.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/clock-arch.h
+END
+makefsdata
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/makefsdata
+END
+uIP_Task.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/165/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/uIP_Task.c
+END
+httpd.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/httpd.c
+END
+httpd-fsdata.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/httpd-fsdata.c
+END
+httpd-cgi.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/httpd-cgi.c
+END
+http-strings
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/http-strings
+END
+uip-conf.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/uip-conf.h
+END
+httpd-fsdata.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/httpd-fsdata.h
+END
+httpd-cgi.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/httpd-cgi.h
+END
+httpd.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/httpd.h
+END
+httpd-fs.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/CORTEX_STM32F107_GCC_Ecplise/webserver/httpd-fs.c
+END

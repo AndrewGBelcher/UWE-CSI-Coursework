@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'visitor_tt1_brkregular';
+    src: url('../../assets/visitor1-webfont.woff2') format('woff2'),
+	    url('../../assets/visitor1-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p {
+    font-family:'visitor_tt1_brkregular', sans-serif;
+}
+
+.enterbox {
+  /*position:relative;*/
+}
+
+.enterbox > input {
+  width: 500px;
+  border: none;
+  outline: none;
+  background-color: #fda500;
+  font-family:'visitor_tt1_brkregular', sans-serif;
+}
+
+#inside {
+    position: relative;
+    overflow-y: auto;
+    padding-bottom: 80px;
+    font-family:'visitor_tt1_brkregular', sans-serif;
+}

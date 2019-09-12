@@ -1,0 +1,193 @@
+\hypertarget{class_player}{}\section{Player Class Reference}
+\label{class_player}\index{Player@{Player}}
+
+
+{\ttfamily \#include $<$player.\+h$>$}
+
+
+
+Collaboration diagram for Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_player__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player} ()
+\item 
+bool \hyperlink{class_player_af2cde98e3e3016f52bcec03c56aec407}{pickup\+Item} (\hyperlink{class_item}{Item} item)
+\item 
+bool \hyperlink{class_player_adb4031aaf2536a5a7f89e7d194d990e2}{drop\+Item} (std\+::string item)
+\item 
+bool \hyperlink{class_player_a8c1c3b5c6c5477f32309e93a63b386ff}{chk\+Item} (std\+::string item)
+\item 
+bool \hyperlink{class_player_a081bbb9e703f1f32eeaa3f9aac6ac327}{del\+Item} (std\+::string item)
+\item 
+void \hyperlink{class_player_ad6b1c30ffa56aacefb102195a041577d}{clear\+Items} ()
+\item 
+std\+::string \hyperlink{class_player_ab21f29bdef7ec29545dbb45f2a166ab0}{get\+Inventory\+Html} ()
+\item 
+\hyperlink{class_room}{Room} $\ast$ \hyperlink{class_player_aa19bb311c830a1e886609eb53502d0b0}{get\+Cur\+Room} ()
+\item 
+void \hyperlink{class_player_a2e90aee69f3d694edf944d5550fe73f9}{set\+Cur\+Room} (\hyperlink{class_room}{Room} $\ast$room)
+\item 
+bool \hyperlink{class_player_aebb3bc5a8d6dcbd27acf67ebd4ca6629}{set\+Invincibility} ()
+\item 
+bool \hyperlink{class_player_aaed2208fc599e76484fde37c38449cb1}{chk\+Invincibility} ()
+\item 
+bool \hyperlink{class_player_a86a98bb13b3a62ef59742ccb98ad3af5}{not\+Invincible} ()
+\item 
+void \hyperlink{class_player_a0ddbb83f6ed54aff1818a5f49291f644}{inc\+Room\+Cnt} ()
+\item 
+int \hyperlink{class_player_a842a4d1798d51aa4e9c4aa31868fe1a6}{chk\+Room\+Cnt} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{class_item}{Item} $>$ \hyperlink{class_player_ad005856eb5f23892ae9687e601f12f6c}{inventory}
+\item 
+int \hyperlink{class_player_a903fd9a9a0dd63ddf7e88b901a72fb99}{max\+Items}
+\item 
+bool \hyperlink{class_player_aaf8419f2a11f79492d1e9081b8913374}{invincible}
+\item 
+int \hyperlink{class_player_a5de846054e4705449a8b8a2365f2f86c}{room\+Cnt}
+\item 
+\hyperlink{class_item}{Item} $\ast$ \hyperlink{class_player_ae0c757e73e05e1a7ebf6f2f511db7494}{item\+Equip}
+\item 
+\hyperlink{class_room}{Room} $\ast$ \hyperlink{class_player_a3be13f6a24a17bd2d199c208a7e96611}{cur\+Room}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection[{\texorpdfstring{Player()}{Player()}}]{\setlength{\rightskip}{0pt plus 5cm}Player\+::\+Player (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{}\label{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}
+
+
+\subsection{Member Function Documentation}
+\index{Player@{Player}!chk\+Invincibility@{chk\+Invincibility}}
+\index{chk\+Invincibility@{chk\+Invincibility}!Player@{Player}}
+\subsubsection[{\texorpdfstring{chk\+Invincibility()}{chkInvincibility()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+::chk\+Invincibility (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_player_aaed2208fc599e76484fde37c38449cb1}{}\label{class_player_aaed2208fc599e76484fde37c38449cb1}
+\index{Player@{Player}!chk\+Item@{chk\+Item}}
+\index{chk\+Item@{chk\+Item}!Player@{Player}}
+\subsubsection[{\texorpdfstring{chk\+Item(std\+::string item)}{chkItem(std::string item)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+::chk\+Item (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{item}
+\end{DoxyParamCaption}
+)}\hypertarget{class_player_a8c1c3b5c6c5477f32309e93a63b386ff}{}\label{class_player_a8c1c3b5c6c5477f32309e93a63b386ff}
+\index{Player@{Player}!chk\+Room\+Cnt@{chk\+Room\+Cnt}}
+\index{chk\+Room\+Cnt@{chk\+Room\+Cnt}!Player@{Player}}
+\subsubsection[{\texorpdfstring{chk\+Room\+Cnt()}{chkRoomCnt()}}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+::chk\+Room\+Cnt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_player_a842a4d1798d51aa4e9c4aa31868fe1a6}{}\label{class_player_a842a4d1798d51aa4e9c4aa31868fe1a6}
+\index{Player@{Player}!clear\+Items@{clear\+Items}}
+\index{clear\+Items@{clear\+Items}!Player@{Player}}
+\subsubsection[{\texorpdfstring{clear\+Items()}{clearItems()}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::clear\+Items (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_player_ad6b1c30ffa56aacefb102195a041577d}{}\label{class_player_ad6b1c30ffa56aacefb102195a041577d}
+\index{Player@{Player}!del\+Item@{del\+Item}}
+\index{del\+Item@{del\+Item}!Player@{Player}}
+\subsubsection[{\texorpdfstring{del\+Item(std\+::string item)}{delItem(std::string item)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+::del\+Item (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{item}
+\end{DoxyParamCaption}
+)}\hypertarget{class_player_a081bbb9e703f1f32eeaa3f9aac6ac327}{}\label{class_player_a081bbb9e703f1f32eeaa3f9aac6ac327}
+\index{Player@{Player}!drop\+Item@{drop\+Item}}
+\index{drop\+Item@{drop\+Item}!Player@{Player}}
+\subsubsection[{\texorpdfstring{drop\+Item(std\+::string item)}{dropItem(std::string item)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+::drop\+Item (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{item}
+\end{DoxyParamCaption}
+)}\hypertarget{class_player_adb4031aaf2536a5a7f89e7d194d990e2}{}\label{class_player_adb4031aaf2536a5a7f89e7d194d990e2}
+\index{Player@{Player}!get\+Cur\+Room@{get\+Cur\+Room}}
+\index{get\+Cur\+Room@{get\+Cur\+Room}!Player@{Player}}
+\subsubsection[{\texorpdfstring{get\+Cur\+Room()}{getCurRoom()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Room} $\ast$ Player\+::get\+Cur\+Room (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_player_aa19bb311c830a1e886609eb53502d0b0}{}\label{class_player_aa19bb311c830a1e886609eb53502d0b0}
+\index{Player@{Player}!get\+Inventory\+Html@{get\+Inventory\+Html}}
+\index{get\+Inventory\+Html@{get\+Inventory\+Html}!Player@{Player}}
+\subsubsection[{\texorpdfstring{get\+Inventory\+Html()}{getInventoryHtml()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Player\+::get\+Inventory\+Html (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_player_ab21f29bdef7ec29545dbb45f2a166ab0}{}\label{class_player_ab21f29bdef7ec29545dbb45f2a166ab0}
+\index{Player@{Player}!inc\+Room\+Cnt@{inc\+Room\+Cnt}}
+\index{inc\+Room\+Cnt@{inc\+Room\+Cnt}!Player@{Player}}
+\subsubsection[{\texorpdfstring{inc\+Room\+Cnt()}{incRoomCnt()}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::inc\+Room\+Cnt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_player_a0ddbb83f6ed54aff1818a5f49291f644}{}\label{class_player_a0ddbb83f6ed54aff1818a5f49291f644}
+\index{Player@{Player}!not\+Invincible@{not\+Invincible}}
+\index{not\+Invincible@{not\+Invincible}!Player@{Player}}
+\subsubsection[{\texorpdfstring{not\+Invincible()}{notInvincible()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+::not\+Invincible (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_player_a86a98bb13b3a62ef59742ccb98ad3af5}{}\label{class_player_a86a98bb13b3a62ef59742ccb98ad3af5}
+\index{Player@{Player}!pickup\+Item@{pickup\+Item}}
+\index{pickup\+Item@{pickup\+Item}!Player@{Player}}
+\subsubsection[{\texorpdfstring{pickup\+Item(\+Item item)}{pickupItem(Item item)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+::pickup\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf Item}}]{item}
+\end{DoxyParamCaption}
+)}\hypertarget{class_player_af2cde98e3e3016f52bcec03c56aec407}{}\label{class_player_af2cde98e3e3016f52bcec03c56aec407}
+\index{Player@{Player}!set\+Cur\+Room@{set\+Cur\+Room}}
+\index{set\+Cur\+Room@{set\+Cur\+Room}!Player@{Player}}
+\subsubsection[{\texorpdfstring{set\+Cur\+Room(\+Room $\ast$room)}{setCurRoom(Room *room)}}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::set\+Cur\+Room (
+\begin{DoxyParamCaption}
+\item[{{\bf Room} $\ast$}]{room}
+\end{DoxyParamCaption}
+)}\hypertarget{class_player_a2e90aee69f3d694edf944d5550fe73f9}{}\label{class_player_a2e90aee69f3d694edf944d5550fe73f9}
+\index{Player@{Player}!set\+Invincibility@{set\+Invincibility}}
+\index{set\+Invincibility@{set\+Invincibility}!Player@{Player}}
+\subsubsection[{\texorpdfstring{set\+Invincibility()}{setInvincibility()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+::set\+Invincibility (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_player_aebb3bc5a8d6dcbd27acf67ebd4ca6629}{}\label{class_player_aebb3bc5a8d6dcbd27acf67ebd4ca6629}
+
+
+\subsection{Member Data Documentation}
+\index{Player@{Player}!cur\+Room@{cur\+Room}}
+\index{cur\+Room@{cur\+Room}!Player@{Player}}
+\subsubsection[{\texorpdfstring{cur\+Room}{curRoom}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Room}$\ast$ Player\+::cur\+Room\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_player_a3be13f6a24a17bd2d199c208a7e96611}{}\label{class_player_a3be13f6a24a17bd2d199c208a7e96611}
+\index{Player@{Player}!inventory@{inventory}}
+\index{inventory@{inventory}!Player@{Player}}
+\subsubsection[{\texorpdfstring{inventory}{inventory}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Item}$>$ Player\+::inventory\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_player_ad005856eb5f23892ae9687e601f12f6c}{}\label{class_player_ad005856eb5f23892ae9687e601f12f6c}
+\index{Player@{Player}!invincible@{invincible}}
+\index{invincible@{invincible}!Player@{Player}}
+\subsubsection[{\texorpdfstring{invincible}{invincible}}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\+::invincible\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_player_aaf8419f2a11f79492d1e9081b8913374}{}\label{class_player_aaf8419f2a11f79492d1e9081b8913374}
+\index{Player@{Player}!item\+Equip@{item\+Equip}}
+\index{item\+Equip@{item\+Equip}!Player@{Player}}
+\subsubsection[{\texorpdfstring{item\+Equip}{itemEquip}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Item}$\ast$ Player\+::item\+Equip\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_player_ae0c757e73e05e1a7ebf6f2f511db7494}{}\label{class_player_ae0c757e73e05e1a7ebf6f2f511db7494}
+\index{Player@{Player}!max\+Items@{max\+Items}}
+\index{max\+Items@{max\+Items}!Player@{Player}}
+\subsubsection[{\texorpdfstring{max\+Items}{maxItems}}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+::max\+Items\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_player_a903fd9a9a0dd63ddf7e88b901a72fb99}{}\label{class_player_a903fd9a9a0dd63ddf7e88b901a72fb99}
+\index{Player@{Player}!room\+Cnt@{room\+Cnt}}
+\index{room\+Cnt@{room\+Cnt}!Player@{Player}}
+\subsubsection[{\texorpdfstring{room\+Cnt}{roomCnt}}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+::room\+Cnt\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_player_a5de846054e4705449a8b8a2365f2f86c}{}\label{class_player_a5de846054e4705449a8b8a2365f2f86c}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{player_8h}{player.\+h}\item 
+source/\hyperlink{player_8cpp}{player.\+cpp}\end{DoxyCompactItemize}

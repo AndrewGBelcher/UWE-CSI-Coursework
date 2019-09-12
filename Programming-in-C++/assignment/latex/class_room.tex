@@ -1,0 +1,213 @@
+\hypertarget{class_room}{}\section{Room Class Reference}
+\label{class_room}\index{Room@{Room}}
+
+
+{\ttfamily \#include $<$room.\+h$>$}
+
+
+
+Collaboration diagram for Room\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{class_room__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_room_ac6ef93a7d9c3e1d624e025058d5f16ff}{Room} ()
+\item 
+\hyperlink{class_room_a96f197f3053dfaa506cde4b80978d4bf}{Room} (uwe\+::\+Room\+Info ri, std\+::vector$<$ \hyperlink{class_item}{Item} $>$\hyperlink{class_room_a21e907fa249c8248845a4e001c7b572a}{item\+Vector})
+\item 
+std\+::string \hyperlink{class_room_a51db5005d72bcaabd2f13b52eb740e30}{get\+Room\+Info} ()
+\item 
+std\+::string \hyperlink{class_room_a59f42b1d74464cd62fb9691ed2be0c85}{get\+Item\+Strings} ()
+\item 
+std\+::string \hyperlink{class_room_a75271a20c610a24bfa275953c45dae61}{get\+Ent\+H\+T\+ML} ()
+\item 
+std\+::string \hyperlink{class_room_ae6a3be5861b657a2cbbada8e67ab7fde}{get\+Name} ()
+\item 
+std\+::string \hyperlink{class_room_a49b28c0297cd75f6bb94b861dafbb0bd}{get\+Desc} ()
+\item 
+void \hyperlink{class_room_a7a2ed3178aed3660121882858f269a10}{init\+Items} (std\+::vector$<$ \hyperlink{class_item}{Item} $>$world\+Items)
+\item 
+std\+::vector$<$ \hyperlink{class_item}{Item} $>$ \hyperlink{class_room_aff3135c3732758a8e176fe5161a193f2}{get\+Items} ()
+\item 
+bool \hyperlink{class_room_ab838a8ed7f67e2b438a7d96ffbbe6961}{get\+Item} (std\+::string i\+Name, \hyperlink{class_item}{Item} $\ast$ret\+Item)
+\item 
+void \hyperlink{class_room_a0aefeb033bb51709bc72fe47574568ca}{put\+Item\+In\+Room} (\hyperlink{class_item}{Item} item)
+\item 
+std\+::vector$<$ \hyperlink{class_entrance}{Entrance} $>$ \hyperlink{class_room_ac4233ee265acfda90b9f159219553e36}{get\+Ents} ()
+\item 
+void \hyperlink{class_room_a1328ddc5bd5957738335f7c05f21959f}{unlock\+Ent} (std\+::string ent\+Name)
+\item 
+void \hyperlink{class_room_ae6c0cdda79ffe2c9ce43b816f137a99d}{load\+Entrances} (std\+::vector$<$ uwe\+::\+Entrance\+Info $>$entrances\+J\+S\+ON)
+\item 
+int \hyperlink{class_room_a9995dfb547b839c817a3f1b107ae3591}{chk\+Zombies} ()
+\item 
+void \hyperlink{class_room_aaeaf156da5e9ae2980438d495dbb5420}{kill\+Zombie} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_room_af7b9b2ab1bd1eda19d6b893c984d73d7}{room\+Items}
+\item 
+std\+::vector$<$ \hyperlink{class_entrance}{Entrance} $>$ \hyperlink{class_room_a7e93af067cbea670fd4a4e8addffd09a}{ent\+Vect}
+\item 
+std\+::vector$<$ \hyperlink{class_item}{Item} $>$ \hyperlink{class_room_a21e907fa249c8248845a4e001c7b572a}{item\+Vector}
+\item 
+std\+::string \hyperlink{class_room_add2825ea48f72ca1b06ae26c28297cdc}{room\+Name}
+\item 
+std\+::string \hyperlink{class_room_ae18039ced2c32837f5064961bb33e4e9}{room\+Desc}
+\item 
+int \hyperlink{class_room_afcddb9fd9012f7838876a64c834a0349}{zomb\+Count}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Room@{Room}!Room@{Room}}
+\index{Room@{Room}!Room@{Room}}
+\subsubsection[{\texorpdfstring{Room()}{Room()}}]{\setlength{\rightskip}{0pt plus 5cm}Room\+::\+Room (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_ac6ef93a7d9c3e1d624e025058d5f16ff}{}\label{class_room_ac6ef93a7d9c3e1d624e025058d5f16ff}
+\index{Room@{Room}!Room@{Room}}
+\index{Room@{Room}!Room@{Room}}
+\subsubsection[{\texorpdfstring{Room(uwe\+::\+Room\+Info ri, std\+::vector$<$ Item $>$item\+Vector)}{Room(uwe::RoomInfo ri, std::vector< Item >itemVector)}}]{\setlength{\rightskip}{0pt plus 5cm}Room\+::\+Room (
+\begin{DoxyParamCaption}
+\item[{uwe\+::\+Room\+Info}]{ri, }
+\item[{std\+::vector$<$ {\bf Item} $>$}]{item\+Vector}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_a96f197f3053dfaa506cde4b80978d4bf}{}\label{class_room_a96f197f3053dfaa506cde4b80978d4bf}
+
+
+\subsection{Member Function Documentation}
+\index{Room@{Room}!chk\+Zombies@{chk\+Zombies}}
+\index{chk\+Zombies@{chk\+Zombies}!Room@{Room}}
+\subsubsection[{\texorpdfstring{chk\+Zombies()}{chkZombies()}}]{\setlength{\rightskip}{0pt plus 5cm}int Room\+::chk\+Zombies (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_a9995dfb547b839c817a3f1b107ae3591}{}\label{class_room_a9995dfb547b839c817a3f1b107ae3591}
+\index{Room@{Room}!get\+Desc@{get\+Desc}}
+\index{get\+Desc@{get\+Desc}!Room@{Room}}
+\subsubsection[{\texorpdfstring{get\+Desc()}{getDesc()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Room\+::get\+Desc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_a49b28c0297cd75f6bb94b861dafbb0bd}{}\label{class_room_a49b28c0297cd75f6bb94b861dafbb0bd}
+\index{Room@{Room}!get\+Ent\+H\+T\+ML@{get\+Ent\+H\+T\+ML}}
+\index{get\+Ent\+H\+T\+ML@{get\+Ent\+H\+T\+ML}!Room@{Room}}
+\subsubsection[{\texorpdfstring{get\+Ent\+H\+T\+M\+L()}{getEntHTML()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Room\+::get\+Ent\+H\+T\+ML (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_a75271a20c610a24bfa275953c45dae61}{}\label{class_room_a75271a20c610a24bfa275953c45dae61}
+\index{Room@{Room}!get\+Ents@{get\+Ents}}
+\index{get\+Ents@{get\+Ents}!Room@{Room}}
+\subsubsection[{\texorpdfstring{get\+Ents()}{getEnts()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Entrance} $>$ Room\+::get\+Ents (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_ac4233ee265acfda90b9f159219553e36}{}\label{class_room_ac4233ee265acfda90b9f159219553e36}
+\index{Room@{Room}!get\+Item@{get\+Item}}
+\index{get\+Item@{get\+Item}!Room@{Room}}
+\subsubsection[{\texorpdfstring{get\+Item(std\+::string i\+Name, Item $\ast$ret\+Item)}{getItem(std::string iName, Item *retItem)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Room\+::get\+Item (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{i\+Name, }
+\item[{{\bf Item} $\ast$}]{ret\+Item}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_ab838a8ed7f67e2b438a7d96ffbbe6961}{}\label{class_room_ab838a8ed7f67e2b438a7d96ffbbe6961}
+\index{Room@{Room}!get\+Items@{get\+Items}}
+\index{get\+Items@{get\+Items}!Room@{Room}}
+\subsubsection[{\texorpdfstring{get\+Items()}{getItems()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Item} $>$ Room\+::get\+Items (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_aff3135c3732758a8e176fe5161a193f2}{}\label{class_room_aff3135c3732758a8e176fe5161a193f2}
+\index{Room@{Room}!get\+Item\+Strings@{get\+Item\+Strings}}
+\index{get\+Item\+Strings@{get\+Item\+Strings}!Room@{Room}}
+\subsubsection[{\texorpdfstring{get\+Item\+Strings()}{getItemStrings()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Room\+::get\+Item\+Strings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_a59f42b1d74464cd62fb9691ed2be0c85}{}\label{class_room_a59f42b1d74464cd62fb9691ed2be0c85}
+\index{Room@{Room}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Room@{Room}}
+\subsubsection[{\texorpdfstring{get\+Name()}{getName()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Room\+::get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_ae6a3be5861b657a2cbbada8e67ab7fde}{}\label{class_room_ae6a3be5861b657a2cbbada8e67ab7fde}
+\index{Room@{Room}!get\+Room\+Info@{get\+Room\+Info}}
+\index{get\+Room\+Info@{get\+Room\+Info}!Room@{Room}}
+\subsubsection[{\texorpdfstring{get\+Room\+Info()}{getRoomInfo()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Room\+::get\+Room\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_a51db5005d72bcaabd2f13b52eb740e30}{}\label{class_room_a51db5005d72bcaabd2f13b52eb740e30}
+\index{Room@{Room}!init\+Items@{init\+Items}}
+\index{init\+Items@{init\+Items}!Room@{Room}}
+\subsubsection[{\texorpdfstring{init\+Items(std\+::vector$<$ Item $>$world\+Items)}{initItems(std::vector< Item >worldItems)}}]{\setlength{\rightskip}{0pt plus 5cm}void Room\+::init\+Items (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Item} $>$}]{world\+Items}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_a7a2ed3178aed3660121882858f269a10}{}\label{class_room_a7a2ed3178aed3660121882858f269a10}
+\index{Room@{Room}!kill\+Zombie@{kill\+Zombie}}
+\index{kill\+Zombie@{kill\+Zombie}!Room@{Room}}
+\subsubsection[{\texorpdfstring{kill\+Zombie()}{killZombie()}}]{\setlength{\rightskip}{0pt plus 5cm}void Room\+::kill\+Zombie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_aaeaf156da5e9ae2980438d495dbb5420}{}\label{class_room_aaeaf156da5e9ae2980438d495dbb5420}
+\index{Room@{Room}!load\+Entrances@{load\+Entrances}}
+\index{load\+Entrances@{load\+Entrances}!Room@{Room}}
+\subsubsection[{\texorpdfstring{load\+Entrances(std\+::vector$<$ uwe\+::\+Entrance\+Info $>$entrances\+J\+S\+O\+N)}{loadEntrances(std::vector< uwe::EntranceInfo >entrancesJSON)}}]{\setlength{\rightskip}{0pt plus 5cm}void Room\+::load\+Entrances (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ uwe\+::\+Entrance\+Info $>$}]{entrances\+J\+S\+ON}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_ae6c0cdda79ffe2c9ce43b816f137a99d}{}\label{class_room_ae6c0cdda79ffe2c9ce43b816f137a99d}
+\index{Room@{Room}!put\+Item\+In\+Room@{put\+Item\+In\+Room}}
+\index{put\+Item\+In\+Room@{put\+Item\+In\+Room}!Room@{Room}}
+\subsubsection[{\texorpdfstring{put\+Item\+In\+Room(\+Item item)}{putItemInRoom(Item item)}}]{\setlength{\rightskip}{0pt plus 5cm}void Room\+::put\+Item\+In\+Room (
+\begin{DoxyParamCaption}
+\item[{{\bf Item}}]{item}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_a0aefeb033bb51709bc72fe47574568ca}{}\label{class_room_a0aefeb033bb51709bc72fe47574568ca}
+\index{Room@{Room}!unlock\+Ent@{unlock\+Ent}}
+\index{unlock\+Ent@{unlock\+Ent}!Room@{Room}}
+\subsubsection[{\texorpdfstring{unlock\+Ent(std\+::string ent\+Name)}{unlockEnt(std::string entName)}}]{\setlength{\rightskip}{0pt plus 5cm}void Room\+::unlock\+Ent (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{ent\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_room_a1328ddc5bd5957738335f7c05f21959f}{}\label{class_room_a1328ddc5bd5957738335f7c05f21959f}
+
+
+\subsection{Member Data Documentation}
+\index{Room@{Room}!ent\+Vect@{ent\+Vect}}
+\index{ent\+Vect@{ent\+Vect}!Room@{Room}}
+\subsubsection[{\texorpdfstring{ent\+Vect}{entVect}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Entrance}$>$ Room\+::ent\+Vect\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_room_a7e93af067cbea670fd4a4e8addffd09a}{}\label{class_room_a7e93af067cbea670fd4a4e8addffd09a}
+\index{Room@{Room}!item\+Vector@{item\+Vector}}
+\index{item\+Vector@{item\+Vector}!Room@{Room}}
+\subsubsection[{\texorpdfstring{item\+Vector}{itemVector}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Item}$>$ Room\+::item\+Vector\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_room_a21e907fa249c8248845a4e001c7b572a}{}\label{class_room_a21e907fa249c8248845a4e001c7b572a}
+\index{Room@{Room}!room\+Desc@{room\+Desc}}
+\index{room\+Desc@{room\+Desc}!Room@{Room}}
+\subsubsection[{\texorpdfstring{room\+Desc}{roomDesc}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Room\+::room\+Desc\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_room_ae18039ced2c32837f5064961bb33e4e9}{}\label{class_room_ae18039ced2c32837f5064961bb33e4e9}
+\index{Room@{Room}!room\+Items@{room\+Items}}
+\index{room\+Items@{room\+Items}!Room@{Room}}
+\subsubsection[{\texorpdfstring{room\+Items}{roomItems}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::string$>$ Room\+::room\+Items\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_room_af7b9b2ab1bd1eda19d6b893c984d73d7}{}\label{class_room_af7b9b2ab1bd1eda19d6b893c984d73d7}
+\index{Room@{Room}!room\+Name@{room\+Name}}
+\index{room\+Name@{room\+Name}!Room@{Room}}
+\subsubsection[{\texorpdfstring{room\+Name}{roomName}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Room\+::room\+Name\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_room_add2825ea48f72ca1b06ae26c28297cdc}{}\label{class_room_add2825ea48f72ca1b06ae26c28297cdc}
+\index{Room@{Room}!zomb\+Count@{zomb\+Count}}
+\index{zomb\+Count@{zomb\+Count}!Room@{Room}}
+\subsubsection[{\texorpdfstring{zomb\+Count}{zombCount}}]{\setlength{\rightskip}{0pt plus 5cm}int Room\+::zomb\+Count\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_room_afcddb9fd9012f7838876a64c834a0349}{}\label{class_room_afcddb9fd9012f7838876a64c834a0349}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{room_8h}{room.\+h}\item 
+source/\hyperlink{room_8cpp}{room.\+cpp}\end{DoxyCompactItemize}

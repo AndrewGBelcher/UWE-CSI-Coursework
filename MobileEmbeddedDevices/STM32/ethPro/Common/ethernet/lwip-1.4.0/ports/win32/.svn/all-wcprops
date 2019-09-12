@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/lwip-1.4.0/ports/win32
+END
+lwipcfg_msvc.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/lwip-1.4.0/ports/win32/lwipcfg_msvc.h
+END
+sys_arch.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/lwip-1.4.0/ports/win32/sys_arch.c
+END
+ethernetif.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/lwip-1.4.0/ports/win32/ethernetif.c
+END

@@ -1,0 +1,6 @@
+<map id="include/world.h" name="include/world.h">
+<area shape="rect" id="node4" href="$room_8h.html" title="room.h" alt="" coords="119,155,181,181"/>
+<area shape="rect" id="node5" href="$item_8h.html" title="item.h" alt="" coords="23,229,82,256"/>
+<area shape="rect" id="node7" href="$player_8h.html" title="player.h" alt="" coords="68,80,136,107"/>
+<area shape="rect" id="node6" href="$entrance_8h.html" title="entrance.h" alt="" coords="106,229,189,256"/>
+</map>

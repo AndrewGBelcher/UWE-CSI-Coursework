@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="800" height="600" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<rect width="800" height="600" fill="white"/>
+	<ellipse stroke="black" stroke-width="1" fill="none" cx="595.5" cy="161.5" rx="30" ry="30"/>
+	<text x="563.5" y="167.5" font-family="Times New Roman" font-size="20">LED on</text>
+	<ellipse stroke="black" stroke-width="1" fill="none" cx="180.5" cy="326.5" rx="30" ry="30"/>
+	<text x="147.5" y="332.5" font-family="Times New Roman" font-size="20">LED off</text>
+	<ellipse stroke="black" stroke-width="1" fill="none" cx="457.5" cy="100.5" rx="30" ry="30"/>
+	<text x="399.5" y="106.5" font-family="Times New Roman" font-size="20">button pressed</text>
+	<ellipse stroke="black" stroke-width="1" fill="none" cx="345.5" cy="480.5" rx="30" ry="30"/>
+	<text x="284.5" y="486.5" font-family="Times New Roman" font-size="20">button released</text>
+	<path stroke="black" stroke-width="1" fill="none" d="M 597.947,131.717 A 22.5,22.5 0 1 1 620.627,145.326"/>
+	<text x="635.5" y="94.5" font-family="Times New Roman" font-size="20">button state high</text>
+	<polygon fill="black" stroke-width="1" points="620.627,145.326 629.946,146.797 626.033,137.594"/>
+	<path stroke="black" stroke-width="1" fill="none" d="M 181.451,356.368 A 22.5,22.5 0 1 1 157.372,345.423"/>
+	<text x="21.5" y="409.5" font-family="Times New Roman" font-size="20">button state low</text>
+	<polygon fill="black" stroke-width="1" points="157.372,345.423 147.946,345.019 152.879,353.718"/>
+	<path stroke="black" stroke-width="1" fill="none" d="M 160.192,304.465 A 180.601,180.601 0 0 1 439.99,76.183"/>
+	<polygon fill="black" stroke-width="1" points="439.99,76.183 438.594,66.853 430.992,73.349"/>
+	<text x="50.5" y="44.5" font-family="Times New Roman" font-size="20">button state high</text>
+	<path stroke="black" stroke-width="1" fill="none" d="M 577.748,185.439 A 75.46,75.46 0 0 1 451.745,129.742"/>
+	<polygon fill="black" stroke-width="1" points="577.748,185.439 568.459,187.085 575.156,194.51"/>
+	<text x="360.5" y="220.5" font-family="Times New Roman" font-size="20">button state high</text>
+	<path stroke="black" stroke-width="1" fill="none" d="M 619.749,179.117 A 203.878,203.878 0 0 1 368.402,499.835"/>
+	<polygon fill="black" stroke-width="1" points="368.402,499.835 371.942,508.58 377.814,500.486"/>
+	<text x="654.5" y="480.5" font-family="Times New Roman" font-size="20">button state low</text>
+	<path stroke="black" stroke-width="1" fill="none" d="M 209.869,320.717 A 129.262,129.262 0 0 1 349.246,450.803"/>
+	<polygon fill="black" stroke-width="1" points="209.869,320.717 218.236,325.075 217.453,315.106"/>
+	<text x="313.5" y="346.5" font-family="Times New Roman" font-size="20">button state low</text>
+	<path stroke="black" stroke-width="1" fill="none" d="M 588.631,190.697 A 450.132,450.132 0 0 1 372.209,466.851"/>
+	<polygon fill="black" stroke-width="1" points="588.631,190.697 581.714,197.113 591.367,199.726"/>
+	<text x="514.5" y="370.5" font-family="Times New Roman" font-size="20">button state high</text>
+	<path stroke="black" stroke-width="1" fill="none" d="M 192.688,299.097 A 366.92,366.92 0 0 1 428.208,106.94"/>
+	<polygon fill="black" stroke-width="1" points="192.688,299.097 200.717,294.143 191.753,289.709"/>
+	<text x="156.5" y="168.5" font-family="Times New Roman" font-size="20">button state low</text>
+</svg>

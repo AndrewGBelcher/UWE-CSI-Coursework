@@ -1,0 +1,232 @@
+\hypertarget{class_world}{}\section{World Class Reference}
+\label{class_world}\index{World@{World}}
+
+
+{\ttfamily \#include $<$world.\+h$>$}
+
+
+
+Collaboration diagram for World\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_world__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_world_afa39d4e6f714a7a3691ac0c656f5e8a8}{World} ()
+\item 
+\hyperlink{class_world_aa95deade27bae5842d7faf397e675e30}{World} (uwe\+::\+World\+Loader wl)
+\item 
+std\+::string \hyperlink{class_world_a35c3f1ee9e59671afd8afe7153080c60}{get\+Info} ()
+\item 
+std\+::string \hyperlink{class_world_aa45cb41c5134a61443d9e1d8af6638ca}{get\+Room\+Info} ()
+\item 
+std\+::string \hyperlink{class_world_ae5944d2cac3bb7d2b9ba011b8d159f1d}{get\+Inventory\+Html} ()
+\item 
+void \hyperlink{class_world_a89353bcb222a0ebc6426916279ac3885}{load\+Rooms} (std\+::vector$<$ uwe\+::\+Room\+Info $>$rooms\+J\+S\+ON)
+\item 
+void \hyperlink{class_world_a9c7027f0e1a55071bba3193055929f03}{load\+Items} (std\+::vector$<$ uwe\+::\+Item\+Info $>$items\+J\+S\+ON)
+\item 
+\hyperlink{class_room}{Room} $\ast$ \hyperlink{class_world_a2ec491313aa804a0cc85f240c0a06a39}{get\+Target\+Room} (\hyperlink{class_room}{Room} $\ast$cur\+Room, std\+::string direction, std\+::string $\ast$dir\+Check\+Ret)
+\item 
+void \hyperlink{class_world_ab8297b76c6b6b91b51b327ee11fe6d5c}{set\+Begin} ()
+\item 
+\hyperlink{class_room}{Room} $\ast$ \hyperlink{class_world_a84b3872e280eb4f6761a4b1eb0a41e69}{get\+Start} ()
+\item 
+\hyperlink{class_room}{Room} $\ast$ \hyperlink{class_world_aaea5355cb0778dd10fc079f579c6a60c}{get\+End} ()
+\item 
+int \hyperlink{class_world_a7eff312b873974bc1fba0fc733e406d7}{get\+Game\+Score} ()
+\item 
+void \hyperlink{class_world_a59b27842de8fa5982a6deb8333f152d6}{scored} (int amount)
+\item 
+void \hyperlink{class_world_ac89bad423d24334fa8d9d539a18707ff}{quit} ()
+\item 
+bool \hyperlink{class_world_a4f052f529eb1af58eeb38d717270b9d7}{check\+Quit} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_player}{Player} \hyperlink{class_world_af12585403cef12e595e282dd27948d9a}{player}
+\item 
+bool \hyperlink{class_world_a7270b9f8836a03add50bffdf20d9d199}{start\+Timer}
+\item 
+bool \hyperlink{class_world_a16e241b63b668a74380b4db331a4e9ea}{end\+Timer}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{class_room}{Room} $>$ \hyperlink{class_world_ab2fda6c8eab2d939323a073c3dd7f1c4}{rooms}
+\item 
+std\+::vector$<$ \hyperlink{class_item}{Item} $>$ \hyperlink{class_world_a944fe6b2afeecf568d7b904ca4f7c660}{items}
+\item 
+std\+::string \hyperlink{class_world_a3343e3ea054378472841acb71fc57390}{info}
+\item 
+std\+::string \hyperlink{class_world_a931da4fdd320f91a2907d3ec740aa071}{start}
+\item 
+std\+::string \hyperlink{class_world_a5f018ca06c6531c087d2db5dcf33b16f}{end}
+\item 
+std\+::string \hyperlink{class_world_a7c1c5fac11cd9f7ce463252dc8ead690}{inventory\+Html}
+\item 
+int \hyperlink{class_world_ae70b4ef5dd9cb9e7336169a25aaee39c}{score}
+\item 
+bool \hyperlink{class_world_afbd2e53d3a60b74efd0b82e67867d250}{exit}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{World@{World}!World@{World}}
+\index{World@{World}!World@{World}}
+\subsubsection[{\texorpdfstring{World()}{World()}}]{\setlength{\rightskip}{0pt plus 5cm}World\+::\+World (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_world_afa39d4e6f714a7a3691ac0c656f5e8a8}{}\label{class_world_afa39d4e6f714a7a3691ac0c656f5e8a8}
+\index{World@{World}!World@{World}}
+\index{World@{World}!World@{World}}
+\subsubsection[{\texorpdfstring{World(uwe\+::\+World\+Loader wl)}{World(uwe::WorldLoader wl)}}]{\setlength{\rightskip}{0pt plus 5cm}World\+::\+World (
+\begin{DoxyParamCaption}
+\item[{uwe\+::\+World\+Loader}]{wl}
+\end{DoxyParamCaption}
+)}\hypertarget{class_world_aa95deade27bae5842d7faf397e675e30}{}\label{class_world_aa95deade27bae5842d7faf397e675e30}
+
+
+\subsection{Member Function Documentation}
+\index{World@{World}!check\+Quit@{check\+Quit}}
+\index{check\+Quit@{check\+Quit}!World@{World}}
+\subsubsection[{\texorpdfstring{check\+Quit()}{checkQuit()}}]{\setlength{\rightskip}{0pt plus 5cm}bool World\+::check\+Quit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_world_a4f052f529eb1af58eeb38d717270b9d7}{}\label{class_world_a4f052f529eb1af58eeb38d717270b9d7}
+\index{World@{World}!get\+End@{get\+End}}
+\index{get\+End@{get\+End}!World@{World}}
+\subsubsection[{\texorpdfstring{get\+End()}{getEnd()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Room} $\ast$ World\+::get\+End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_world_aaea5355cb0778dd10fc079f579c6a60c}{}\label{class_world_aaea5355cb0778dd10fc079f579c6a60c}
+\index{World@{World}!get\+Game\+Score@{get\+Game\+Score}}
+\index{get\+Game\+Score@{get\+Game\+Score}!World@{World}}
+\subsubsection[{\texorpdfstring{get\+Game\+Score()}{getGameScore()}}]{\setlength{\rightskip}{0pt plus 5cm}int World\+::get\+Game\+Score (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_world_a7eff312b873974bc1fba0fc733e406d7}{}\label{class_world_a7eff312b873974bc1fba0fc733e406d7}
+\index{World@{World}!get\+Info@{get\+Info}}
+\index{get\+Info@{get\+Info}!World@{World}}
+\subsubsection[{\texorpdfstring{get\+Info()}{getInfo()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string World\+::get\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_world_a35c3f1ee9e59671afd8afe7153080c60}{}\label{class_world_a35c3f1ee9e59671afd8afe7153080c60}
+\index{World@{World}!get\+Inventory\+Html@{get\+Inventory\+Html}}
+\index{get\+Inventory\+Html@{get\+Inventory\+Html}!World@{World}}
+\subsubsection[{\texorpdfstring{get\+Inventory\+Html()}{getInventoryHtml()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string World\+::get\+Inventory\+Html (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_world_ae5944d2cac3bb7d2b9ba011b8d159f1d}{}\label{class_world_ae5944d2cac3bb7d2b9ba011b8d159f1d}
+\index{World@{World}!get\+Room\+Info@{get\+Room\+Info}}
+\index{get\+Room\+Info@{get\+Room\+Info}!World@{World}}
+\subsubsection[{\texorpdfstring{get\+Room\+Info()}{getRoomInfo()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string World\+::get\+Room\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_world_aa45cb41c5134a61443d9e1d8af6638ca}{}\label{class_world_aa45cb41c5134a61443d9e1d8af6638ca}
+\index{World@{World}!get\+Start@{get\+Start}}
+\index{get\+Start@{get\+Start}!World@{World}}
+\subsubsection[{\texorpdfstring{get\+Start()}{getStart()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Room} $\ast$ World\+::get\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_world_a84b3872e280eb4f6761a4b1eb0a41e69}{}\label{class_world_a84b3872e280eb4f6761a4b1eb0a41e69}
+\index{World@{World}!get\+Target\+Room@{get\+Target\+Room}}
+\index{get\+Target\+Room@{get\+Target\+Room}!World@{World}}
+\subsubsection[{\texorpdfstring{get\+Target\+Room(\+Room $\ast$cur\+Room, std\+::string direction, std\+::string $\ast$dir\+Check\+Ret)}{getTargetRoom(Room *curRoom, std::string direction, std::string *dirCheckRet)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Room} $\ast$ World\+::get\+Target\+Room (
+\begin{DoxyParamCaption}
+\item[{{\bf Room} $\ast$}]{cur\+Room, }
+\item[{std\+::string}]{direction, }
+\item[{std\+::string $\ast$}]{dir\+Check\+Ret}
+\end{DoxyParamCaption}
+)}\hypertarget{class_world_a2ec491313aa804a0cc85f240c0a06a39}{}\label{class_world_a2ec491313aa804a0cc85f240c0a06a39}
+\index{World@{World}!load\+Items@{load\+Items}}
+\index{load\+Items@{load\+Items}!World@{World}}
+\subsubsection[{\texorpdfstring{load\+Items(std\+::vector$<$ uwe\+::\+Item\+Info $>$items\+J\+S\+O\+N)}{loadItems(std::vector< uwe::ItemInfo >itemsJSON)}}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::load\+Items (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ uwe\+::\+Item\+Info $>$}]{items\+J\+S\+ON}
+\end{DoxyParamCaption}
+)}\hypertarget{class_world_a9c7027f0e1a55071bba3193055929f03}{}\label{class_world_a9c7027f0e1a55071bba3193055929f03}
+\index{World@{World}!load\+Rooms@{load\+Rooms}}
+\index{load\+Rooms@{load\+Rooms}!World@{World}}
+\subsubsection[{\texorpdfstring{load\+Rooms(std\+::vector$<$ uwe\+::\+Room\+Info $>$rooms\+J\+S\+O\+N)}{loadRooms(std::vector< uwe::RoomInfo >roomsJSON)}}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::load\+Rooms (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ uwe\+::\+Room\+Info $>$}]{rooms\+J\+S\+ON}
+\end{DoxyParamCaption}
+)}\hypertarget{class_world_a89353bcb222a0ebc6426916279ac3885}{}\label{class_world_a89353bcb222a0ebc6426916279ac3885}
+\index{World@{World}!quit@{quit}}
+\index{quit@{quit}!World@{World}}
+\subsubsection[{\texorpdfstring{quit()}{quit()}}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::quit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_world_ac89bad423d24334fa8d9d539a18707ff}{}\label{class_world_ac89bad423d24334fa8d9d539a18707ff}
+\index{World@{World}!scored@{scored}}
+\index{scored@{scored}!World@{World}}
+\subsubsection[{\texorpdfstring{scored(int amount)}{scored(int amount)}}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::scored (
+\begin{DoxyParamCaption}
+\item[{int}]{amount}
+\end{DoxyParamCaption}
+)}\hypertarget{class_world_a59b27842de8fa5982a6deb8333f152d6}{}\label{class_world_a59b27842de8fa5982a6deb8333f152d6}
+\index{World@{World}!set\+Begin@{set\+Begin}}
+\index{set\+Begin@{set\+Begin}!World@{World}}
+\subsubsection[{\texorpdfstring{set\+Begin()}{setBegin()}}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::set\+Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_world_ab8297b76c6b6b91b51b327ee11fe6d5c}{}\label{class_world_ab8297b76c6b6b91b51b327ee11fe6d5c}
+
+
+\subsection{Member Data Documentation}
+\index{World@{World}!end@{end}}
+\index{end@{end}!World@{World}}
+\subsubsection[{\texorpdfstring{end}{end}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string World\+::end\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_world_a5f018ca06c6531c087d2db5dcf33b16f}{}\label{class_world_a5f018ca06c6531c087d2db5dcf33b16f}
+\index{World@{World}!end\+Timer@{end\+Timer}}
+\index{end\+Timer@{end\+Timer}!World@{World}}
+\subsubsection[{\texorpdfstring{end\+Timer}{endTimer}}]{\setlength{\rightskip}{0pt plus 5cm}bool World\+::end\+Timer}\hypertarget{class_world_a16e241b63b668a74380b4db331a4e9ea}{}\label{class_world_a16e241b63b668a74380b4db331a4e9ea}
+\index{World@{World}!exit@{exit}}
+\index{exit@{exit}!World@{World}}
+\subsubsection[{\texorpdfstring{exit}{exit}}]{\setlength{\rightskip}{0pt plus 5cm}bool World\+::exit\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_world_afbd2e53d3a60b74efd0b82e67867d250}{}\label{class_world_afbd2e53d3a60b74efd0b82e67867d250}
+\index{World@{World}!info@{info}}
+\index{info@{info}!World@{World}}
+\subsubsection[{\texorpdfstring{info}{info}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string World\+::info\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_world_a3343e3ea054378472841acb71fc57390}{}\label{class_world_a3343e3ea054378472841acb71fc57390}
+\index{World@{World}!inventory\+Html@{inventory\+Html}}
+\index{inventory\+Html@{inventory\+Html}!World@{World}}
+\subsubsection[{\texorpdfstring{inventory\+Html}{inventoryHtml}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string World\+::inventory\+Html\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_world_a7c1c5fac11cd9f7ce463252dc8ead690}{}\label{class_world_a7c1c5fac11cd9f7ce463252dc8ead690}
+\index{World@{World}!items@{items}}
+\index{items@{items}!World@{World}}
+\subsubsection[{\texorpdfstring{items}{items}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Item}$>$ World\+::items\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_world_a944fe6b2afeecf568d7b904ca4f7c660}{}\label{class_world_a944fe6b2afeecf568d7b904ca4f7c660}
+\index{World@{World}!player@{player}}
+\index{player@{player}!World@{World}}
+\subsubsection[{\texorpdfstring{player}{player}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player} World\+::player}\hypertarget{class_world_af12585403cef12e595e282dd27948d9a}{}\label{class_world_af12585403cef12e595e282dd27948d9a}
+\index{World@{World}!rooms@{rooms}}
+\index{rooms@{rooms}!World@{World}}
+\subsubsection[{\texorpdfstring{rooms}{rooms}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Room}$>$ World\+::rooms\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_world_ab2fda6c8eab2d939323a073c3dd7f1c4}{}\label{class_world_ab2fda6c8eab2d939323a073c3dd7f1c4}
+\index{World@{World}!score@{score}}
+\index{score@{score}!World@{World}}
+\subsubsection[{\texorpdfstring{score}{score}}]{\setlength{\rightskip}{0pt plus 5cm}int World\+::score\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_world_ae70b4ef5dd9cb9e7336169a25aaee39c}{}\label{class_world_ae70b4ef5dd9cb9e7336169a25aaee39c}
+\index{World@{World}!start@{start}}
+\index{start@{start}!World@{World}}
+\subsubsection[{\texorpdfstring{start}{start}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string World\+::start\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_world_a931da4fdd320f91a2907d3ec740aa071}{}\label{class_world_a931da4fdd320f91a2907d3ec740aa071}
+\index{World@{World}!start\+Timer@{start\+Timer}}
+\index{start\+Timer@{start\+Timer}!World@{World}}
+\subsubsection[{\texorpdfstring{start\+Timer}{startTimer}}]{\setlength{\rightskip}{0pt plus 5cm}bool World\+::start\+Timer}\hypertarget{class_world_a7270b9f8836a03add50bffdf20d9d199}{}\label{class_world_a7270b9f8836a03add50bffdf20d9d199}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{world_8h}{world.\+h}\item 
+source/\hyperlink{world_8cpp}{world.\+cpp}\end{DoxyCompactItemize}

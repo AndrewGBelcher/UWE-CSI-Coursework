@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_entrance" kind="class" language="C++" prot="public">
+    <compoundname>Entrance</compoundname>
+    <includes refid="entrance_8h" local="no">entrance.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_entrance_1a228a17052cfc8eb772255bee5e9f56ae" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Entrance::roomName</definition>
+        <argsstring></argsstring>
+        <name>roomName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/entrance.h" line="23" column="1" bodyfile="include/entrance.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_entrance_1ad9ee71c233e33d198c7a6c4d1ec90b46" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Entrance::dir</definition>
+        <argsstring></argsstring>
+        <name>dir</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/entrance.h" line="24" column="1" bodyfile="include/entrance.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_entrance_1a16540d02b9f34c068cda79c86dc3df5e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Entrance::lock</definition>
+        <argsstring></argsstring>
+        <name>lock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/entrance.h" line="25" column="1" bodyfile="include/entrance.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_entrance_1a88cd27875093371afa47ac0f321716d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Entrance::Entrance</definition>
+        <argsstring>()</argsstring>
+        <name>Entrance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/entrance.h" line="30" column="1" bodyfile="source/entrance.cpp" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_entrance_1a84a2ab9846eb0271b98e22bc131e1ca2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Entrance::Entrance</definition>
+        <argsstring>(uwe::EntranceInfo entInfo)</argsstring>
+        <name>Entrance</name>
+        <param>
+          <type>uwe::EntranceInfo</type>
+          <declname>entInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/entrance.h" line="31" column="1" bodyfile="source/entrance.cpp" bodystart="18" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_entrance_1a52a2c624cd71effe98fb65b688089dba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Entrance::getDir</definition>
+        <argsstring>()</argsstring>
+        <name>getDir</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/entrance.h" line="34" column="1" bodyfile="source/entrance.cpp" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_entrance_1abddd96900248aace4478339cfc0b08cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Entrance::getRoom</definition>
+        <argsstring>()</argsstring>
+        <name>getRoom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/entrance.h" line="35" column="1" bodyfile="source/entrance.cpp" bodystart="31" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_entrance_1a4bbdb80d7ee6f5fbe3619e9177901d38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Entrance::checkLock</definition>
+        <argsstring>()</argsstring>
+        <name>checkLock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/entrance.h" line="38" column="1" bodyfile="source/entrance.cpp" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_entrance_1af14ff07579df1b040890c3a2e447898c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Entrance::unlock</definition>
+        <argsstring>()</argsstring>
+        <name>unlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/entrance.h" line="39" column="1" bodyfile="source/entrance.cpp" bodystart="36" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="24">
+        <label>Entrance</label>
+        <link refid="class_entrance"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/entrance.h" line="18" column="1" bodyfile="include/entrance.h" bodystart="18" bodyend="41"/>
+    <listofallmembers>
+      <member refid="class_entrance_1a4bbdb80d7ee6f5fbe3619e9177901d38" prot="public" virt="non-virtual"><scope>Entrance</scope><name>checkLock</name></member>
+      <member refid="class_entrance_1ad9ee71c233e33d198c7a6c4d1ec90b46" prot="private" virt="non-virtual"><scope>Entrance</scope><name>dir</name></member>
+      <member refid="class_entrance_1a88cd27875093371afa47ac0f321716d7" prot="public" virt="non-virtual"><scope>Entrance</scope><name>Entrance</name></member>
+      <member refid="class_entrance_1a84a2ab9846eb0271b98e22bc131e1ca2" prot="public" virt="non-virtual"><scope>Entrance</scope><name>Entrance</name></member>
+      <member refid="class_entrance_1a52a2c624cd71effe98fb65b688089dba" prot="public" virt="non-virtual"><scope>Entrance</scope><name>getDir</name></member>
+      <member refid="class_entrance_1abddd96900248aace4478339cfc0b08cb" prot="public" virt="non-virtual"><scope>Entrance</scope><name>getRoom</name></member>
+      <member refid="class_entrance_1a16540d02b9f34c068cda79c86dc3df5e" prot="private" virt="non-virtual"><scope>Entrance</scope><name>lock</name></member>
+      <member refid="class_entrance_1a228a17052cfc8eb772255bee5e9f56ae" prot="private" virt="non-virtual"><scope>Entrance</scope><name>roomName</name></member>
+      <member refid="class_entrance_1af14ff07579df1b040890c3a2e447898c" prot="public" virt="non-virtual"><scope>Entrance</scope><name>unlock</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

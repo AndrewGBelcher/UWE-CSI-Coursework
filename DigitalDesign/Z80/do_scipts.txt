@@ -1,0 +1,314 @@
+// test for reg 8/16
+force clk 0 0, 1 10 -repeat 20
+force reset 0
+force WE 0
+force data_in 33
+run 20
+
+force reset 1
+run 25
+
+force WE 1
+run 15
+
+force reset 0
+force WE 0
+run 20
+force WE 1
+run 60
+
+
+// test for db_mux appendix 4
+force sel 0
+force rf_out 11
+force cu_out 22
+force alu_out 33
+run 10
+force rf_out 44
+run 10
+force sel 1
+run 10
+force cu_out 55
+run 10
+force sel 2
+run 10
+force alu_out 66
+run 10
+force sel 3
+run 10
+force sel 4
+run 10
+
+// test for regfile appendix 7
+force clk 0 0, 1 10 -repeat 20
+force reset 0
+force read 1
+force data_bus 55
+force WE 0
+force RE 0
+force alu_R 22
+force alu_F 10
+force alu_ld_r 0
+force alu_re_r 0
+run 20
+
+force data_bus 11
+force WE 1
+force RE 2
+force alu_ld_r 1
+force alu_re_r 1
+run 20
+
+force data_bus 22
+force WE 2
+force RE 3
+force alu_ld_r 2
+force alu_re_r 2
+run 20
+
+force data_bus 33
+force WE 4
+force RE 4
+force alu_ld_r 4
+force alu_re_r 4
+run 20
+
+force data_bus 44
+force WE 8
+force RE 5
+force alu_ld_r 8
+force alu_re_r 8
+run 20
+
+force data_bus 55
+force WE 10
+force RE 6
+force alu_ld_r 10
+force alu_re_r 10
+run 20
+
+force data_bus 66
+force WE 20
+force RE 7
+force alu_ld_r 20
+force alu_re_r 8
+run 20
+
+force data_bus 77
+force WE 40
+force RE 8
+force alu_ld_r 40
+force alu_re_r 10
+run 20
+
+force data_bus 88
+force WE 80
+force RE 9
+force alu_ld_r 80
+force alu_re_r 80
+run 20
+
+force data_bus 99
+force WE 100
+force RE 10
+force alu_ld_r 0
+force alu_re_r 2
+run 20
+
+force data_bus aa
+force WE 200
+force RE 11
+force alu_ld_r 0
+force alu_re_r 4
+run 20
+
+force data_bus bb
+force WE 400
+force RE 12
+force alu_ld_r 0
+force alu_re_r 0
+force read 0
+run 20
+
+
+force data_bus cc
+force WE 800
+force RE 13
+force alu_ld_r 0
+force alu_re_r 0
+run 20
+
+force data_bus dd
+force WE 1000
+force RE 14
+force alu_ld_r 0
+force alu_re_r 0
+run 20
+
+force data_bus ee
+force WE 2000
+force RE 15
+force alu_ld_r 0
+force alu_re_r 0
+force reset 1
+run 20
+
+force data_bus ff
+force WE 4000
+force RE 16
+force alu_ld_r 0
+force alu_re_r 0
+run 20
+
+force data_bus 1f
+force WE 8000
+force RE 17
+force alu_ld_r 0
+force alu_re_r 0
+run 20
+
+
+// test for alu - appendix 10
+force clk 0 0, 1 10 -repeat 20
+force sel 0
+force data_bus 11
+force r_sel 0
+force rf_A 55
+force rf_F x
+run 20
+
+force sel 1
+run 20
+force sel 2
+run 20
+force sel 3
+run 20
+force sel 4
+run 20
+force sel 5
+run 20
+force sel 6
+run 20
+force sel 7
+run 20
+force sel 8
+run 20
+force sel 9
+run 20
+force sel a
+run 20
+force sel b
+run 20
+force sel c
+run 20
+force sel d
+run 20
+force sel e
+run 20
+force sel f
+run 20
+force sel 10
+run 20
+force sel 11
+run 20
+
+// test for cu appendix 10
+force clk 0 0, 1 10 -repeat 20
+force reset 0
+force data_bus 00
+run 20
+force data_bus 36
+run 40
+force data_bus 06
+run 40
+force data_bus 0e
+run 40
+force data_bus 16 
+run 40
+force data_bus 34
+run 20
+force data_bus 04
+run 20
+force data_bus 0c
+run 20
+force data_bus 35
+run 20
+force data_bus 05
+run 20
+force data_bus 0d
+run 20
+force data_bus 2f
+run 20
+force data_bus 3f
+run 20
+force data_bus 37
+run 20
+ 
+
+
+force data_bus 47
+run 20
+force data_bus 78
+run 20
+
+force data_bus 86
+run 20
+force data_bus 80
+run 20
+force data_bus 87
+run 20
+force data_bus 8e
+run 20
+force data_bus 88
+run 20
+force data_bus 8f
+run 20
+force data_bus 90
+run 20
+force data_bus 97
+run 20
+force data_bus 98
+run 20
+force data_bus 9f
+run 20
+force data_bus a0
+run 20
+force data_bus a7
+run 20
+force data_bus a8
+run 20
+force data_bus af
+run 20
+force data_bus b0
+run 20
+force data_bus b7
+run 20
+force data_bus b8
+run 20
+force data_bus bf
+run 20
+
+force data_bus c6
+run 40
+force data_bus ce
+run 40
+force data_bus d6
+run 40
+force data_bus de
+run 40
+force data_bus e6
+run 40
+force data_bus ee
+run 40
+force data_bus ed
+run 40
+force data_bus 44
+run 40
+force data_bus f6
+run 40
+force data_bus fe
+run 40
+force data_bus ff
+run 40
+force data_bus 44
+run 80

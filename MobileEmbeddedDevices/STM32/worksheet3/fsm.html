@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="Generator" content="Kate, the KDE Advanced Text Editor" />
+<title>fsm.tex</title>
+</head>
+<!-- Highlighting: "LaTeX" -->
+<body>
+<pre style='color:#1f1c1b;background-color:#ffffff;'>
+<b><span style='color:#644a9b;'>\documentclass</span></b>[12pt]{<span style='color:#0095ff;'>article</span>}
+<b><span style='color:#644a9b;'>\usepackage</span></b>{<span style='color:#0095ff;'>tikz</span>}
+
+<b>\begin</b>{<span style='color:#0095ff;'>document</span>}
+
+<b>\begin</b>{<span style='color:#0095ff;'>center</span>}
+<b>\begin</b>{<span style='color:#0095ff;'>tikzpicture</span>}[scale=0.2]
+<span style='color:#644a9b;'>\tikzstyle</span>{every node}+=[inner sep=0pt]
+<span style='color:#644a9b;'>\draw</span> [black] (59.5,-16.1) circle (3);
+<span style='color:#644a9b;'>\draw</span> (59.5,-16.1) node {<span style='color:#ff5500;'>$LED</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>on$</span>};
+<span style='color:#644a9b;'>\draw</span> [black] (18,-32.6) circle (3);
+<span style='color:#644a9b;'>\draw</span> (18,-32.6) node {<span style='color:#ff5500;'>$LED</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>off$</span>};
+<span style='color:#644a9b;'>\draw</span> [black] (45.7,-10) circle (3);
+<span style='color:#644a9b;'>\draw</span> (45.7,-10) node {<span style='color:#ff5500;'>$button</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>pressed$</span>};
+<span style='color:#644a9b;'>\draw</span> [black] (34.5,-48) circle (3);
+<span style='color:#644a9b;'>\draw</span> (34.5,-48) node {<span style='color:#ff5500;'>$button</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>released$</span>};
+<span style='color:#644a9b;'>\draw</span> [black] (59.745,-13.122) arc (203.03624:-84.96376:2.25);
+<span style='color:#644a9b;'>\draw</span> (70.13,-9.81) node [above] {<span style='color:#ff5500;'>$button</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>state</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>high$</span>};
+<span style='color:#644a9b;'>\fill</span> [black] (62.01,-14.48) -- (62.94,-14.63) -- (62.55,-13.71);
+<span style='color:#644a9b;'>\draw</span> [black] (18.095,-35.587) arc (29.55605:-258.44395:2.25);
+<span style='color:#644a9b;'>\draw</span> (8.45,-39.31) node [below] {<span style='color:#ff5500;'>$button</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>state</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>low$</span>};
+<span style='color:#644a9b;'>\fill</span> [black] (15.69,-34.49) -- (14.74,-34.45) -- (15.24,-35.32);
+<span style='color:#644a9b;'>\draw</span> [black] (15.969,-30.397) arc (-142.09436:-319.4847:18.06);
+<span style='color:#644a9b;'>\fill</span> [black] (43.95,-7.57) -- (43.81,-6.64) -- (43.05,-7.28);
+<span style='color:#644a9b;'>\draw</span> (11.63,-4.81) node [above] {<span style='color:#ff5500;'>$button</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>state</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>high$</span>};
+<span style='color:#644a9b;'>\draw</span> [black] (57.725,-18.494) arc (-47.94846:-179.74518:7.546);
+<span style='color:#644a9b;'>\fill</span> [black] (57.72,-18.49) -- (56.8,-18.66) -- (57.47,-19.4);
+<span style='color:#644a9b;'>\draw</span> (42.62,-20.37) node [below] {<span style='color:#ff5500;'>$button</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>state</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>high$</span>};
+<span style='color:#644a9b;'>\draw</span> [black] (61.925,-17.862) arc (49.78573:-125.95726:20.388);
+<span style='color:#644a9b;'>\fill</span> [black] (36.79,-49.93) -- (37.14,-50.81) -- (37.73,-50);
+<span style='color:#644a9b;'>\draw</span> (65.38,-47.42) node [right] {<span style='color:#ff5500;'>$button</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>state</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>low$</span>};
+<span style='color:#644a9b;'>\draw</span> [black] (20.937,-32.022) arc (94.49109:-0.54122:12.926);
+<span style='color:#644a9b;'>\fill</span> [black] (20.94,-32.02) -- (21.77,-32.46) -- (21.7,-31.46);
+<span style='color:#644a9b;'>\draw</span> (37.67,-34.97) node [above] {<span style='color:#ff5500;'>$button</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>state</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>low$</span>};
+<span style='color:#644a9b;'>\draw</span> [black] (58.813,-19.02) arc (-15.1484:-61.02313:45.013);
+<span style='color:#644a9b;'>\fill</span> [black] (58.81,-19.02) -- (58.12,-19.66) -- (59.09,-19.92);
+<span style='color:#644a9b;'>\draw</span> (51.36,-36.44) node [right] {<span style='color:#ff5500;'>$button</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>state</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>high$</span>};
+<span style='color:#644a9b;'>\draw</span> [black] (19.219,-29.86) arc (153.68:104.74094:36.692);
+<span style='color:#644a9b;'>\fill</span> [black] (19.22,-29.86) -- (20.02,-29.36) -- (19.13,-28.92);
+<span style='color:#644a9b;'>\draw</span> (22.02,-17.2) node [above] {<span style='color:#ff5500;'>$button</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>state</span><span style='color:#3daee9;'>\mbox</span>{ }<span style='color:#ff5500;'>low$</span>};
+<b>\end</b>{<span style='color:#0095ff;'>tikzpicture</span>}
+<b>\end</b>{<span style='color:#0095ff;'>center</span>}
+
+<b>\end</b>{<span style='color:#0095ff;'>document</span>}
+</pre>
+</body>
+</html>

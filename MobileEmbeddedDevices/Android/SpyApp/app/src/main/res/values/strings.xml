@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SpyApp</string>
+    <string name="permission_camera_rationale">Access to the camera, mic, and storage medium is needed for detection</string>
+
+
+    <string name="ok">OK</string>
+</resources>

@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_zombie_bot" kind="class" language="C++" prot="public">
+    <compoundname>ZombieBot</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ZombieBot</basecompoundref>
+    <includes refid="_zombie_bot_8h" local="no">ZombieBot.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_zombie_bot_1ae4c9fe36c717e85cc6f0b71ea9c3a4f8" prot="public" static="no" mutable="no">
+        <type><ref refid="class_world" kindref="compound">World</ref></type>
+        <definition>World ZombieBot::world</definition>
+        <argsstring></argsstring>
+        <name>world</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ZombieBot.h" line="24" column="1" bodyfile="include/ZombieBot.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_zombie_bot_1a1876a669a2bca3d893bd5685b96a8fc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ZombieBot::ZombieBot</definition>
+        <argsstring>(World w)</argsstring>
+        <name>ZombieBot</name>
+        <param>
+          <type><ref refid="class_world" kindref="compound">World</ref></type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ZombieBot.h" line="27" column="1" bodyfile="source/ZombieBot.cpp" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_zombie_bot_1ae0d559ee494734cb30f29966ce548fae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ZombieBot::shouldQuit</definition>
+        <argsstring>() override</argsstring>
+        <name>shouldQuit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>should game quit <simplesect kind="return"><para>return true if exit program, otherwise false </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ZombieBot.h" line="33" column="1" bodyfile="source/ZombieBot.cpp" bodystart="31" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_zombie_bot_1ab0ad3b297aaa0614eaf335a254044c6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ZombieBot::begin</definition>
+        <argsstring>() override</argsstring>
+        <name>begin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>text to be displayed at beginning of game <simplesect kind="return"><para>text to be displayed </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ZombieBot.h" line="39" column="1" bodyfile="source/ZombieBot.cpp" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_zombie_bot_1a4a470bb8e1bf9f9cafa5846bbae10efd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ZombieBot::currentScore</definition>
+        <argsstring>() override</argsstring>
+        <name>currentScore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>compute current score <simplesect kind="return"><para>current score </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ZombieBot.h" line="45" column="1" bodyfile="source/ZombieBot.cpp" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_zombie_bot_1af93d1514656fcf73c9a705fc220c6e5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ZombieBot::enableTimer</definition>
+        <argsstring>() override</argsstring>
+        <name>enableTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>should zombie timer be enabled <simplesect kind="return"><para>true if timer should be enabled, otherwise false </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ZombieBot.h" line="51" column="1" bodyfile="source/ZombieBot.cpp" bodystart="51" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_zombie_bot_1a6078092634dea0a6db55f0377ed3eaa9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ZombieBot::disableTimer</definition>
+        <argsstring>() override</argsstring>
+        <name>disableTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>should zombie timer be disabled <simplesect kind="return"><para>true if timer should be disabled, otherwise false </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ZombieBot.h" line="57" column="1" bodyfile="source/ZombieBot.cpp" bodystart="64" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_zombie_bot_1a7bdd6cb1af9514dd5afc61066e83d40c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; ZombieBot::processCmd</definition>
+        <argsstring>(std::string cmd) override</argsstring>
+        <name>processCmd</name>
+        <param>
+          <type>std::string</type>
+          <declname>cmd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>process player commands.<linebreak/>
+<linebreak/>
+ The set of commands are as follows:<linebreak/>
+ <itemizedlist>
+<listitem>
+<para>info - return the info string for the world. </para></listitem>
+<listitem>
+<para>look - return the HTML representing the view of the current room. this should include entrances, items, and so on.<linebreak/>
+  </para></listitem>
+<listitem>
+<para>move dir - try and move in the direction dir. if there is an extrance in that direction, then if it is not locked, move through to the connected room, return message about new room. if can&apos;t move, because no entrance in that direction, or entrance is locked, then return a message to that effect.<linebreak/>
+  </para></listitem>
+<listitem>
+<para>one entry to a room if it contains zombies, then the next time the method <ref refid="class_zombie_bot_1af93d1514656fcf73c9a705fc220c6e5e" kindref="member">enableTimer()</ref> is called it should return true, just the one time. This will cause the client to start the Zombie kill timer event, displaying a Zombie and timer, to show the player that they will die if the zombie(s) is not killed in time.<linebreak/>
+  </para></listitem>
+<listitem>
+<para>pickup item - pick up item from room, if item exits then this should cause it to be removed from room and get added to players inventory, and return message to say picked up. if it does not exist, then return message to that effect.<linebreak/>
+ The users score should be increased by one, each time an item is picked up.  </para></listitem>
+<listitem>
+<para>kill - if the room contains at least one zombie and players inventory contains either a Daisy or Chainsaw, then one should be killed (i.e. zombie count drops by one), return a message to inform the user that a zombie has died. if kill is succcessful, then the player&apos;s inventory should have one less Daisy or Chainsaw.<linebreak/>
+ if no zombies, then nothing happens.  </para></listitem>
+<listitem>
+<para>if the zombie timer was running, i.e. a call to <ref refid="class_zombie_bot_1af93d1514656fcf73c9a705fc220c6e5e" kindref="member">enableTimer()</ref> had returned true for the current room, then if the zombie count is now zero, then <ref refid="class_zombie_bot_1a6078092634dea0a6db55f0377ed3eaa9" kindref="member">disableTimer()</ref> should return true, one time, to tell the client to stop the zombie timer.<linebreak/>
+  </para></listitem>
+<listitem>
+<para>drop item - drop an item into room from inventory. if the item is not in inventory, then nothing happens, otherwise it should be removed, when added to room. return a message to say item dropped.<linebreak/>
+  </para></listitem>
+<listitem>
+<para>timerexpired - the client&apos;s zombie timer expired before all zombies in the current room were killed and so the player is dead. <ref refid="class_zombie_bot_1ae0d559ee494734cb30f29966ce548fae" kindref="member">shouldQuit()</ref> should now return true.  </para></listitem>
+<listitem>
+<para>quit - <ref refid="class_zombie_bot_1ae0d559ee494734cb30f29966ce548fae" kindref="member">shouldQuit()</ref> should now return true.  </para></listitem>
+<listitem>
+<para>inventory - return HTML to display the players current inventory.  </para></listitem>
+<listitem>
+<para>anything else - return HTML saying &quot;That&apos;s not a verb I recognise.&quot;  </para></listitem>
+</itemizedlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to be processed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>output to be displayed. each element in the list returned is in HTML and will be output in the clients display window </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ZombieBot.h" line="135" column="1" bodyfile="source/ZombieBot.cpp" bodystart="79" bodyend="367"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="38">
+        <label>ZombieBot</label>
+        <link refid="class_zombie_bot"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>uwe::ZombieBot</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="42">
+        <label>World</label>
+        <link refid="class_world"/>
+        <childnode refid="43" relation="usage">
+          <edgelabel>+player</edgelabel>
+        </childnode>
+      </node>
+      <node id="40">
+        <label>ZombieBot</label>
+        <link refid="class_zombie_bot"/>
+        <childnode refid="41" relation="public-inheritance">
+        </childnode>
+        <childnode refid="42" relation="usage">
+          <edgelabel>+world</edgelabel>
+        </childnode>
+      </node>
+      <node id="44">
+        <label>Item</label>
+        <link refid="class_item"/>
+      </node>
+      <node id="43">
+        <label>Player</label>
+        <link refid="class_player"/>
+        <childnode refid="44" relation="usage">
+          <edgelabel>-itemEquip</edgelabel>
+        </childnode>
+        <childnode refid="45" relation="usage">
+          <edgelabel>-curRoom</edgelabel>
+        </childnode>
+      </node>
+      <node id="41">
+        <label>uwe::ZombieBot</label>
+      </node>
+      <node id="45">
+        <label>Room</label>
+        <link refid="class_room"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/ZombieBot.h" line="17" column="1" bodyfile="include/ZombieBot.h" bodystart="17" bodyend="136"/>
+    <listofallmembers>
+      <member refid="class_zombie_bot_1ab0ad3b297aaa0614eaf335a254044c6f" prot="public" virt="non-virtual"><scope>ZombieBot</scope><name>begin</name></member>
+      <member refid="class_zombie_bot_1a4a470bb8e1bf9f9cafa5846bbae10efd" prot="public" virt="non-virtual"><scope>ZombieBot</scope><name>currentScore</name></member>
+      <member refid="class_zombie_bot_1a6078092634dea0a6db55f0377ed3eaa9" prot="public" virt="non-virtual"><scope>ZombieBot</scope><name>disableTimer</name></member>
+      <member refid="class_zombie_bot_1af93d1514656fcf73c9a705fc220c6e5e" prot="public" virt="non-virtual"><scope>ZombieBot</scope><name>enableTimer</name></member>
+      <member refid="class_zombie_bot_1a7bdd6cb1af9514dd5afc61066e83d40c" prot="public" virt="non-virtual"><scope>ZombieBot</scope><name>processCmd</name></member>
+      <member refid="class_zombie_bot_1ae0d559ee494734cb30f29966ce548fae" prot="public" virt="non-virtual"><scope>ZombieBot</scope><name>shouldQuit</name></member>
+      <member refid="class_zombie_bot_1ae4c9fe36c717e85cc6f0b71ea9c3a4f8" prot="public" virt="non-virtual"><scope>ZombieBot</scope><name>world</name></member>
+      <member refid="class_zombie_bot_1a1876a669a2bca3d893bd5685b96a8fc7" prot="public" virt="non-virtual"><scope>ZombieBot</scope><name>ZombieBot</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

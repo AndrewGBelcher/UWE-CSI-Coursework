@@ -1,0 +1,14 @@
+{
+  "name": "morse",
+  "version": "1.0.0",
+  "description": "IoT  micro:bit tetris.",
+  "license": "MIT",
+  "dependencies": {
+    "microbit": "lancaster-university/microbit"
+  },
+  "extraIncludes": [
+"inc"],
+  "targetDependencies": {},
+  "bin": "./source"
+}
+

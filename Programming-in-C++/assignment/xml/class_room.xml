@@ -1,0 +1,364 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_room" kind="class" language="C++" prot="public">
+    <compoundname>Room</compoundname>
+    <includes refid="room_8h" local="no">room.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_room_1af7b9b2ab1bd1eda19d6b893c984d73d7" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; Room::roomItems</definition>
+        <argsstring></argsstring>
+        <name>roomItems</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="23" column="1" bodyfile="include/room.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_room_1a7e93af067cbea670fd4a4e8addffd09a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_entrance" kindref="compound">Entrance</ref> &gt;</type>
+        <definition>std::vector&lt;Entrance&gt; Room::entVect</definition>
+        <argsstring></argsstring>
+        <name>entVect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="24" column="1" bodyfile="include/room.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_room_1a21e907fa249c8248845a4e001c7b572a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_item" kindref="compound">Item</ref> &gt;</type>
+        <definition>std::vector&lt;Item&gt; Room::itemVector</definition>
+        <argsstring></argsstring>
+        <name>itemVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="25" column="1" bodyfile="include/room.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_room_1add2825ea48f72ca1b06ae26c28297cdc" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Room::roomName</definition>
+        <argsstring></argsstring>
+        <name>roomName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="27" column="1" bodyfile="include/room.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_room_1ae18039ced2c32837f5064961bb33e4e9" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Room::roomDesc</definition>
+        <argsstring></argsstring>
+        <name>roomDesc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="28" column="1" bodyfile="include/room.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_room_1afcddb9fd9012f7838876a64c834a0349" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Room::zombCount</definition>
+        <argsstring></argsstring>
+        <name>zombCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="30" column="1" bodyfile="include/room.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_room_1ac6ef93a7d9c3e1d624e025058d5f16ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Room::Room</definition>
+        <argsstring>()</argsstring>
+        <name>Room</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="35" column="1" bodyfile="source/room.cpp" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_room_1a96f197f3053dfaa506cde4b80978d4bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Room::Room</definition>
+        <argsstring>(uwe::RoomInfo ri, std::vector&lt; Item &gt;itemVector)</argsstring>
+        <name>Room</name>
+        <param>
+          <type>uwe::RoomInfo</type>
+          <declname>ri</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="class_item" kindref="compound">Item</ref> &gt;</type>
+          <declname>itemVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="36" column="1" bodyfile="source/room.cpp" bodystart="19" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_room_1a51db5005d72bcaabd2f13b52eb740e30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Room::getRoomInfo</definition>
+        <argsstring>()</argsstring>
+        <name>getRoomInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="39" column="1" bodyfile="source/room.cpp" bodystart="46" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_room_1a59f42b1d74464cd62fb9691ed2be0c85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Room::getItemStrings</definition>
+        <argsstring>()</argsstring>
+        <name>getItemStrings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="40" column="1" bodyfile="source/room.cpp" bodystart="58" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_room_1a75271a20c610a24bfa275953c45dae61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Room::getEntHTML</definition>
+        <argsstring>()</argsstring>
+        <name>getEntHTML</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="41" column="1" bodyfile="source/room.cpp" bodystart="70" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_room_1ae6a3be5861b657a2cbbada8e67ab7fde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Room::getName</definition>
+        <argsstring>()</argsstring>
+        <name>getName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="42" column="1" bodyfile="source/room.cpp" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_room_1a49b28c0297cd75f6bb94b861dafbb0bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Room::getDesc</definition>
+        <argsstring>()</argsstring>
+        <name>getDesc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="43" column="1" bodyfile="source/room.cpp" bodystart="41" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_room_1a7a2ed3178aed3660121882858f269a10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Room::initItems</definition>
+        <argsstring>(std::vector&lt; Item &gt;worldItems)</argsstring>
+        <name>initItems</name>
+        <param>
+          <type>std::vector&lt; <ref refid="class_item" kindref="compound">Item</ref> &gt;</type>
+          <declname>worldItems</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="46" column="1" bodyfile="source/room.cpp" bodystart="99" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="class_room_1aff3135c3732758a8e176fe5161a193f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_item" kindref="compound">Item</ref> &gt;</type>
+        <definition>std::vector&lt; Item &gt; Room::getItems</definition>
+        <argsstring>()</argsstring>
+        <name>getItems</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="47" column="1" bodyfile="source/room.cpp" bodystart="31" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_room_1ab838a8ed7f67e2b438a7d96ffbbe6961" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Room::getItem</definition>
+        <argsstring>(std::string iName, Item *retItem)</argsstring>
+        <name>getItem</name>
+        <param>
+          <type>std::string</type>
+          <declname>iName</declname>
+        </param>
+        <param>
+          <type><ref refid="class_item" kindref="compound">Item</ref> *</type>
+          <declname>retItem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="48" column="1" bodyfile="source/room.cpp" bodystart="81" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_room_1a0aefeb033bb51709bc72fe47574568ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Room::putItemInRoom</definition>
+        <argsstring>(Item item)</argsstring>
+        <name>putItemInRoom</name>
+        <param>
+          <type><ref refid="class_item" kindref="compound">Item</ref></type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="49" column="1" bodyfile="source/room.cpp" bodystart="135" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="class_room_1ac4233ee265acfda90b9f159219553e36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_entrance" kindref="compound">Entrance</ref> &gt;</type>
+        <definition>std::vector&lt; Entrance &gt; Room::getEnts</definition>
+        <argsstring>()</argsstring>
+        <name>getEnts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="52" column="1" bodyfile="source/room.cpp" bodystart="128" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_room_1a1328ddc5bd5957738335f7c05f21959f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Room::unlockEnt</definition>
+        <argsstring>(std::string entName)</argsstring>
+        <name>unlockEnt</name>
+        <param>
+          <type>std::string</type>
+          <declname>entName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="53" column="1" bodyfile="source/room.cpp" bodystart="141" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="class_room_1ae6c0cdda79ffe2c9ce43b816f137a99d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Room::loadEntrances</definition>
+        <argsstring>(std::vector&lt; uwe::EntranceInfo &gt;entrancesJSON)</argsstring>
+        <name>loadEntrances</name>
+        <param>
+          <type>std::vector&lt; uwe::EntranceInfo &gt;</type>
+          <declname>entrancesJSON</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="54" column="1" bodyfile="source/room.cpp" bodystart="118" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="class_room_1a9995dfb547b839c817a3f1b107ae3591" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Room::chkZombies</definition>
+        <argsstring>()</argsstring>
+        <name>chkZombies</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="57" column="1" bodyfile="source/room.cpp" bodystart="154" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="class_room_1aaeaf156da5e9ae2980438d495dbb5420" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Room::killZombie</definition>
+        <argsstring>()</argsstring>
+        <name>killZombie</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/room.h" line="58" column="1" bodyfile="source/room.cpp" bodystart="160" bodyend="163"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="32">
+        <label>Room</label>
+        <link refid="class_room"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/room.h" line="18" column="1" bodyfile="include/room.h" bodystart="18" bodyend="60"/>
+    <listofallmembers>
+      <member refid="class_room_1a9995dfb547b839c817a3f1b107ae3591" prot="public" virt="non-virtual"><scope>Room</scope><name>chkZombies</name></member>
+      <member refid="class_room_1a7e93af067cbea670fd4a4e8addffd09a" prot="private" virt="non-virtual"><scope>Room</scope><name>entVect</name></member>
+      <member refid="class_room_1a49b28c0297cd75f6bb94b861dafbb0bd" prot="public" virt="non-virtual"><scope>Room</scope><name>getDesc</name></member>
+      <member refid="class_room_1a75271a20c610a24bfa275953c45dae61" prot="public" virt="non-virtual"><scope>Room</scope><name>getEntHTML</name></member>
+      <member refid="class_room_1ac4233ee265acfda90b9f159219553e36" prot="public" virt="non-virtual"><scope>Room</scope><name>getEnts</name></member>
+      <member refid="class_room_1ab838a8ed7f67e2b438a7d96ffbbe6961" prot="public" virt="non-virtual"><scope>Room</scope><name>getItem</name></member>
+      <member refid="class_room_1aff3135c3732758a8e176fe5161a193f2" prot="public" virt="non-virtual"><scope>Room</scope><name>getItems</name></member>
+      <member refid="class_room_1a59f42b1d74464cd62fb9691ed2be0c85" prot="public" virt="non-virtual"><scope>Room</scope><name>getItemStrings</name></member>
+      <member refid="class_room_1ae6a3be5861b657a2cbbada8e67ab7fde" prot="public" virt="non-virtual"><scope>Room</scope><name>getName</name></member>
+      <member refid="class_room_1a51db5005d72bcaabd2f13b52eb740e30" prot="public" virt="non-virtual"><scope>Room</scope><name>getRoomInfo</name></member>
+      <member refid="class_room_1a7a2ed3178aed3660121882858f269a10" prot="public" virt="non-virtual"><scope>Room</scope><name>initItems</name></member>
+      <member refid="class_room_1a21e907fa249c8248845a4e001c7b572a" prot="private" virt="non-virtual"><scope>Room</scope><name>itemVector</name></member>
+      <member refid="class_room_1aaeaf156da5e9ae2980438d495dbb5420" prot="public" virt="non-virtual"><scope>Room</scope><name>killZombie</name></member>
+      <member refid="class_room_1ae6c0cdda79ffe2c9ce43b816f137a99d" prot="public" virt="non-virtual"><scope>Room</scope><name>loadEntrances</name></member>
+      <member refid="class_room_1a0aefeb033bb51709bc72fe47574568ca" prot="public" virt="non-virtual"><scope>Room</scope><name>putItemInRoom</name></member>
+      <member refid="class_room_1ac6ef93a7d9c3e1d624e025058d5f16ff" prot="public" virt="non-virtual"><scope>Room</scope><name>Room</name></member>
+      <member refid="class_room_1a96f197f3053dfaa506cde4b80978d4bf" prot="public" virt="non-virtual"><scope>Room</scope><name>Room</name></member>
+      <member refid="class_room_1ae18039ced2c32837f5064961bb33e4e9" prot="private" virt="non-virtual"><scope>Room</scope><name>roomDesc</name></member>
+      <member refid="class_room_1af7b9b2ab1bd1eda19d6b893c984d73d7" prot="private" virt="non-virtual"><scope>Room</scope><name>roomItems</name></member>
+      <member refid="class_room_1add2825ea48f72ca1b06ae26c28297cdc" prot="private" virt="non-virtual"><scope>Room</scope><name>roomName</name></member>
+      <member refid="class_room_1a1328ddc5bd5957738335f7c05f21959f" prot="public" virt="non-virtual"><scope>Room</scope><name>unlockEnt</name></member>
+      <member refid="class_room_1afcddb9fd9012f7838876a64c834a0349" prot="private" virt="non-virtual"><scope>Room</scope><name>zombCount</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,51 @@
+{
+    "info" : "<p class=\\\"lead\\\">Welcome to OOSD1 Zombies</p><p>Zombies are real, no matter what you mum told you! UWE's campus has been invaded and you must kill the zombies and get to the exit room, to save yourself and the University. Good luck!</p>",
+
+    "startHtml" : "let's play",
+
+    "inventoryHtml" : "<img src=\\\"../assets/backpack.png\\\">",
+
+    "items" : [
+        { "name" : "GOLD", "html" : "<img src=\\\"../assets/gold.png\\\">" },
+        { "name" : "KEY", "html" : "<img src=\\\"../assets/key.png\\\">" },
+        { "name" : "CHAINSAW", "html" : "<img src=\\\"../assets/chainsaw.png\\\">" },
+        { "name" : "DAISY", "html" : "<img src=\\\"../assets/daisy.png\\\">" }
+    ],
+
+    "rooms" : [
+    {
+        "name" : "Toilet",
+        "description": "Level Toilet desc",
+        "entrances" : [
+            { "direction" : "NE", "to" : "Exit", "locked": true },
+            { "direction" : "SE", "to" : "R3", "locked": false },
+            { "direction" : "SW", "to" : "R4", "locked": false }
+        ],
+        "items" : [ { "item" : "GOLD" }, { "item" : "CHAINSAW" }, { "item" : "DAISY" } ],
+        "zombies" : 0
+    },
+    {
+        "name" : "Exit",
+        "description": "This is the final room...",
+        "entrances" : [  ],
+        "items" : [ { "item" : "GOLD" } ],
+        "zombies" : 1
+    },
+    {
+        "name" : "R3",
+        "description": "Level R3",
+        "entrances" : [ { "direction" : "NW", "to" : "Toilet", "locked": false } ],
+        "items" : [ { "item" : "KEY" }, { "item" : "CHAINSAW" } ],
+        "zombies" : 2
+    },
+    {
+        "name" : "R4",
+        "description": "Level R4",
+        "entrances" : [ { "direction" : "NE", "to" : "Toilet", "locked": false } ],
+        "items" : [ { "item" : "GOLD" }, { "item" : "DAISY" } ],
+        "zombies" : 0
+    }
+  ],
+  "start" : "Toilet",
+  "finish": "Exit"
+}

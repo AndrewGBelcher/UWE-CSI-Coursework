@@ -1,0 +1,20 @@
+digraph doxygraph
+{
+graph [ rankdir="RL" ]
+"class_entrance" [ label="Entrance\n|+Entrance (  )\l+Entrance ( entInfo : uwe::EntranceInfo )\l+checkLock (  ) : bool\l+getDir (  ) : std::string\l+getRoom (  ) : std::string\l+unlock (  ) : void\l|-dir : std::string\l-lock : bool\l-roomName : std::string\l" shape="record" ]
+"class_item" [ label="Item\n|+Item (  )\l+Item ( name : std::string, itemDesc : std::string )\l+chkHeld (  ) : bool\l+getHtml (  ) : std::string\l+getName (  ) : std::string\l+setHeld (  ) : void\l|-held : bool\l-itemHtml : std::string\l-itemName : std::string\l-name : std::string\l" shape="record" ]
+"class_player" [ label="Player\n|+Player (  )\l+chkInvincibility (  ) : bool\l+chkItem ( item : std::string ) : bool\l+chkRoomCnt (  ) : int\l+clearItems (  ) : void\l+delItem ( item : std::string ) : bool\l+dropItem ( item : std::string ) : bool\l+getCurRoom (  ) : Room *\l+getInventoryHtml (  ) : std::string\l+incRoomCnt (  ) : void\l+notInvincible (  ) : bool\l+pickupItem ( item : Item ) : bool\l+setCurRoom ( room : Room * ) : void\l+setInvincibility (  ) : bool\l|-curRoom : Room *\l-inventory : std::vector\< Item \>\l-invincible : bool\l-itemEquip : Item *\l-maxItems : int\l-roomCnt : int\l" shape="record" ]
+"class_room"
+"class_player" -> "class_room" [ arrowtail="odiamond" dir="back" ]
+"class_player" -> "class_item" [ arrowtail="odiamond" dir="back" ]
+"class_player" -> "class_item" [ arrowtail="diamond" dir="back" ]
+"class_room" [ label="Room\n|+Room (  )\l+Room ( ri : uwe::RoomInfo, itemVector : std::vector\< Item \> )\l+chkZombies (  ) : int\l+getDesc (  ) : std::string\l+getEntHTML (  ) : std::string\l+getEnts (  ) : std::vector\< Entrance \>\l+getItem ( iName : std::string, retItem : Item * ) : bool\l+getItemStrings (  ) : std::string\l+getItems (  ) : std::vector\< Item \>\l+getName (  ) : std::string\l+getRoomInfo (  ) : std::string\l+initItems ( worldItems : std::vector\< Item \> ) : void\l+killZombie (  ) : void\l+loadEntrances ( entrancesJSON : std::vector\< uwe::EntranceInfo \> ) : void\l+putItemInRoom ( item : Item ) : void\l+unlockEnt ( entName : std::string ) : void\l|-entVect : std::vector\< Entrance \>\l-itemVector : std::vector\< Item \>\l-roomDesc : std::string\l-roomItems : std::vector\< std::string \>\l-roomName : std::string\l-zombCount : int\l" shape="record" ]
+"class_room" -> "class_entrance" [ arrowtail="diamond" dir="back" ]
+"class_room" -> "class_item" [ arrowtail="diamond" dir="back" ]
+"class_world" [ label="World\n|+World (  )\l+World ( wl : uwe::WorldLoader )\l+checkQuit (  ) : bool\l+getEnd (  ) : Room *\l+getGameScore (  ) : int\l+getInfo (  ) : std::string\l+getInventoryHtml (  ) : std::string\l+getRoomInfo (  ) : std::string\l+getStart (  ) : Room *\l+getTargetRoom ( curRoom : Room *, direction : std::string, dirCheckRet : std::string * ) : Room *\l+loadItems ( itemsJSON : std::vector\< uwe::ItemInfo \> ) : void\l+loadRooms ( roomsJSON : std::vector\< uwe::RoomInfo \> ) : void\l+quit (  ) : void\l+scored ( amount : int ) : void\l+setBegin (  ) : void\l|+endTimer : bool\l+player : Player\l+startTimer : bool\l-end : std::string\l-exit : bool\l-info : std::string\l-inventoryHtml : std::string\l-items : std::vector\< Item \>\l-rooms : std::vector\< Room \>\l-score : int\l-start : std::string\l" shape="record" ]
+"class_world" -> "class_room" [ arrowtail="diamond" dir="back" ]
+"class_world" -> "class_player" [ arrowtail="diamond" dir="back" ]
+"class_world" -> "class_item" [ arrowtail="diamond" dir="back" ]
+"class_zombie_bot" [ label="ZombieBot\n|+ZombieBot ( w : World )\l+begin (  ) : std::string\l+currentScore (  ) : int\l+disableTimer (  ) : bool\l+enableTimer (  ) : bool\l+processCmd ( cmd : std::string ) : std::vector\< std::string \>\l+shouldQuit (  ) : bool\l|+world : World\l" shape="record" ]
+"class_zombie_bot" -> "class_world" [ arrowtail="diamond" dir="back" ]
+}

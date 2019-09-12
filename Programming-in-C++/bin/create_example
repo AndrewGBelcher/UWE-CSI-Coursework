@@ -1,0 +1,55 @@
+# File: create_example.sh
+# Author: Benedict R. Gaster
+# Date: 15th June 2017
+#
+# Desc: Create a new example that can be used as the basis to for a application.
+#       It creates a directory under the specified location, corresponding
+#       makefile and main.cpp.
+#
+#       If the specified location contains a makefile, which is the intention,
+#       then this is assumed to match the example template and the newly created
+#       example is added.
+#
+# usage: create_example.sh name where
+#    $1 name - name of example to create
+#    $2 author - name of author
+#
+#    Copyright: University of West of England
+#
+
+# TODO: @br-gaster add command line check for number of args...
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+TEMPLATE_SOURCE_DIR=${SCRIPT_DIR}/../templates/example
+WHERE=examples
+
+if [ "$#" -ne 2 ]; then
+  echo usage name author
+elif [ -d "$WHERE/$1" ]; then
+  echo ERROR: directory $2 already exists
+else
+  DATE=`date +%d-%m-%Y`
+
+  mkdir $WHERE/$1
+
+  sed -e "s/\${name}/$1/" -e "s/\${author}/$2/" -e "s/\${date}/$DATE/" \
+                          ${TEMPLATE_SOURCE_DIR}/Makefile > $WHERE/$1/Makefile
+
+  sed -e "s/\${author}/$2/" -e "s/\${date}/$DATE/" \
+                          ${TEMPLATE_SOURCE_DIR}/main.cpp > $WHERE/$1/main.cpp
+
+  # finally we need to add to the "examples" makefile to do the recurise make
+  if [ -f "$WHERE/Makefile" ]; then
+    tmp_mk_file=$(mktemp /tmp/Makefile.XXXXXX)
+    BUILD_RULE=$(sed -e "s/\${name}/$1/" ${TEMPLATE_SOURCE_DIR}/build_rule.mk)
+    awk -v BR="$BUILD_RULE" -v EX="$1 \${add_example}" '{
+      sub(/\${add_example_rule}/, BR);
+      sub(/\${add_example}/, EX);
+      print;
+    }' \
+        $WHERE/Makefile > $tmp_mk_file
+
+    cp $tmp_mk_file $WHERE/Makefile
+    rm $tmp_mk_file
+  fi
+fi

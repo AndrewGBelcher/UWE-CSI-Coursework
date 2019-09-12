@@ -1,0 +1,180 @@
+@font-face {
+    font-family: 'visitor_tt1_brkregular';
+    src: url('../assets/visitor1-webfont.woff2') format('woff2'),
+    url('../assets/visitor1-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  background: transparent
+}
+
+body {
+
+    /*overflow: hidden;*/
+  /*display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;*/
+}
+
+div#outside {
+  /*position: absolute;*/
+    /*overflow: hidden;*/
+}
+
+body {
+   /*background: url("./assets/brist lowran 885x885.png") top left no-repeat;
+   background-size: 15%;
+   background-position: 20px 50px;
+   background-attachment: fixed;*/
+  /* Margin top by nav height */
+  padding-top: 50px;
+  /* Margin bottom by footer height */
+  margin-bottom: 80px;
+}
+
+p {
+    font-family:'visitor_tt1_brkregular', sans-serif;
+}
+
+h1 {
+    font-family:'visitor_tt1_brkregular', sans-serif;
+}
+
+#bcolor {
+  background-color: #fda500;
+
+}
+
+/*
+ * Main content
+ */
+.main {
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  body {
+    background-size: 10%;
+    background-position: 5px 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-size: 10%;
+    background-position: 5px 50px;
+
+  }
+}
+
+/*html {
+  height: 100%;
+}*/
+
+.main .page-header {
+  margin-top: 0;
+}
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+
+
+/*
+ * Add a sticky footer for twiter links, copyright, and so on
+ */
+ .footer {
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   /* Set the fixed height of the footer here */
+   height: 80px;
+   /*background-color: #333;*/
+   background-repeat: repeat;
+   background-image: url("../assets/zombie_backdrop.png");
+ }
+
+
+ body > .container {
+     font-family:'visitor_tt1_brkregular', sans-serif;
+     padding: 50px 15px 0;
+ }
+ .container .text-muted {
+   margin: 20px 0;
+ }
+
+ .footer > .container {
+   padding-right: 15px;
+   padding-left: 15px;
+ }
+
+ .code {
+   font-size: 80%;
+ }
+
+.footer-text {
+  color:#777;
+}
+
+ /*
+  * each routed page is wrapped such that it does not overlay the footer
+  */
+.page-text {
+
+  /* this must match the footer height */
+
+  width:75%;
+	position: relative;
+	margin:-13px auto 80px auto;
+	padding: 2px 0px 0px 0px;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.zombie {
+  /*position: fixed;
+  top: 80px;
+  left: 30px;*/
+  height: 40px
+  /*background-image: url("../assets/zombie.png");*/
+}
+
+.logo {
+    position: fixed;
+    top: 55px;
+    right: 0;
+    width: 100px;
+    height: 100px;
+}
+
+.logo img {
+   max-width:100%;
+   max-height:100%;
+}

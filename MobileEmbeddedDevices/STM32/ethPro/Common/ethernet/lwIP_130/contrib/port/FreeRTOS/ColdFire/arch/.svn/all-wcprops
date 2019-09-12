@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/lwIP_130/contrib/port/FreeRTOS/ColdFire/arch
+END
+sys_arch.h
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/lwIP_130/contrib/port/FreeRTOS/ColdFire/arch/sys_arch.h
+END
+perf.h
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/lwIP_130/contrib/port/FreeRTOS/ColdFire/arch/perf.h
+END
+cc.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/lwIP_130/contrib/port/FreeRTOS/ColdFire/arch/cc.h
+END
+cpu.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/lwIP_130/contrib/port/FreeRTOS/ColdFire/arch/cpu.h
+END

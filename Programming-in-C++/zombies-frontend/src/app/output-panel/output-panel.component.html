@@ -1,0 +1,14 @@
+<div id="inside">
+
+<div class="floating-box">
+  <div *ngFor="let event of outputPanel">
+    <div [innerHTML]="event"></div>
+  </div>
+</div>
+
+<div id="inputbox" class="enterbox">
+  <input #newMsg value={{prompt}}
+      (keyup.enter)="processInput(newMsg)">
+</div>
+
+</div>

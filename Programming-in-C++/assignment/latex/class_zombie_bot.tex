@@ -1,0 +1,162 @@
+\hypertarget{class_zombie_bot}{}\section{Zombie\+Bot Class Reference}
+\label{class_zombie_bot}\index{Zombie\+Bot@{Zombie\+Bot}}
+
+
+{\ttfamily \#include $<$Zombie\+Bot.\+h$>$}
+
+
+
+Inheritance diagram for Zombie\+Bot\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{class_zombie_bot__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Zombie\+Bot\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_zombie_bot__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_zombie_bot_a1876a669a2bca3d893bd5685b96a8fc7}{Zombie\+Bot} (\hyperlink{class_world}{World} w)
+\item 
+bool \hyperlink{class_zombie_bot_ae0d559ee494734cb30f29966ce548fae}{should\+Quit} () override
+\item 
+std\+::string \hyperlink{class_zombie_bot_ab0ad3b297aaa0614eaf335a254044c6f}{begin} () override
+\item 
+int \hyperlink{class_zombie_bot_a4a470bb8e1bf9f9cafa5846bbae10efd}{current\+Score} () override
+\item 
+bool \hyperlink{class_zombie_bot_af93d1514656fcf73c9a705fc220c6e5e}{enable\+Timer} () override
+\item 
+bool \hyperlink{class_zombie_bot_a6078092634dea0a6db55f0377ed3eaa9}{disable\+Timer} () override
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_zombie_bot_a7bdd6cb1af9514dd5afc61066e83d40c}{process\+Cmd} (std\+::string cmd) override
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_world}{World} \hyperlink{class_zombie_bot_ae4c9fe36c717e85cc6f0b71ea9c3a4f8}{world}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Zombie\+Bot@{Zombie\+Bot}!Zombie\+Bot@{Zombie\+Bot}}
+\index{Zombie\+Bot@{Zombie\+Bot}!Zombie\+Bot@{Zombie\+Bot}}
+\subsubsection[{\texorpdfstring{Zombie\+Bot(\+World w)}{ZombieBot(World w)}}]{\setlength{\rightskip}{0pt plus 5cm}Zombie\+Bot\+::\+Zombie\+Bot (
+\begin{DoxyParamCaption}
+\item[{{\bf World}}]{w}
+\end{DoxyParamCaption}
+)}\hypertarget{class_zombie_bot_a1876a669a2bca3d893bd5685b96a8fc7}{}\label{class_zombie_bot_a1876a669a2bca3d893bd5685b96a8fc7}
+
+
+\subsection{Member Function Documentation}
+\index{Zombie\+Bot@{Zombie\+Bot}!begin@{begin}}
+\index{begin@{begin}!Zombie\+Bot@{Zombie\+Bot}}
+\subsubsection[{\texorpdfstring{begin() override}{begin() override}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Zombie\+Bot\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_zombie_bot_ab0ad3b297aaa0614eaf335a254044c6f}{}\label{class_zombie_bot_ab0ad3b297aaa0614eaf335a254044c6f}
+text to be displayed at beginning of game \begin{DoxyReturn}{Returns}
+text to be displayed 
+\end{DoxyReturn}
+\index{Zombie\+Bot@{Zombie\+Bot}!current\+Score@{current\+Score}}
+\index{current\+Score@{current\+Score}!Zombie\+Bot@{Zombie\+Bot}}
+\subsubsection[{\texorpdfstring{current\+Score() override}{currentScore() override}}]{\setlength{\rightskip}{0pt plus 5cm}int Zombie\+Bot\+::current\+Score (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_zombie_bot_a4a470bb8e1bf9f9cafa5846bbae10efd}{}\label{class_zombie_bot_a4a470bb8e1bf9f9cafa5846bbae10efd}
+compute current score \begin{DoxyReturn}{Returns}
+current score 
+\end{DoxyReturn}
+\index{Zombie\+Bot@{Zombie\+Bot}!disable\+Timer@{disable\+Timer}}
+\index{disable\+Timer@{disable\+Timer}!Zombie\+Bot@{Zombie\+Bot}}
+\subsubsection[{\texorpdfstring{disable\+Timer() override}{disableTimer() override}}]{\setlength{\rightskip}{0pt plus 5cm}bool Zombie\+Bot\+::disable\+Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_zombie_bot_a6078092634dea0a6db55f0377ed3eaa9}{}\label{class_zombie_bot_a6078092634dea0a6db55f0377ed3eaa9}
+should zombie timer be disabled \begin{DoxyReturn}{Returns}
+true if timer should be disabled, otherwise false 
+\end{DoxyReturn}
+\index{Zombie\+Bot@{Zombie\+Bot}!enable\+Timer@{enable\+Timer}}
+\index{enable\+Timer@{enable\+Timer}!Zombie\+Bot@{Zombie\+Bot}}
+\subsubsection[{\texorpdfstring{enable\+Timer() override}{enableTimer() override}}]{\setlength{\rightskip}{0pt plus 5cm}bool Zombie\+Bot\+::enable\+Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_zombie_bot_af93d1514656fcf73c9a705fc220c6e5e}{}\label{class_zombie_bot_af93d1514656fcf73c9a705fc220c6e5e}
+should zombie timer be enabled \begin{DoxyReturn}{Returns}
+true if timer should be enabled, otherwise false 
+\end{DoxyReturn}
+\index{Zombie\+Bot@{Zombie\+Bot}!process\+Cmd@{process\+Cmd}}
+\index{process\+Cmd@{process\+Cmd}!Zombie\+Bot@{Zombie\+Bot}}
+\subsubsection[{\texorpdfstring{process\+Cmd(std\+::string cmd) override}{processCmd(std::string cmd) override}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::string $>$ Zombie\+Bot\+::process\+Cmd (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{cmd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_zombie_bot_a7bdd6cb1af9514dd5afc61066e83d40c}{}\label{class_zombie_bot_a7bdd6cb1af9514dd5afc61066e83d40c}
+process player commands.~\newline
+~\newline
+ The set of commands are as follows\+:~\newline
+ 
+\begin{DoxyItemize}
+\item info -\/ return the info string for the world. 
+\item look -\/ return the H\+T\+ML representing the view of the current room. this should include entrances, items, and so on.~\newline
+  
+\item move dir -\/ try and move in the direction dir. if there is an extrance in that direction, then if it is not locked, move through to the connected room, return message about new room. if can\textquotesingle{}t move, because no entrance in that direction, or entrance is locked, then return a message to that effect.~\newline
+  
+\item one entry to a room if it contains zombies, then the next time the method \hyperlink{class_zombie_bot_af93d1514656fcf73c9a705fc220c6e5e}{enable\+Timer()} is called it should return true, just the one time. This will cause the client to start the Zombie kill timer event, displaying a Zombie and timer, to show the player that they will die if the zombie(s) is not killed in time.~\newline
+  
+\item pickup item -\/ pick up item from room, if item exits then this should cause it to be removed from room and get added to players inventory, and return message to say picked up. if it does not exist, then return message to that effect.~\newline
+ The users score should be increased by one, each time an item is picked up.  
+\item kill -\/ if the room contains at least one zombie and players inventory contains either a Daisy or Chainsaw, then one should be killed (i.\+e. zombie count drops by one), return a message to inform the user that a zombie has died. if kill is succcessful, then the player\textquotesingle{}s inventory should have one less Daisy or Chainsaw.~\newline
+ if no zombies, then nothing happens.  
+\item if the zombie timer was running, i.\+e. a call to \hyperlink{class_zombie_bot_af93d1514656fcf73c9a705fc220c6e5e}{enable\+Timer()} had returned true for the current room, then if the zombie count is now zero, then \hyperlink{class_zombie_bot_a6078092634dea0a6db55f0377ed3eaa9}{disable\+Timer()} should return true, one time, to tell the client to stop the zombie timer.~\newline
+  
+\item drop item -\/ drop an item into room from inventory. if the item is not in inventory, then nothing happens, otherwise it should be removed, when added to room. return a message to say item dropped.~\newline
+  
+\item timerexpired -\/ the client\textquotesingle{}s zombie timer expired before all zombies in the current room were killed and so the player is dead. \hyperlink{class_zombie_bot_ae0d559ee494734cb30f29966ce548fae}{should\+Quit()} should now return true.  
+\item quit -\/ \hyperlink{class_zombie_bot_ae0d559ee494734cb30f29966ce548fae}{should\+Quit()} should now return true.  
+\item inventory -\/ return H\+T\+ML to display the players current inventory.  
+\item anything else -\/ return H\+T\+ML saying \char`\"{}\+That\textquotesingle{}s not a verb I recognise.\char`\"{}  
+\end{DoxyItemize}
+\begin{DoxyParams}{Parameters}
+{\em cmd} & to be processed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output to be displayed. each element in the list returned is in H\+T\+ML and will be output in the clients display window 
+\end{DoxyReturn}
+\index{Zombie\+Bot@{Zombie\+Bot}!should\+Quit@{should\+Quit}}
+\index{should\+Quit@{should\+Quit}!Zombie\+Bot@{Zombie\+Bot}}
+\subsubsection[{\texorpdfstring{should\+Quit() override}{shouldQuit() override}}]{\setlength{\rightskip}{0pt plus 5cm}bool Zombie\+Bot\+::should\+Quit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{class_zombie_bot_ae0d559ee494734cb30f29966ce548fae}{}\label{class_zombie_bot_ae0d559ee494734cb30f29966ce548fae}
+should game quit \begin{DoxyReturn}{Returns}
+return true if exit program, otherwise false 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{Zombie\+Bot@{Zombie\+Bot}!world@{world}}
+\index{world@{world}!Zombie\+Bot@{Zombie\+Bot}}
+\subsubsection[{\texorpdfstring{world}{world}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf World} Zombie\+Bot\+::world}\hypertarget{class_zombie_bot_ae4c9fe36c717e85cc6f0b71ea9c3a4f8}{}\label{class_zombie_bot_ae4c9fe36c717e85cc6f0b71ea9c3a4f8}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_zombie_bot_8h}{Zombie\+Bot.\+h}\item 
+source/\hyperlink{_zombie_bot_8cpp}{Zombie\+Bot.\+cpp}\end{DoxyCompactItemize}

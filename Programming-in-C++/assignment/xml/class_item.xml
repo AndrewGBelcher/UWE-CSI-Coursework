@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_item" kind="class" language="C++" prot="public">
+    <compoundname>Item</compoundname>
+    <includes refid="item_8h" local="no">item.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_item_1a17b15dc1e47ddba7e5c98476aeae98a6" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Item::itemName</definition>
+        <argsstring></argsstring>
+        <name>itemName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/item.h" line="21" column="1" bodyfile="include/item.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_item_1a324a6bcafab4ed84ad92860e061635e9" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Item::itemHtml</definition>
+        <argsstring></argsstring>
+        <name>itemHtml</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/item.h" line="22" column="1" bodyfile="include/item.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_item_1a342b7a351c9ae1c5430aa3ef65b670bd" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Item::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/item.h" line="23" column="1" bodyfile="include/item.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_item_1acb32fa26879eb794207306dd7f322f1f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Item::held</definition>
+        <argsstring></argsstring>
+        <name>held</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/item.h" line="24" column="1" bodyfile="include/item.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_item_1a297720c02984eab37332ae795d22189d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Item::Item</definition>
+        <argsstring>()</argsstring>
+        <name>Item</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/item.h" line="29" column="1" bodyfile="source/item.cpp" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_item_1ab6fbcff91764911e1af1f9a6384b8472" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Item::Item</definition>
+        <argsstring>(std::string name, std::string itemDesc)</argsstring>
+        <name>Item</name>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>itemDesc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/item.h" line="30" column="1" bodyfile="source/item.cpp" bodystart="18" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_item_1a34a7a862e03a25e685bc9d6de8bde908" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Item::getHtml</definition>
+        <argsstring>()</argsstring>
+        <name>getHtml</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/item.h" line="33" column="1" bodyfile="source/item.cpp" bodystart="42" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_item_1a4ff297b946505e7956eae16006cada04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Item::getName</definition>
+        <argsstring>()</argsstring>
+        <name>getName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/item.h" line="34" column="1" bodyfile="source/item.cpp" bodystart="37" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_item_1ac2ea634d1693b729328307e4a40dbe7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Item::chkHeld</definition>
+        <argsstring>()</argsstring>
+        <name>chkHeld</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/item.h" line="37" column="1" bodyfile="source/item.cpp" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_item_1af3e1688046b6145d02a42eba8443d36d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Item::setHeld</definition>
+        <argsstring>()</argsstring>
+        <name>setHeld</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/item.h" line="38" column="1" bodyfile="source/item.cpp" bodystart="32" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="26">
+        <label>Item</label>
+        <link refid="class_item"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/item.h" line="16" column="1" bodyfile="include/item.h" bodystart="16" bodyend="40"/>
+    <listofallmembers>
+      <member refid="class_item_1ac2ea634d1693b729328307e4a40dbe7a" prot="public" virt="non-virtual"><scope>Item</scope><name>chkHeld</name></member>
+      <member refid="class_item_1a34a7a862e03a25e685bc9d6de8bde908" prot="public" virt="non-virtual"><scope>Item</scope><name>getHtml</name></member>
+      <member refid="class_item_1a4ff297b946505e7956eae16006cada04" prot="public" virt="non-virtual"><scope>Item</scope><name>getName</name></member>
+      <member refid="class_item_1acb32fa26879eb794207306dd7f322f1f" prot="private" virt="non-virtual"><scope>Item</scope><name>held</name></member>
+      <member refid="class_item_1a297720c02984eab37332ae795d22189d" prot="public" virt="non-virtual"><scope>Item</scope><name>Item</name></member>
+      <member refid="class_item_1ab6fbcff91764911e1af1f9a6384b8472" prot="public" virt="non-virtual"><scope>Item</scope><name>Item</name></member>
+      <member refid="class_item_1a324a6bcafab4ed84ad92860e061635e9" prot="private" virt="non-virtual"><scope>Item</scope><name>itemHtml</name></member>
+      <member refid="class_item_1a17b15dc1e47ddba7e5c98476aeae98a6" prot="private" virt="non-virtual"><scope>Item</scope><name>itemName</name></member>
+      <member refid="class_item_1a342b7a351c9ae1c5430aa3ef65b670bd" prot="private" virt="non-virtual"><scope>Item</scope><name>name</name></member>
+      <member refid="class_item_1af3e1688046b6145d02a42eba8443d36d" prot="public" virt="non-virtual"><scope>Item</scope><name>setHeld</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+{
+  "name": "tetris",
+  "version": "1.0.0",
+  "description": "IoT  micro:bit tetris.",
+  "license": "MIT",
+  "dependencies": {
+    "microbit": "lancaster-university/microbit"
+  },
+  "targetDependencies": {},
+  "bin": "./source"
+}
+

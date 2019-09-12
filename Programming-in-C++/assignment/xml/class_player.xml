@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_player" kind="class" language="C++" prot="public">
+    <compoundname>Player</compoundname>
+    <includes refid="player_8h" local="no">player.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_player_1ad005856eb5f23892ae9687e601f12f6c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_item" kindref="compound">Item</ref> &gt;</type>
+        <definition>std::vector&lt;Item&gt; Player::inventory</definition>
+        <argsstring></argsstring>
+        <name>inventory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="22" column="1" bodyfile="include/player.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a903fd9a9a0dd63ddf7e88b901a72fb99" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Player::maxItems</definition>
+        <argsstring></argsstring>
+        <name>maxItems</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="23" column="1" bodyfile="include/player.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1aaf8419f2a11f79492d1e9081b8913374" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Player::invincible</definition>
+        <argsstring></argsstring>
+        <name>invincible</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="24" column="1" bodyfile="include/player.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a5de846054e4705449a8b8a2365f2f86c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Player::roomCnt</definition>
+        <argsstring></argsstring>
+        <name>roomCnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="25" column="1" bodyfile="include/player.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1ae0c757e73e05e1a7ebf6f2f511db7494" prot="private" static="no" mutable="no">
+        <type><ref refid="class_item" kindref="compound">Item</ref> *</type>
+        <definition>Item* Player::itemEquip</definition>
+        <argsstring></argsstring>
+        <name>itemEquip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="27" column="1" bodyfile="include/player.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a3be13f6a24a17bd2d199c208a7e96611" prot="private" static="no" mutable="no">
+        <type><ref refid="class_room" kindref="compound">Room</ref> *</type>
+        <definition>Room* Player::curRoom</definition>
+        <argsstring></argsstring>
+        <name>curRoom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="28" column="1" bodyfile="include/player.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Player::Player</definition>
+        <argsstring>()</argsstring>
+        <name>Player</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="33" column="1" bodyfile="source/player.cpp" bodystart="16" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1af2cde98e3e3016f52bcec03c56aec407" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Player::pickupItem</definition>
+        <argsstring>(Item item)</argsstring>
+        <name>pickupItem</name>
+        <param>
+          <type><ref refid="class_item" kindref="compound">Item</ref></type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="36" column="1" bodyfile="source/player.cpp" bodystart="34" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1adb4031aaf2536a5a7f89e7d194d990e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Player::dropItem</definition>
+        <argsstring>(std::string item)</argsstring>
+        <name>dropItem</name>
+        <param>
+          <type>std::string</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="37" column="1" bodyfile="source/player.cpp" bodystart="50" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a8c1c3b5c6c5477f32309e93a63b386ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Player::chkItem</definition>
+        <argsstring>(std::string item)</argsstring>
+        <name>chkItem</name>
+        <param>
+          <type>std::string</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="38" column="1" bodyfile="source/player.cpp" bodystart="105" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a081bbb9e703f1f32eeaa3f9aac6ac327" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Player::delItem</definition>
+        <argsstring>(std::string item)</argsstring>
+        <name>delItem</name>
+        <param>
+          <type>std::string</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="39" column="1" bodyfile="source/player.cpp" bodystart="73" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1ad6b1c30ffa56aacefb102195a041577d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::clearItems</definition>
+        <argsstring>()</argsstring>
+        <name>clearItems</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="40" column="1" bodyfile="source/player.cpp" bodystart="93" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1ab21f29bdef7ec29545dbb45f2a166ab0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Player::getInventoryHtml</definition>
+        <argsstring>()</argsstring>
+        <name>getInventoryHtml</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="43" column="1" bodyfile="source/player.cpp" bodystart="119" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1aa19bb311c830a1e886609eb53502d0b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_room" kindref="compound">Room</ref> *</type>
+        <definition>Room * Player::getCurRoom</definition>
+        <argsstring>()</argsstring>
+        <name>getCurRoom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="46" column="1" bodyfile="source/player.cpp" bodystart="24" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a2e90aee69f3d694edf944d5550fe73f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::setCurRoom</definition>
+        <argsstring>(Room *room)</argsstring>
+        <name>setCurRoom</name>
+        <param>
+          <type><ref refid="class_room" kindref="compound">Room</ref> *</type>
+          <declname>room</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="47" column="1" bodyfile="source/player.cpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1aebb3bc5a8d6dcbd27acf67ebd4ca6629" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Player::setInvincibility</definition>
+        <argsstring>()</argsstring>
+        <name>setInvincibility</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="50" column="1" bodyfile="source/player.cpp" bodystart="141" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1aaed2208fc599e76484fde37c38449cb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Player::chkInvincibility</definition>
+        <argsstring>()</argsstring>
+        <name>chkInvincibility</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="51" column="1" bodyfile="source/player.cpp" bodystart="153" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a86a98bb13b3a62ef59742ccb98ad3af5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Player::notInvincible</definition>
+        <argsstring>()</argsstring>
+        <name>notInvincible</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="52" column="1" bodyfile="source/player.cpp" bodystart="130" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a0ddbb83f6ed54aff1818a5f49291f644" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player::incRoomCnt</definition>
+        <argsstring>()</argsstring>
+        <name>incRoomCnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="55" column="1" bodyfile="source/player.cpp" bodystart="164" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a842a4d1798d51aa4e9c4aa31868fe1a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Player::chkRoomCnt</definition>
+        <argsstring>()</argsstring>
+        <name>chkRoomCnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/player.h" line="56" column="1" bodyfile="source/player.cpp" bodystart="159" bodyend="162"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="29">
+        <label>Item</label>
+        <link refid="class_item"/>
+      </node>
+      <node id="28">
+        <label>Player</label>
+        <link refid="class_player"/>
+        <childnode refid="29" relation="usage">
+          <edgelabel>-itemEquip</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>-curRoom</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
+        <label>Room</label>
+        <link refid="class_room"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/player.h" line="17" column="1" bodyfile="include/player.h" bodystart="17" bodyend="58"/>
+    <listofallmembers>
+      <member refid="class_player_1aaed2208fc599e76484fde37c38449cb1" prot="public" virt="non-virtual"><scope>Player</scope><name>chkInvincibility</name></member>
+      <member refid="class_player_1a8c1c3b5c6c5477f32309e93a63b386ff" prot="public" virt="non-virtual"><scope>Player</scope><name>chkItem</name></member>
+      <member refid="class_player_1a842a4d1798d51aa4e9c4aa31868fe1a6" prot="public" virt="non-virtual"><scope>Player</scope><name>chkRoomCnt</name></member>
+      <member refid="class_player_1ad6b1c30ffa56aacefb102195a041577d" prot="public" virt="non-virtual"><scope>Player</scope><name>clearItems</name></member>
+      <member refid="class_player_1a3be13f6a24a17bd2d199c208a7e96611" prot="private" virt="non-virtual"><scope>Player</scope><name>curRoom</name></member>
+      <member refid="class_player_1a081bbb9e703f1f32eeaa3f9aac6ac327" prot="public" virt="non-virtual"><scope>Player</scope><name>delItem</name></member>
+      <member refid="class_player_1adb4031aaf2536a5a7f89e7d194d990e2" prot="public" virt="non-virtual"><scope>Player</scope><name>dropItem</name></member>
+      <member refid="class_player_1aa19bb311c830a1e886609eb53502d0b0" prot="public" virt="non-virtual"><scope>Player</scope><name>getCurRoom</name></member>
+      <member refid="class_player_1ab21f29bdef7ec29545dbb45f2a166ab0" prot="public" virt="non-virtual"><scope>Player</scope><name>getInventoryHtml</name></member>
+      <member refid="class_player_1a0ddbb83f6ed54aff1818a5f49291f644" prot="public" virt="non-virtual"><scope>Player</scope><name>incRoomCnt</name></member>
+      <member refid="class_player_1ad005856eb5f23892ae9687e601f12f6c" prot="private" virt="non-virtual"><scope>Player</scope><name>inventory</name></member>
+      <member refid="class_player_1aaf8419f2a11f79492d1e9081b8913374" prot="private" virt="non-virtual"><scope>Player</scope><name>invincible</name></member>
+      <member refid="class_player_1ae0c757e73e05e1a7ebf6f2f511db7494" prot="private" virt="non-virtual"><scope>Player</scope><name>itemEquip</name></member>
+      <member refid="class_player_1a903fd9a9a0dd63ddf7e88b901a72fb99" prot="private" virt="non-virtual"><scope>Player</scope><name>maxItems</name></member>
+      <member refid="class_player_1a86a98bb13b3a62ef59742ccb98ad3af5" prot="public" virt="non-virtual"><scope>Player</scope><name>notInvincible</name></member>
+      <member refid="class_player_1af2cde98e3e3016f52bcec03c56aec407" prot="public" virt="non-virtual"><scope>Player</scope><name>pickupItem</name></member>
+      <member refid="class_player_1affe0cc3cb714f6deb4e62f0c0d3f1fd8" prot="public" virt="non-virtual"><scope>Player</scope><name>Player</name></member>
+      <member refid="class_player_1a5de846054e4705449a8b8a2365f2f86c" prot="private" virt="non-virtual"><scope>Player</scope><name>roomCnt</name></member>
+      <member refid="class_player_1a2e90aee69f3d694edf944d5550fe73f9" prot="public" virt="non-virtual"><scope>Player</scope><name>setCurRoom</name></member>
+      <member refid="class_player_1aebb3bc5a8d6dcbd27acf67ebd4ca6629" prot="public" virt="non-virtual"><scope>Player</scope><name>setInvincibility</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

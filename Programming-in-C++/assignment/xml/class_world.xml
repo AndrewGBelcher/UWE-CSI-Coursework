@@ -1,0 +1,439 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_world" kind="class" language="C++" prot="public">
+    <compoundname>World</compoundname>
+    <includes refid="world_8h" local="no">world.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_world_1ab2fda6c8eab2d939323a073c3dd7f1c4" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_room" kindref="compound">Room</ref> &gt;</type>
+        <definition>std::vector&lt;Room&gt; World::rooms</definition>
+        <argsstring></argsstring>
+        <name>rooms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="26" column="1" bodyfile="include/world.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_world_1a944fe6b2afeecf568d7b904ca4f7c660" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_item" kindref="compound">Item</ref> &gt;</type>
+        <definition>std::vector&lt;Item&gt; World::items</definition>
+        <argsstring></argsstring>
+        <name>items</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="27" column="1" bodyfile="include/world.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_world_1a3343e3ea054378472841acb71fc57390" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string World::info</definition>
+        <argsstring></argsstring>
+        <name>info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="29" column="1" bodyfile="include/world.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_world_1a931da4fdd320f91a2907d3ec740aa071" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string World::start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="30" column="1" bodyfile="include/world.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_world_1a5f018ca06c6531c087d2db5dcf33b16f" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string World::end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="31" column="1" bodyfile="include/world.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_world_1a7c1c5fac11cd9f7ce463252dc8ead690" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string World::inventoryHtml</definition>
+        <argsstring></argsstring>
+        <name>inventoryHtml</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="32" column="1" bodyfile="include/world.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_world_1ae70b4ef5dd9cb9e7336169a25aaee39c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int World::score</definition>
+        <argsstring></argsstring>
+        <name>score</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="34" column="1" bodyfile="include/world.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_world_1afbd2e53d3a60b74efd0b82e67867d250" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool World::exit</definition>
+        <argsstring></argsstring>
+        <name>exit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="35" column="1" bodyfile="include/world.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_world_1af12585403cef12e595e282dd27948d9a" prot="public" static="no" mutable="no">
+        <type><ref refid="class_player" kindref="compound">Player</ref></type>
+        <definition>Player World::player</definition>
+        <argsstring></argsstring>
+        <name>player</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="44" column="1" bodyfile="include/world.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_world_1a7270b9f8836a03add50bffdf20d9d199" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool World::startTimer</definition>
+        <argsstring></argsstring>
+        <name>startTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="66" column="1" bodyfile="include/world.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_world_1a16e241b63b668a74380b4db331a4e9ea" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool World::endTimer</definition>
+        <argsstring></argsstring>
+        <name>endTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="67" column="1" bodyfile="include/world.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_world_1afa39d4e6f714a7a3691ac0c656f5e8a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>World::World</definition>
+        <argsstring>()</argsstring>
+        <name>World</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="40" column="1" bodyfile="source/world.cpp" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_world_1aa95deade27bae5842d7faf397e675e30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>World::World</definition>
+        <argsstring>(uwe::WorldLoader wl)</argsstring>
+        <name>World</name>
+        <param>
+          <type>uwe::WorldLoader</type>
+          <declname>wl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="41" column="1" bodyfile="source/world.cpp" bodystart="19" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_world_1a35c3f1ee9e59671afd8afe7153080c60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string World::getInfo</definition>
+        <argsstring>()</argsstring>
+        <name>getInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="47" column="1" bodyfile="source/world.cpp" bodystart="39" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_world_1aa45cb41c5134a61443d9e1d8af6638ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string World::getRoomInfo</definition>
+        <argsstring>()</argsstring>
+        <name>getRoomInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="48" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_world_1ae5944d2cac3bb7d2b9ba011b8d159f1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string World::getInventoryHtml</definition>
+        <argsstring>()</argsstring>
+        <name>getInventoryHtml</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="49" column="1" bodyfile="source/world.cpp" bodystart="83" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_world_1a89353bcb222a0ebc6426916279ac3885" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void World::loadRooms</definition>
+        <argsstring>(std::vector&lt; uwe::RoomInfo &gt;roomsJSON)</argsstring>
+        <name>loadRooms</name>
+        <param>
+          <type>std::vector&lt; uwe::RoomInfo &gt;</type>
+          <declname>roomsJSON</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="52" column="1" bodyfile="source/world.cpp" bodystart="97" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_world_1a9c7027f0e1a55071bba3193055929f03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void World::loadItems</definition>
+        <argsstring>(std::vector&lt; uwe::ItemInfo &gt;itemsJSON)</argsstring>
+        <name>loadItems</name>
+        <param>
+          <type>std::vector&lt; uwe::ItemInfo &gt;</type>
+          <declname>itemsJSON</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="53" column="1" bodyfile="source/world.cpp" bodystart="88" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="class_world_1a2ec491313aa804a0cc85f240c0a06a39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_room" kindref="compound">Room</ref> *</type>
+        <definition>Room * World::getTargetRoom</definition>
+        <argsstring>(Room *curRoom, std::string direction, std::string *dirCheckRet)</argsstring>
+        <name>getTargetRoom</name>
+        <param>
+          <type><ref refid="class_room" kindref="compound">Room</ref> *</type>
+          <declname>curRoom</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>direction</declname>
+        </param>
+        <param>
+          <type>std::string *</type>
+          <declname>dirCheckRet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="56" column="1" bodyfile="source/world.cpp" bodystart="105" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_world_1ab8297b76c6b6b91b51b327ee11fe6d5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void World::setBegin</definition>
+        <argsstring>()</argsstring>
+        <name>setBegin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="57" column="1" bodyfile="source/world.cpp" bodystart="74" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_world_1a84b3872e280eb4f6761a4b1eb0a41e69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_room" kindref="compound">Room</ref> *</type>
+        <definition>Room * World::getStart</definition>
+        <argsstring>()</argsstring>
+        <name>getStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="58" column="1" bodyfile="source/world.cpp" bodystart="60" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_world_1aaea5355cb0778dd10fc079f579c6a60c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_room" kindref="compound">Room</ref> *</type>
+        <definition>Room * World::getEnd</definition>
+        <argsstring>()</argsstring>
+        <name>getEnd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="59" column="1" bodyfile="source/world.cpp" bodystart="46" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_world_1a7eff312b873974bc1fba0fc733e406d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int World::getGameScore</definition>
+        <argsstring>()</argsstring>
+        <name>getGameScore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="62" column="1" bodyfile="source/world.cpp" bodystart="131" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="class_world_1a59b27842de8fa5982a6deb8333f152d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void World::scored</definition>
+        <argsstring>(int amount)</argsstring>
+        <name>scored</name>
+        <param>
+          <type>int</type>
+          <declname>amount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="63" column="1" bodyfile="source/world.cpp" bodystart="136" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="class_world_1ac89bad423d24334fa8d9d539a18707ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void World::quit</definition>
+        <argsstring>()</argsstring>
+        <name>quit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="70" column="1" bodyfile="source/world.cpp" bodystart="146" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_world_1a4f052f529eb1af58eeb38d717270b9d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool World::checkQuit</definition>
+        <argsstring>()</argsstring>
+        <name>checkQuit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/world.h" line="71" column="1" bodyfile="source/world.cpp" bodystart="141" bodyend="143"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="34">
+        <label>World</label>
+        <link refid="class_world"/>
+        <childnode refid="35" relation="usage">
+          <edgelabel>+player</edgelabel>
+        </childnode>
+      </node>
+      <node id="36">
+        <label>Item</label>
+        <link refid="class_item"/>
+      </node>
+      <node id="35">
+        <label>Player</label>
+        <link refid="class_player"/>
+        <childnode refid="36" relation="usage">
+          <edgelabel>-itemEquip</edgelabel>
+        </childnode>
+        <childnode refid="37" relation="usage">
+          <edgelabel>-curRoom</edgelabel>
+        </childnode>
+      </node>
+      <node id="37">
+        <label>Room</label>
+        <link refid="class_room"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/world.h" line="21" column="1" bodyfile="include/world.h" bodystart="21" bodyend="73"/>
+    <listofallmembers>
+      <member refid="class_world_1a4f052f529eb1af58eeb38d717270b9d7" prot="public" virt="non-virtual"><scope>World</scope><name>checkQuit</name></member>
+      <member refid="class_world_1a5f018ca06c6531c087d2db5dcf33b16f" prot="private" virt="non-virtual"><scope>World</scope><name>end</name></member>
+      <member refid="class_world_1a16e241b63b668a74380b4db331a4e9ea" prot="public" virt="non-virtual"><scope>World</scope><name>endTimer</name></member>
+      <member refid="class_world_1afbd2e53d3a60b74efd0b82e67867d250" prot="private" virt="non-virtual"><scope>World</scope><name>exit</name></member>
+      <member refid="class_world_1aaea5355cb0778dd10fc079f579c6a60c" prot="public" virt="non-virtual"><scope>World</scope><name>getEnd</name></member>
+      <member refid="class_world_1a7eff312b873974bc1fba0fc733e406d7" prot="public" virt="non-virtual"><scope>World</scope><name>getGameScore</name></member>
+      <member refid="class_world_1a35c3f1ee9e59671afd8afe7153080c60" prot="public" virt="non-virtual"><scope>World</scope><name>getInfo</name></member>
+      <member refid="class_world_1ae5944d2cac3bb7d2b9ba011b8d159f1d" prot="public" virt="non-virtual"><scope>World</scope><name>getInventoryHtml</name></member>
+      <member refid="class_world_1aa45cb41c5134a61443d9e1d8af6638ca" prot="public" virt="non-virtual"><scope>World</scope><name>getRoomInfo</name></member>
+      <member refid="class_world_1a84b3872e280eb4f6761a4b1eb0a41e69" prot="public" virt="non-virtual"><scope>World</scope><name>getStart</name></member>
+      <member refid="class_world_1a2ec491313aa804a0cc85f240c0a06a39" prot="public" virt="non-virtual"><scope>World</scope><name>getTargetRoom</name></member>
+      <member refid="class_world_1a3343e3ea054378472841acb71fc57390" prot="private" virt="non-virtual"><scope>World</scope><name>info</name></member>
+      <member refid="class_world_1a7c1c5fac11cd9f7ce463252dc8ead690" prot="private" virt="non-virtual"><scope>World</scope><name>inventoryHtml</name></member>
+      <member refid="class_world_1a944fe6b2afeecf568d7b904ca4f7c660" prot="private" virt="non-virtual"><scope>World</scope><name>items</name></member>
+      <member refid="class_world_1a9c7027f0e1a55071bba3193055929f03" prot="public" virt="non-virtual"><scope>World</scope><name>loadItems</name></member>
+      <member refid="class_world_1a89353bcb222a0ebc6426916279ac3885" prot="public" virt="non-virtual"><scope>World</scope><name>loadRooms</name></member>
+      <member refid="class_world_1af12585403cef12e595e282dd27948d9a" prot="public" virt="non-virtual"><scope>World</scope><name>player</name></member>
+      <member refid="class_world_1ac89bad423d24334fa8d9d539a18707ff" prot="public" virt="non-virtual"><scope>World</scope><name>quit</name></member>
+      <member refid="class_world_1ab2fda6c8eab2d939323a073c3dd7f1c4" prot="private" virt="non-virtual"><scope>World</scope><name>rooms</name></member>
+      <member refid="class_world_1ae70b4ef5dd9cb9e7336169a25aaee39c" prot="private" virt="non-virtual"><scope>World</scope><name>score</name></member>
+      <member refid="class_world_1a59b27842de8fa5982a6deb8333f152d6" prot="public" virt="non-virtual"><scope>World</scope><name>scored</name></member>
+      <member refid="class_world_1ab8297b76c6b6b91b51b327ee11fe6d5c" prot="public" virt="non-virtual"><scope>World</scope><name>setBegin</name></member>
+      <member refid="class_world_1a931da4fdd320f91a2907d3ec740aa071" prot="private" virt="non-virtual"><scope>World</scope><name>start</name></member>
+      <member refid="class_world_1a7270b9f8836a03add50bffdf20d9d199" prot="public" virt="non-virtual"><scope>World</scope><name>startTimer</name></member>
+      <member refid="class_world_1afa39d4e6f714a7a3691ac0c656f5e8a8" prot="public" virt="non-virtual"><scope>World</scope><name>World</name></member>
+      <member refid="class_world_1aa95deade27bae5842d7faf397e675e30" prot="public" virt="non-virtual"><scope>World</scope><name>World</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

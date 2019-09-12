@@ -1,0 +1,1674 @@
+From 420d291af5159c9658265b3a9fd79959245a67c8 Mon Sep 17 00:00:00 2001
+From: Andrew Belcher <Andrew2.Belcher@live.uwe.ac.uk>
+Date: Sun, 2 Dec 2018 21:19:22 +0000
+Subject: [PATCH] set back to orignal for diffing
+
+---
+ source/lib/syscall-nr.h              |   3 +-
+ source/tests/threads/Make.tests      |   1 -
+ source/tests/threads/tests.c         |   1 -
+ source/tests/threads/tests.h         |   1 -
+ source/tests/userprog/close-twice.c  |   1 -
+ source/tests/userprog/close-twice.ck |   2 +-
+ source/threads/init.c                |   3 -
+ source/threads/thread.c              |  83 +---
+ source/threads/thread.h              |  42 +-
+ source/userprog/exception.c          |   4 +-
+ source/userprog/pagedir.c            |   2 +-
+ source/userprog/process.c            | 322 ++------------
+ source/userprog/process.h            |  37 --
+ source/userprog/syscall.c            | 606 +--------------------------
+ source/userprog/syscall.h            |  65 ---
+ source/utils/pintos                  |   2 +-
+ source/utils/pintos-gdb              |   2 +-
+ 17 files changed, 67 insertions(+), 1110 deletions(-)
+
+diff --git a/source/lib/syscall-nr.h b/source/lib/syscall-nr.h
+index 5d1bbdc..21a7af9 100644
+--- a/source/lib/syscall-nr.h
++++ b/source/lib/syscall-nr.h
+@@ -28,8 +28,7 @@ enum
+     SYS_MKDIR,                  /* Create a directory. */
+     SYS_READDIR,                /* Reads a directory entry. */
+     SYS_ISDIR,                  /* Tests if a fd represents a directory. */
+-    SYS_INUMBER,                 /* Returns the inode number for a fd. */
+-    SYS_NUM_SYSCALLS
++    SYS_INUMBER                 /* Returns the inode number for a fd. */
+   };
+ 
+ #endif /* lib/syscall-nr.h */
+diff --git a/source/tests/threads/Make.tests b/source/tests/threads/Make.tests
+index ee492ad..4569035 100644
+--- a/source/tests/threads/Make.tests
++++ b/source/tests/threads/Make.tests
+@@ -36,7 +36,6 @@ tests/threads_SRC += tests/threads/mlfqs-load-avg.c
+ tests/threads_SRC += tests/threads/mlfqs-recent-1.c
+ tests/threads_SRC += tests/threads/mlfqs-fair.c
+ tests/threads_SRC += tests/threads/mlfqs-block.c
+-tests/threads_SRC += tests/threads/hello_world.c
+ 
+ MLFQS_OUTPUTS = 				\
+ tests/threads/mlfqs-load-1.output		\
+diff --git a/source/tests/threads/tests.c b/source/tests/threads/tests.c
+index 865f318..af15aee 100644
+--- a/source/tests/threads/tests.c
++++ b/source/tests/threads/tests.c
+@@ -38,7 +38,6 @@ static const struct test tests[] =
+     {"mlfqs-nice-2", test_mlfqs_nice_2},
+     {"mlfqs-nice-10", test_mlfqs_nice_10},
+     {"mlfqs-block", test_mlfqs_block},
+-    {"hello_world", hello_world},
+   };
+ 
+ static const char *test_name;
+diff --git a/source/tests/threads/tests.h b/source/tests/threads/tests.h
+index 422973e..cd9d489 100644
+--- a/source/tests/threads/tests.h
++++ b/source/tests/threads/tests.h
+@@ -32,7 +32,6 @@ extern test_func test_mlfqs_fair_20;
+ extern test_func test_mlfqs_nice_2;
+ extern test_func test_mlfqs_nice_10;
+ extern test_func test_mlfqs_block;
+-extern test_func hello_world;
+ 
+ void msg (const char *, ...);
+ void fail (const char *, ...);
+diff --git a/source/tests/userprog/close-twice.c b/source/tests/userprog/close-twice.c
+index b09f1de..830bccf 100644
+--- a/source/tests/userprog/close-twice.c
++++ b/source/tests/userprog/close-twice.c
+@@ -15,5 +15,4 @@ test_main (void)
+   close (handle);
+   msg ("close \"sample.txt\" again");
+   close (handle);
+-  
+ }
+diff --git a/source/tests/userprog/close-twice.ck b/source/tests/userprog/close-twice.ck
+index da271aa..deb55a6 100644
+--- a/source/tests/userprog/close-twice.ck
++++ b/source/tests/userprog/close-twice.ck
+@@ -14,6 +14,6 @@ EOF
+ (close-twice) open "sample.txt"
+ (close-twice) close "sample.txt"
+ (close-twice) close "sample.txt" again
+-close-twice: exit(-22)
++close-twice: exit(-1)
+ EOF
+ pass;
+diff --git a/source/threads/init.c b/source/threads/init.c
+index 64215fe..cebec2c 100644
+--- a/source/threads/init.c
++++ b/source/threads/init.c
+@@ -103,7 +103,6 @@ main (void)
+ #ifdef USERPROG
+   tss_init ();
+   gdt_init ();
+-
+ #endif
+ 
+   /* Initialize interrupt handlers. */
+@@ -121,7 +120,6 @@ main (void)
+   serial_init_queue ();
+   timer_calibrate ();
+ 
+-
+ #ifdef FILESYS
+   /* Initialize file system. */
+   ide_init ();
+@@ -134,7 +132,6 @@ main (void)
+   /* Run actions specified on kernel command line. */
+   run_actions (argv);
+ 
+-
+   /* Finish up. */
+   shutdown ();
+   thread_exit ();
+diff --git a/source/threads/thread.c b/source/threads/thread.c
+index 67cbf15..052302f 100644
+--- a/source/threads/thread.c
++++ b/source/threads/thread.c
+@@ -10,10 +10,11 @@
+ #include "threads/palloc.h"
+ #include "threads/switch.h"
+ #include "threads/synch.h"
+-#include "userprog/syscall.h"
+ #include "threads/vaddr.h"
+-#include "userprog/process.h"
+ 
++#ifdef USERPROG
++#include "userprog/process.h"
++#endif
+ 
+ /* Random value for struct thread's `magic' member.
+    Used to detect stack overflow.  See the big comment at the top
+@@ -94,15 +95,12 @@ thread_init (void)
+   lock_init (&tid_lock);
+   list_init (&ready_list);
+   list_init (&all_list);
+-  
+-
+ 
+   /* Set up a thread structure for the running thread. */
+   initial_thread = running_thread ();
+ 
+   init_thread (initial_thread, "main", PRI_DEFAULT);
+ 
+-
+   initial_thread->status = THREAD_RUNNING;
+   initial_thread->tid = allocate_tid ();
+ }
+@@ -115,7 +113,8 @@ thread_start (void)
+   /* Create the idle thread. */
+   struct semaphore idle_started;
+ 
+-
++  //init_info (initial_thread, initial_thread->tid);
++  
+   sema_init (&idle_started, 0);
+   thread_create ("idle", PRI_MIN, idle, &idle_started);
+ 
+@@ -189,14 +188,9 @@ thread_create (const char *name, int priority,
+     return TID_ERROR;
+ 
+   /* Initialize thread. */
+-
+   init_thread (t, name, priority);
+   tid = t->tid = allocate_tid ();
+ 
+-	t->parent_tid = thread_current()->tid;
+-	t->parent = thread_current();
+-
+-  
+   /* Stack frame for kernel_thread(). */
+   kf = alloc_frame (t, sizeof *kf);
+   kf->eip = NULL;
+@@ -269,9 +263,7 @@ thread_name (void)
+ struct thread *
+ thread_current (void) 
+ {
+-
+   struct thread *t = running_thread ();
+-
+   
+   /* Make sure T is really a thread.
+      If either of these assertions fire, then your thread may
+@@ -306,29 +298,9 @@ thread_exit (void)
+      and schedule another process.  That process will destroy us
+      when it calls thread_schedule_tail(). */
+   intr_disable ();
+-  
+-  // clean up files and resources
+-  struct thread* td = thread_current();
+-  
+-  td->alive = DEAD;
+-  td->waiting = NOT_WAITING;
+-  
+-  struct file* cur_exec = td->cur_exec;
+-  if(cur_exec)
+-  {
+-  	file_allow_write(cur_exec);
+-  	file_close(cur_exec);
+-  }
+-  
+-  // Why is this messing up 1 test?
+-  //close_all_files();
+-  
+   list_remove (&thread_current()->allelem);
+-
+   thread_current ()->status = THREAD_DYING;
+-
+   schedule ();
+-
+   NOT_REACHED ();
+ }
+ 
+@@ -486,7 +458,6 @@ is_thread (struct thread *t)
+    NAME. */
+ static void
+ init_thread (struct thread *t, const char *name, int priority)
+-
+ {
+   enum intr_level old_level;
+ 
+@@ -501,22 +472,14 @@ init_thread (struct thread *t, const char *name, int priority)
+   t->priority = priority;
+   t->magic = THREAD_MAGIC;
+ 
++  //t->is_kernel = is_kernel;
+ 
+   old_level = intr_disable ();
+   list_push_back (&all_list, &t->allelem);
+   intr_set_level (old_level);
+-  
+-  // Our lists/semaphores/setup
+-  list_init(&t->children);
+-  list_init(&t->thread_file_list);
+-  sema_init(&t->condition,0);
+-  t->exiting = NOT_EXITING;
+-
+ }
+ 
+ 
+-
+-
+ /* Allocates a SIZE-byte frame at the top of thread T's stack and
+    returns a pointer to the frame's base. */
+ static void *
+@@ -554,8 +517,8 @@ next_thread_to_run (void)
+    the first time a thread is scheduled it is called by
+    switch_entry() (see switch.S).
+ 
+-   It's not safe to call DEBUG_PRINT() until the thread switch is
+-   complete.  In practice that means that DEBUG_PRINT()s should be
++   It's not safe to call printf() until the thread switch is
++   complete.  In practice that means that printf()s should be
+    added at the end of the function.
+ 
+    After this function and its caller returns, the thread switch
+@@ -595,7 +558,7 @@ thread_schedule_tail (struct thread *prev)
+    running to some other state.  This function finds another
+    thread to run and switches to it.
+ 
+-   It's not safe to call DEBUG_PRINT() until thread_schedule_tail()
++   It's not safe to call printf() until thread_schedule_tail()
+    has completed. */
+ static void
+ schedule (void) 
+@@ -626,33 +589,7 @@ allocate_tid (void)
+ 
+   return tid;
+ }
+-
+-// Get thread from thread id
+-struct thread* get_thread(tid_t tid)
+-{
+-	// Catch if threa creation failed
+-	ASSERT(tid != TID_ERROR);
+-	
+-	struct list_elem* e;	
+-	struct thread* td;
+-	
+-	for(e = list_begin(&all_list);
+-			e != list_end(&all_list);
+-			e = list_next(e))
+-	{
+-		td = list_entry(e, struct thread, allelem);
+-
+-		// Found it!
+-		if(td->tid == tid && td->status != THREAD_DYING)
+-		{
+-			return td;
+-		}
+-	}
+-	return NULL;
+-}
+-
+-
++
+ /* Offset of `stack' member within `struct thread'.
+    Used by switch.S, which can't figure it out on its own. */
+ uint32_t thread_stack_ofs = offsetof (struct thread, stack);
+-
+diff --git a/source/threads/thread.h b/source/threads/thread.h
+index 643c69d..093bcdd 100644
+--- a/source/threads/thread.h
++++ b/source/threads/thread.h
+@@ -4,8 +4,6 @@
+ #include <debug.h>
+ #include <list.h>
+ #include <stdint.h>
+-#include "threads/synch.h"
+-#include "hash.h"
+ 
+ /* States in a thread's life cycle. */
+ enum thread_status
+@@ -26,8 +24,6 @@ typedef int tid_t;
+ #define PRI_DEFAULT 31                  /* Default priority. */
+ #define PRI_MAX 63                      /* Highest priority. */
+ 
+-
+-
+ /* A kernel thread or user process.
+ 
+    Each thread structure is stored in its own 4 kB page.  The
+@@ -86,58 +82,26 @@ typedef int tid_t;
+    blocked state is on a semaphore wait list. */
+ struct thread
+   {
+-
+     /* Owned by thread.c. */
+     tid_t tid;                          /* Thread identifier. */
+     enum thread_status status;          /* Thread state. */
+     char name[16];                      /* Name (for debugging purposes). */
+     uint8_t *stack;                     /* Saved stack pointer. */
+     int priority;                       /* Priority. */
++    struct list_elem allelem;           /* List element for all threads list. */
+ 
+     /* Shared between thread.c and synch.c. */
+     struct list_elem elem;              /* List element. */
+-    struct list_elem allelem;           /* List element for all threads list. */
+-    
++      
+ #ifdef USERPROG
+     /* Owned by userprog/process.c. */
+-    struct list thread_file_list;				/* List of threads opened files */      
+     uint32_t *pagedir;                  /* Page directory. */
+-	  struct thread* parent;							/* Parent of the thread */
+-		struct list_elem child;							/* Element of parents list of children */
+-		struct list children;								/* Children of the thread */
+-		int exiting;												/* Is thread exiting */
+-		int alive;													/* Is thread alive */
+-		int waiting;												/* Is thread waiting */
+-		int exit_status;										/* Return or exit code from thread */
+-    int child_loaded;										/* Has child of this thread been loaded */
+-    struct file* cur_exec;							/* Pointer to current executeable file */
+-		struct semaphore condition;					/* Semaphore for thread run control */
+-    struct list children_return;				/* Children statuses */
+-    tid_t parent_tid;										/* Thread id of parent thread */
+-    struct lock plock;									/* process lock for while thread is alive */
+-    int fd_next;												/* Current index on thread file descriptor */
+-    struct stack_data* stack_data;			/* Stack data used for this thread, before pushing to stack */
+ #endif
+ 
+     /* Owned by thread.c. */
+     unsigned magic;                     /* Detects stack overflow. */
+   };
+ 
+-typedef int pid_t;
+-
+-char* thread_args; // Dont like it as a global but it works for now
+-
+-/* Information about the child process */
+-struct child
+-{
+-	int running;
+-	int exit_code;
+-	struct thread* td;
+-	struct thread* parent;
+-	tid_t tid;
+-};
+-
+-
+ /* If false (default), use round-robin scheduler.
+    If true, use multi-level feedback queue scheduler.
+    Controlled by kernel command-line option "-o mlfqs". */
+@@ -174,6 +138,4 @@ void thread_set_nice (int);
+ int thread_get_recent_cpu (void);
+ int thread_get_load_avg (void);
+ 
+-struct return_status* thread_get_child_status(int);
+-
+ #endif /* threads/thread.h */
+diff --git a/source/userprog/exception.c b/source/userprog/exception.c
+index 9ca5f80..19aca12 100644
+--- a/source/userprog/exception.c
++++ b/source/userprog/exception.c
+@@ -89,7 +89,7 @@ kill (struct intr_frame *f)
+       printf ("%s: dying due to interrupt %#04x (%s).\n",
+               thread_name (), f->vec_no, intr_name (f->vec_no));
+       intr_dump_frame (f);
+-			sys_exit(-1);
++      thread_exit (); 
+ 
+     case SEL_KCSEG:
+       /* Kernel's code segment, which indicates a kernel bug.
+@@ -151,7 +151,7 @@ page_fault (struct intr_frame *f)
+   /* To implement virtual memory, delete the rest of the function
+      body, and replace it with code that brings in the page to
+      which fault_addr refers. */
+-  printf ("Page fault at %p: %s, error: %s page in %s context.\n",
++  printf ("Page fault at %p: %s error %s page in %s context.\n",
+           fault_addr,
+           not_present ? "not present" : "rights violation",
+           write ? "writing" : "reading",
+diff --git a/source/userprog/pagedir.c b/source/userprog/pagedir.c
+index 768d421..a6a87b8 100644
+--- a/source/userprog/pagedir.c
++++ b/source/userprog/pagedir.c
+@@ -243,7 +243,7 @@ active_pd (void)
+   return ptov (pd);
+ }
+ 
+-/* Some page table changes can cause the CPU's translation
++/* Seom page table changes can cause the CPU's translation
+    lookaside buffer (TLB) to become out-of-sync with the page
+    table.  When this happens, we have to "invalidate" the TLB by
+    re-activating it.
+diff --git a/source/userprog/process.c b/source/userprog/process.c
+index ef8395f..d51339a 100644
+--- a/source/userprog/process.c
++++ b/source/userprog/process.c
+@@ -17,101 +17,43 @@
+ #include "threads/palloc.h"
+ #include "threads/thread.h"
+ #include "threads/vaddr.h"
+-#include "userprog/syscall.h"
+ 
+ static thread_func start_process NO_RETURN;
+ static bool load (const char *cmdline, void (**eip) (void), void **esp);
+ 
+-
+ /* Starts a new thread running a user program loaded from
+    FILENAME.  The new thread may be scheduled (and may even exit)
+    before process_execute() returns.  Returns the new process's
+    thread id, or TID_ERROR if the thread cannot be created. */
+ tid_t
+-process_execute (const char* file_name) 
++process_execute (const char *file_name) 
+ {
+-	tid_t tid = TID_ERROR; // -1
+-	char* saveptr; // pointer for context on reentering strtok
+-	char* f_args; // file name along with args to be passed to thread_create
+-	char* fname; // file name to be stripped out
+-  
+-	/* Make a copy of FILE_NAME.
+-	Otherwise there's a race between the caller and load(). */
+-	f_args = palloc_get_page (0);
+-  	
+-	if (f_args == NULL)
+-		return TID_ERROR;
+-	
+-	// separate page for passing in the stripped filename to thread_create
+-	fname = palloc_get_page(0);
+-	if(fname == NULL)
+-			return TID_ERROR;
+-	
+-	// load file and args string into copy ready for parsing  
+-	strlcpy (fname, file_name, PGSIZE);
+-	strlcpy (f_args, fname, PGSIZE);
+-	thread_args = f_args;
+-  
+-	// strip out the filename
+-	fname = strtok_r(fname," ",&saveptr);
+-
+-  struct thread* td = thread_current();
+-/*
+-
+-	td->child_loaded = 0;
+-	
+-	struct list* td_children = &(td->children);
+-	struct child* thread_child = malloc(sizeof(struct child));
+-	struct list_elem* e =  malloc(sizeof(struct list_elem));
+-
+-	list_push_back(td_children, e);*/
++  char *fn_copy;
++  tid_t tid;
+ 
++  /* Make a copy of FILE_NAME.
++     Otherwise there's a race between the caller and load(). */
++  fn_copy = palloc_get_page (0);
++  if (fn_copy == NULL)
++    return TID_ERROR;
++  strlcpy (fn_copy, file_name, PGSIZE);
+ 
+   /* Create a new thread to execute FILE_NAME. */
+-  intr_disable();
+-  
+-  // create the thread with filename and pointer to full argument string
+-	// will be parsed out later in setup_stack
+-  tid = thread_create (fname, PRI_DEFAULT, start_process, thread_args);
+-  thread_block();
+-  intr_enable();
+-  
+-  // return if thread fails to load after creation
+-  if(td->child_loaded != CHILD_LOADED)
+-  	tid = TID_ERROR;
+-
+-	// dont forget to free memory when thread_create fails  
+-	if (tid == TID_ERROR)
+-	{
+-	  palloc_free_page (f_args); 	
+-	  palloc_free_page (fname); 		  
+-	  return tid;	  
+-	}
+-
+-	// setup thread info
+-	struct thread* child = get_thread(tid);
+-	
+-	child->alive = ALIVE;
+-	child->waiting = NOT_WAITING;
+-	child->fd_next = INITIAL_FD;
+-
+-	lock_init(&child->plock);
+-	
++  tid = thread_create (file_name, PRI_DEFAULT, start_process, fn_copy);
++
++  if (tid == TID_ERROR)
++    palloc_free_page (fn_copy); 
+   return tid;
+ }
+ 
+-
+-
+ /* A thread function that loads a user process and starts it
+    running. */
+ static void
+ start_process (void *file_name_)
+ {
+-
++  char *file_name = file_name_;
+   struct intr_frame if_;
+   bool success;
+- 	struct thread* cur = thread_current();
+-
+ 
+   /* Initialize interrupt frame and load executable. */
+   memset (&if_, 0, sizeof if_);
+@@ -119,19 +61,13 @@ start_process (void *file_name_)
+   if_.cs = SEL_UCSEG;
+   if_.eflags = FLAG_IF | FLAG_MBS;
+ 
+-  success = load (file_name_, &if_.eip, &if_.esp);
+-
+-	// Tell the parent about our loaded child
+-	cur->parent->waiting = NOT_WAITING;
+-	thread_unblock(cur->parent);
++  success = load (file_name, &if_.eip, &if_.esp);
+   
+   /* If load failed, quit. */
+-  if (!success)
+-		sys_exit(ERROR);
++  palloc_free_page (file_name);
++  if (!success) 
++    thread_exit ();
+ 
+-	// Yay child was loaded
+-	cur->parent->child_loaded = CHILD_LOADED;
+-	
+   /* Start the user process by simulating a return from an
+      interrupt, implemented by intr_exit (in
+      threads/intr-stubs.S).  Because intr_exit takes all of its
+@@ -152,32 +88,12 @@ start_process (void *file_name_)
+    This function will be implemented in problem 2-2.  For now, it
+    does nothing. */
+ int
+-process_wait (tid_t child_tid) 
++process_wait (tid_t child_tid UNUSED) 
+ {
+-	if(child_tid == TID_ERROR)
+-		return ERROR;
+-
+-  struct thread* parent = thread_current();
+-	struct thread* child = get_thread(child_tid);
+-	int status = ERROR;
+-
+-	if(child == NULL || child->waiting)
+-		return status;
+-	
+-	if(child->alive)
+-	{
+-		child->waiting = WAITING;		
+-		
+-		if(child->exiting == EXITING && child->status == THREAD_BLOCKED)
+-			return child->exit_status;		
+-
+-		// wait for the condition to be set to positive
+-		sema_down(&parent->condition);
+-
+-	}
+-
+-	return child->exit_status;
+-
++    // FIXME: @bgaster --- quick hack to make sure processes execute!
++  for(;;) ;
++    
++  return -1;
+ }
+ 
+ /* Free the current process's resources. */
+@@ -187,10 +103,7 @@ process_exit (void)
+   struct thread *cur = thread_current ();
+   uint32_t *pd;
+ 
+-	// we are exiting now
+-	cur->exiting = EXITING;
+-
+-	  /* Destroy the current process's page directory and switch back
++  /* Destroy the current process's page directory and switch back
+      to the kernel-only page directory. */
+   pd = cur->pagedir;
+   if (pd != NULL) 
+@@ -206,13 +119,6 @@ process_exit (void)
+       pagedir_activate (NULL);
+       pagedir_destroy (pd);
+     }
+-    
+-  // if we are the root thread then wait  
+-	if(strcmp(cur->name, "main") != 0)
+-	{
+-		sema_up(&(cur->parent)->condition);
+-		sema_down(&cur->condition);
+-	}
+ }
+ 
+ /* Sets up the CPU for running user code in the current
+@@ -230,7 +136,7 @@ process_activate (void)
+      interrupts. */
+   tss_update ();
+ }
+-
++
+ /* We load ELF binaries.  The following definitions are taken
+    from the ELF specification, [ELF1], more-or-less verbatim.  */
+ 
+@@ -238,7 +144,7 @@ process_activate (void)
+ typedef uint32_t Elf32_Word, Elf32_Addr, Elf32_Off;
+ typedef uint16_t Elf32_Half;
+ 
+-/* For use with ELF types in DEBUG_PRINT(). */
++/* For use with ELF types in printf(). */
+ #define PE32Wx PRIx32   /* Print Elf32_Word in hexadecimal. */
+ #define PE32Ax PRIx32   /* Print Elf32_Addr in hexadecimal. */
+ #define PE32Ox PRIx32   /* Print Elf32_Off in hexadecimal. */
+@@ -294,7 +200,7 @@ struct Elf32_Phdr
+ #define PF_W 2          /* Writable. */
+ #define PF_R 4          /* Readable. */
+ 
+-static bool setup_stack (void **esp, char* args_unparsed);
++static bool setup_stack (void **esp);
+ static bool validate_segment (const struct Elf32_Phdr *, struct file *);
+ static bool load_segment (struct file *file, off_t ofs, uint8_t *upage,
+                           uint32_t read_bytes, uint32_t zero_bytes,
+@@ -319,33 +225,16 @@ load (const char *file_name, void (**eip) (void), void **esp)
+   if (t->pagedir == NULL) 
+     goto done;
+   process_activate ();
+-  
+-	// allocate memory for a copy of filename
+-	char* f_namecpy = palloc_get_page(PAL_ZERO|PAL_ASSERT);
+-  
+-	if(f_namecpy == NULL)
+-	{
+-		printf ("load: cant allocate memory\n");
+-		goto done;
+-	}
+-	
+-	// load it into that page
+-	strlcpy(f_namecpy,file_name,PGSIZE);
+-	
+-	char* save_ptr;
+-	f_namecpy = strtok_r(f_namecpy," ",&save_ptr);
+-
+-	/* Open executable file. */
+-	file = filesys_open (f_namecpy);
+-
+-	if (file == NULL) 
+-	{
+-		printf ("load: %s: open failed\n", f_namecpy);
+-		goto done; 
+-	}
+-
+-	DEBUG_PRINT("proc name:%s\nfilename:%s\n\n",thread_current()->name, f_namecpy);
+-	
++
++  /* Open executable file. */
++  file = filesys_open (file_name);
++
++  if (file == NULL) 
++    {
++	printf ("load: %s: open failed\n", file_name);
++      goto done; 
++    }
++
+   /* Read and verify executable header. */
+   if (file_read (file, &ehdr, sizeof ehdr) != sizeof ehdr
+       || memcmp (ehdr.e_ident, "\177ELF\1\1\1", 7)
+@@ -359,7 +248,6 @@ load (const char *file_name, void (**eip) (void), void **esp)
+       goto done; 
+     }
+ 
+-
+   /* Read program headers. */
+   file_ofs = ehdr.e_phoff;
+   for (i = 0; i < ehdr.e_phnum; i++) 
+@@ -420,7 +308,7 @@ load (const char *file_name, void (**eip) (void), void **esp)
+     }
+ 
+   /* Set up stack. */
+-  if (!setup_stack (esp,file_name))
++  if (!setup_stack (esp))
+     goto done;
+ 
+   /* Start address. */
+@@ -429,24 +317,11 @@ load (const char *file_name, void (**eip) (void), void **esp)
+   success = true;
+ 
+  done:
+- 
+-   	// we cant allow program file to be changed
+-   	if(success)
+-   	{
+-   		file_deny_write(file);
+-  		t->cur_exec = file;
+- 		}
+- 		else
+- 			file_close(file);
+-
+- 	// dont forget to free the page
+- 	palloc_free_page(f_namecpy); 		
+- 		
+   /* We arrive here whether the load is successful or not. */
++  file_close (file);
+   return success;
+ }
+-
+-
++
+ /* load() helpers. */
+ 
+ static bool install_page (void *upage, void *kpage, bool writable);
+@@ -558,135 +433,20 @@ load_segment (struct file *file, off_t ofs, uint8_t *upage,
+ /* Create a minimal stack by mapping a zeroed page at the top of
+    user virtual memory. */
+ static bool
+-setup_stack (void **esp, char* args_unparsed)
++setup_stack (void **esp) 
+ {
+   uint8_t *kpage;
+   bool success = false;
+-  struct list_elem* e;
+ 
+   kpage = palloc_get_page (PAL_USER | PAL_ZERO);
+   if (kpage != NULL) 
+     {
+       success = install_page (((uint8_t *) PHYS_BASE) - PGSIZE, kpage, true);
+       if (success) {
+-
+-
+         *esp = PHYS_BASE;
+-
+       } else
+         palloc_free_page (kpage);
+     }
+-    
+-     /*********************************************************
+-     *                                                       *	
+-     * Parse and Push arguments to the Stack for our Process *
+-     *                                                       *
+-     *********************************************************/
+-    
+-    /*********************************************************
+-     *                  Parse the arguments                  *
+-     *********************************************************/
+-     
+-		// Allocate a page for thread data *for our args
+-		char *tmp_page = palloc_get_page (0);
+-		if (tmp_page == NULL)
+-		{
+-			success = NULL;
+-			return success;
+-		} 
+-
+-		// Initialize that page for our args and make a ptr for it
+-		memset(tmp_page,0,PGSIZE);
+-		char* tmp_page_ptr = tmp_page;
+-		char* token, saveptr;
+-		
+-		struct stack_data* program_stack_data = NULL;
+-  	program_stack_data = tmp_page_ptr;
+-		
+-		// Stack data for this proccess pointing to allocated page
+-		struct stack_data* tmp_stk_data = NULL;
+-		tmp_stk_data = tmp_page_ptr;
+-		
+-		/* Move pointer to location in page at top of the 
+-		   stack_data structure we are writing in */
+-		tmp_page_ptr += sizeof(struct stack_data);
+-		list_init(&program_stack_data->argv);
+-
+-		// Parse file and args
+-		for (token = strtok_r (args_unparsed, " ", &saveptr); 
+-					token != NULL;
+-		      token = strtok_r (NULL, " ", &saveptr)
+-					)
+-		{
+-			struct argument* args = NULL;
+-			args = (struct argument *)tmp_page_ptr;
+-			tmp_page_ptr += sizeof(struct argument);
+-			
+-			// If we go beyond our limit complain
+-			ASSERT(tmp_page_ptr - tmp_page <= PGSIZE);
+-			args->token=token;
+-			list_push_front(&tmp_stk_data->argv, &args->token_list_elem);
+-			tmp_stk_data->argc++;			
+-		}
+-		
+-		// Just put a 4 byte buffer at base;
+-		*esp -= 4;
+-		
+-		// Copy arg strings onto stack
+-		for (e = list_begin (&program_stack_data->argv);
+-				 e != list_end (&program_stack_data->argv);
+-		     e = list_next (e))
+-		{
+-		    struct argument *args = list_entry(e, struct argument, token_list_elem);
+-		    char *indexed_arg = args->token;
+-		    *esp -= (strlen(indexed_arg) + 1);
+-
+-		    strlcpy (*esp, indexed_arg, strlen(indexed_arg) + 1);
+-		    args->token = *esp;
+-		}
+-
+-    /*********************************************************
+-     *                  Setup the Frame                      *
+-     *********************************************************/
+-     
+-		// align data with 0 byte 
+-		uint8_t alignment_byte = 0;
+-		*esp -= (sizeof(uint8_t));
+-		*(uint8_t *)*esp = alignment_byte;
+-
+-		// last arg, null pointer for convention *argv[argc] = NULL
+-		char *last_arg  = NULL;
+-		*esp-= (sizeof(char *));
+-		*(int32_t *)*esp = (int32_t)last_arg;
+-
+-		// Iterating over the same list pushing the ptrs to the arguments strings
+-		// on the stack
+-		for (e = list_begin (&program_stack_data->argv);
+-				 e != list_end (&program_stack_data->argv);
+-				 )
+-		{
+-			struct argument *args = list_entry(e, struct argument, token_list_elem);
+-			char *indexed_arg = args->token;
+-			*esp -= (sizeof(char*));
+-			*(int32_t *)*esp = (int32_t)indexed_arg;
+-			e = list_next(e);
+-		}
+-
+-		// push argument vector pointer onto stack
+-		char **fst_arg_ptr = *esp;
+-		*esp -= (sizeof(char **));
+-		*(int32_t *)*esp = (int32_t)fst_arg_ptr;
+-		 
+-		// push argument count onto stack
+-		*esp -=(sizeof(program_stack_data->argc));
+-		*(int32_t *)*esp = program_stack_data->argc;
+-		   
+-		// fake the return addr in stack frame
+-		void *fake_return_addr  = 0;
+-		*esp -= (sizeof(void *));
+-		*(int32_t *)*esp = (int32_t)fake_return_addr;    
+-    
+-    
+   return success;
+ }
+ 
+diff --git a/source/userprog/process.h b/source/userprog/process.h
+index bb42745..688cd2a 100644
+--- a/source/userprog/process.h
++++ b/source/userprog/process.h
+@@ -2,43 +2,6 @@
+ #define USERPROG_PROCESS_H
+ 
+ #include "threads/thread.h"
+-#include "threads/synch.h"
+-#include "hash.h"
+-
+-#define CHILD_LOADED 			1
+-#define CHILD_NOT_LOADED 	0
+-#define CHILD_LOAD_FAILED -1
+-#define WAITING 					1
+-#define NOT_WAITING 			0
+-#define EXITING 					0
+-#define NOT_EXITING 			1
+-#define ALIVE 						1
+-#define DEAD 							0
+-#define ERROR 						-1
+-#define INITIAL_FD 				3
+-
+-/* List of open files in a process */
+-struct proc_fd_list{
+-	int fd;
+-	struct file* file;
+-	struct list_elem elem;
+-};
+-
+-/* Used for pushing arguments to the stack */
+-struct argument
+-{
+-	char* token;
+-	struct list_elem token_list_elem;
+-};
+-
+-/* Where we store the arguments after parsing */
+-struct stack_data
+-{
+-	struct list argv;
+-	int argc;
+-};
+-
+-struct lock filesys_lock;
+ 
+ tid_t process_execute (const char *file_name);
+ int process_wait (tid_t);
+diff --git a/source/userprog/syscall.c b/source/userprog/syscall.c
+index a76b5c3..0463515 100644
+--- a/source/userprog/syscall.c
++++ b/source/userprog/syscall.c
+@@ -1,613 +1,21 @@
+ #include "userprog/syscall.h"
+ #include <stdio.h>
+-#include <user/syscall.h>
+ #include <syscall-nr.h>
+ #include "threads/interrupt.h"
+-#include "threads/vaddr.h"
+-#include "threads/malloc.h"
+-#include "lib/user/syscall.h"
+ #include "threads/thread.h"
+-#include "threads/synch.h"
+-#include "userprog/process.h"
+-#include "filesys/file.h"
+-#include "filesys/filesys.h"
+ 
++static void syscall_handler (struct intr_frame *);
+ 
+-void syscall_init (void) 
++void
++syscall_init (void) 
+ {
+- 	lock_init(&filesys_lock);
+   intr_register_int (0x30, 3, INTR_ON, syscall_handler, "syscall");
+ }
+ 
+ 
+-static void syscall_handler (struct intr_frame *frame)
++static void
++syscall_handler (struct intr_frame *f UNUSED)
+ {
+-	
+-	// Grab stack pointer
+-	uint32_t *esp = (uint32_t*)frame->esp;
+-
+-	// Is the Stack Pointer Valid?
+-	check_userland_addr(esp);
+-	
+-	// Grab syscall number
+-	int syscall_num = *esp;
+-
+-	DEBUG_PRINT("\nCalling syscall:%d\n\n",syscall_num);
+-
+-	// Check if its a valid syscall
+-	ASSERT(syscall_num < SYS_NUM_SYSCALLS);
+-	
+-	// Now call our syscall
+-	int arg[MAX_ARGS];
+-	
+-	// Now Branch
+-	switch(syscall_num)
+-	{
+-	
+-	case SYS_HALT: // 0
+-		{
+-		
+-			frame->eax = sys_halt();
+-			break;
+-		}
+-	case SYS_EXIT: // 1
+-		{
+-			int status = (int)get_stack_argument(frame,0);
+-			
+-			sys_exit(status);
+-			break;
+-		}
+-	case SYS_EXEC: // 2
+-		{
+-			const void* cmd = get_stack_argument(frame,0);
+-			
+-			check_userland_addr((void*)cmd);
+-			
+-			frame->eax = sys_exec(cmd);
+-			break;
+-		}
+-	case SYS_WAIT: // 3
+-		{
+-			pid_t pid = (pid_t)get_stack_argument(frame,0);
+-		
+-			frame->eax = sys_wait(pid);
+-			break;
+-		}
+-	case SYS_CREATE: // 4
+-		{
+-			const char* filename = (const char*)get_stack_argument(frame,0);
+-			unsigned size = (unsigned)get_stack_argument(frame,1);
+-			
+-			check_userland_addr((void*)filename);
+-			
+-			frame->eax = sys_create(filename, size);
+-			break;
+-		}
+-	case SYS_REMOVE: // 5
+-		{
+-			const char* filename = (const char*)get_stack_argument(frame,0);
+-			check_userland_addr((void*)filename);
+-			
+-			frame->eax = sys_remove(filename);
+-			break;
+-		}
+-	case SYS_OPEN: // 6
+-		{
+-		
+-			const char* filename = (const char*)get_stack_argument(frame,0);
+-			check_userland_addr((void*)filename);
+-
+-			frame->eax =  sys_open(filename);
+-			break;
+-		}
+-	case SYS_FILESIZE: // 7
+-		{
+-		
+-			int fd = (int)get_stack_argument(frame,0);
+-			
+-			frame->eax = sys_filesize(fd);
+-			break;
+-		}
+-	case SYS_READ: // 8
+-		{
+-			int fd = (int)get_stack_argument(frame,0);
+-			char *buffer = (const char*)get_stack_argument(frame,1);
+-			unsigned size = (unsigned)get_stack_argument(frame,2);
+-			
+-			check_userland_buffer(buffer,size);
+-			
+-			frame->eax = sys_read(fd, buffer, size);
+-			break;
+-		}
+-	case SYS_WRITE: // 9
+-		{
+-		
+-			int fd = (int)get_stack_argument(frame,0);
+-			const void *buffer = (const void*)get_stack_argument(frame,1);
+-			unsigned size = (unsigned)get_stack_argument(frame,2);
+-
+-			check_userland_buffer(buffer,size);
+-			
+-			frame->eax = sys_write(fd, buffer, size);
+-			break;
+-		}
+-	case SYS_SEEK: // 10
+-		{
+-			int fd = (int)get_stack_argument(frame,0);
+-			unsigned pos = (unsigned)get_stack_argument(frame,1);
+-		
+-			sys_seek(fd, pos);
+-			break;
+-		}
+-	case SYS_TELL: // 11
+-		{
+-			int fd = (int)get_stack_argument(frame,0);
+-		
+-			frame->eax = sys_tell(fd);
+-			break;
+-		}
+-	case SYS_CLOSE: // 12
+-		{
+-			int fd = (int)get_stack_argument(frame,0);
+-					
+-			frame->eax = sys_close(fd);
+-			break;
+-		}
+-	case SYS_MMAP: // 13
+-		{
+-		
+-			//mmap();
+-			break;
+-		}
+-	case SYS_MUNMAP: // 14
+-		{
+-		
+-			//munmap();
+-			break;
+-		}
+-
+-	// Oops!
+-	default:
+-		DEBUG_PRINT("Syscall Not Implemented!\n\tsyscall_num:%d\n\n",syscall_num);
+-	
+-	}
+-	
+-}
+-
+-
+-void sys_halt(void)
+-{
+-	shutdown_power_off();
+-}
+-
+-
+-void sys_exit(int status)
+-{
+-	struct thread* cur = thread_current();
+-	struct list_elem* e;	
+-	char* fname, saveptr;
+-
+-	// print name and status before exit
+-	printf("%s: exit(%d)\n", cur->name,status);
+-	
+-	// assign the thread the status
+-	cur->exit_status = status;
+-	
+-	thread_exit();
+-	
+-}
+-
+-
+-pid_t sys_exec(const char* cmd)
+-{
+-	DEBUG_PRINT("EXEC:%s\n",cmd);
+-	
+-	tid_t tid = process_execute(cmd);
+-	
+-	return tid;
+-}
+-
+-
+-int sys_wait(pid_t pid)
+-{
+-	return process_wait(pid);
+-}
+-
+-
+-int sys_create(const char* filename, unsigned size)
+-{
+-
+-	int ret = -1;
+-	
+-	lock_acquire(&filesys_lock);
+-	ret = filesys_create(filename, size);
+-	lock_release(&filesys_lock);
+-	
+-	return ret;
+-}
+-
+-
+-int sys_remove(const char* filename)
+-{
+-	int ret = -1;
+-	
+-	lock_acquire(&filesys_lock);
+-	ret = filesys_remove(filename);
+-	lock_release(&filesys_lock);
+-	
+-	return ret;
+-}
+-
+-
+-int sys_open(const char* filename)
+-{	
+-	struct file *f;
+-	int status = -1;
+-	int fd;
+-	struct thread* cur_td = thread_current();
+-	
+-	// synch filesystem usage
+-	lock_acquire(&filesys_lock);
+-	
+-	// open file and get the struct file pointer of the file
+-	f = filesys_open(filename);
+-	
+-	// handle filesys open error
+-	if(f == NULL)
+-	{
+-		lock_release(&filesys_lock);
+-		return -1;
+-	}
+-
+-	// time to add this file to our threads open files
+-	struct proc_fd_list* fd_list = palloc_get_page(0);
+-	
+-	// incase we cant allocate for our list
+-	if(!fd_list)
+-	{
+-		lock_release(&filesys_lock);
+-		return -1;	
+-	} 
+-
+-	// grab the current threads file list
+-	struct list* td_file_list = &cur_td->thread_file_list;
+-
+-	// add our new fd and file * to our processes list
+-	fd_list->fd = new_fd();	
+-	fd_list->file = f;
+-	file_deny_write(f);
+-	
+-	// now add the elem from our list to the threads list
+-	list_push_back(td_file_list, &(fd_list->elem));
+-
+-	fd = fd_list->fd;
+-
+-	lock_release (&filesys_lock);
+-	
+-	return fd;		
+-}
+-
+-
+-int sys_filesize(int fd)
+-{
+-
+-	int ret = -1;
+-	
+-	lock_acquire(&filesys_lock);
+-	
+-	struct proc_fd_list* proc_file = get_process_file(fd);
+-	  
+-	if(proc_file != NULL)
+-		ret = file_length(proc_file->file);
+-	
+-	lock_release(&filesys_lock);
+-	return ret;
+-}
+-
+-
+-
+-int sys_read(int fd, char* buffer, unsigned size)
+-{
+-		int i;
+-		int ret = -1;
+-		
+-		// why do anything		
+-		if(size < 1)return 0;
+-
+-		// stdio handling
+-		if(fd == STDOUT_FILENO || fd == STDERR_FILENO)return ret;
+-		
+-		if(fd == STDIN_FILENO)
+-		{
+-			*(buffer++) = input_getc();
+-			return 1;
+-		}
+-
+-		// normal files		
+-		struct file *f;
+-
+-		lock_acquire(&filesys_lock);
+-	
+-	  struct proc_fd_list* proc_file = get_process_file(fd);
+-
+-	  if(proc_file != NULL)
+-	  	ret = file_read(proc_file->file, buffer, size);
+-	
+-		lock_release (&filesys_lock);
+-		
+-		return ret;
+-}
+-
+-int sys_write(int fd, const void* buffer, unsigned size)
+-{
+-		int ret = -1;
+-		
+-		// why do anything
+-		if(size < 1)return 0;
+-
+-		// stdio handling
+-		if(fd == STDIN_FILENO || fd == STDERR_FILENO)return ret;
+-		
+-		if(fd == STDOUT_FILENO)
+-		{
+-			putbuf(buffer,size);
+-			return size;
+-		}
+-
+-		// normal files		
+-		struct file *f;
+-
+-		lock_acquire(&filesys_lock);
+-	
+-	  struct proc_fd_list* proc_file = get_process_file(fd);
+-	  
+-	  if(proc_file != NULL)
+-	  {
+-	  	file_allow_write(proc_file->file);
+-	  	ret = file_write(proc_file->file, buffer, size);
+-	  	file_deny_write(proc_file->file);
+-		}
+-		
+-		lock_release (&filesys_lock);
+-
+-		return ret;
+-}
+-
+-
+-
+-void sys_seek(int fd, unsigned pos)
+-{
+-		struct proc_fd_list* proc_file = get_process_file(fd);
+-		
+-	  if(proc_file == NULL || proc_file->file == NULL)
+-	  	sys_exit(-1);
+-	  
+-		lock_acquire(&filesys_lock);
+-		file_seek(proc_file->file,pos);
+-		lock_release(&filesys_lock);
+-}
+-
+-
+-int32_t sys_tell(int fd)
+-{
+-		int32_t cur_offset = -1;
+-		struct proc_fd_list* proc_file = get_process_file(fd);
+-		
+-	  if(proc_file == NULL || proc_file->file == NULL)
+-	  	sys_exit(-1);
+-
+-		lock_acquire(&filesys_lock);
+-		cur_offset = file_tell(proc_file->file);
+-		lock_release(&filesys_lock);
+-	
+-		return cur_offset;
+-}
+-
+-int sys_close(int fd)
+-{
+-		struct thread* cur = thread_current();
+-
+-		if(fd < 3 || cur->fd_next >= fd)return -1;
+-
+-		struct proc_fd_list* proc_file = get_process_file(fd);
+-		
+-	  if(proc_file == NULL || proc_file->file == NULL)
+-	  	sys_exit(-1);
+-	
+-		lock_acquire(&filesys_lock);
+-		
+-		file_allow_write(proc_file->file);
+-		file_close(proc_file->file);
+-
+-		list_remove(&(proc_file->elem));
+-		palloc_free_page(proc_file);
+-
+-		
+-		lock_release(&filesys_lock);
+-	
+-		return 0;
+-}
+-/*
+-void sys_mmap(struct init_frame *frame UNUSED)
+-{
+-
+-}
+-
+-void sys_munmap(struct init_frame *frame UNUSED)
+-{
+-
+-}*/
+-
+-//	==============	HELPER FUNCTIONS ===============
+-
+-// A nice simple hexdump function
+-int hexDump(const void *data, int size)
+-{
+-	unsigned char *d = (unsigned char *)data;
+-	int consoleSize = 16;
+-	char b[consoleSize + 3];
+-	int i;
+-
+-	if(data == 0){
+-		return -1;
+-		}
+-	b[0] = '|';
+-	b[consoleSize + 1] = '|';
+-	b[consoleSize + 2] = '\0';
+-	
+-	DEBUG_PRINT("\n-------HEX DUMP------\n");
+-	for (i = 0; i < size; i++)
+-	{
+-		if ((i % consoleSize) == 0)
+-		{
+-			if (i != 0){
+-				DEBUG_PRINT("  %s\n", b);
+-				}
+-			DEBUG_PRINT("%08lx ", (unsigned char *)data + i);
+-		}
+-
+-		if(i % consoleSize == 8)
+-			DEBUG_PRINT(" ");
+-		DEBUG_PRINT(" %02x", d[i]);
+-
+-		if (d[i] >= ' ' && d[i] <= '~')
+-			b[i % consoleSize + 1] = d[i];
+-		else
+-			b[i % consoleSize + 1] = '.';
+-	}
+-	while((i % consoleSize) != 0)
+-	{
+-		if(i % consoleSize == 8)
+-			DEBUG_PRINT("    ");
+-		else
+-			DEBUG_PRINT("   ");
+-		b[i % consoleSize + 1] = '.';
+-		i++;
+-	}
+-	DEBUG_PRINT("  %s\n\n", b);
+-
+-	return 0;
+-}
+-
+-// generates a new file descriptor reserving 0,1,2 for stdio
+-static int new_fd()
+-{
+-	struct thread* cur = thread_current();
+-	int fd_cur = cur->fd_next;
+-	
+-	// update thread +1 after return
+-	return cur->fd_next++;
+-}
+-
+-
+-// evaluate pointer into userland, if invalid exit the process
+-static void check_userland_addr (const void *ptr)
+-{
+-
+-  // check if pointer is to somewhere and is in the userland address space
+-	if (ptr == NULL || 
+-			!is_user_vaddr(ptr) ||
+-			ptr >= PHYS_BASE ||
+-			pagedir_get_page(thread_current()->pagedir, ptr) == NULL
+-			)
+-  {
+-    // exit if address is not valid
+-    sys_exit(-1);
+-    NOT_REACHED();
+-  }
+-
+-}
+-
+-
+-// evaluate useland buffer pointer by pointer
+-static void check_userland_buffer (void *buffer, size_t size)
+-{
+-
+-	char* tmp_buf = (char *)buffer;
+-	
+-	for(size_t i = 0; i < size; i++)
+-	{
+-		check_userland_addr((void*)tmp_buf);
+-		tmp_buf++;
+-	}
+-}
+-
+-
+-// gets stack argument with indexex arg to point into stack frame
+-uint32_t get_stack_argument(struct intr_frame *frame, unsigned int index)
+-{
+-	
+-  uint32_t *p = (uint32_t*)frame->esp + index + 1;
+-
+-  // evaluate stack pointer before using it
+-  check_userland_addr ((void *)p);
+-
+-  return *p;
++  printf ("system call!\n");
++  thread_exit ();
+ }
+-
+-
+-void close_all_files(void)
+-{
+-
+-	struct thread* cur_td = thread_current();
+-	struct list_elem* e;
+-
+-	if(list_empty(&cur_td->thread_file_list))
+-	{
+-		return;
+-	}
+-	else
+-	{
+-		for(e = list_begin(&cur_td->thread_file_list); 
+-				e != list_end(&cur_td->thread_file_list);
+-				e = list_next(e))
+-		{
+-		
+-
+-			struct proc_fd_list* proc_file = list_entry(e, struct proc_fd_list, elem);
+-			//e = list_pop_front(proc_file);
+-			
+-			if(proc_file)
+-			{
+-				if(proc_file->file)
+-				{
+-					file_close(proc_file->file);
+-				}
+-				list_remove(proc_file);
+-			}
+-			//palloc_free_page(proc_file);
+-		}
+-	}
+-}
+-
+-
+-struct proc_fd_list* get_process_file(int fd)
+-{
+-
+-	struct thread* cur_td = thread_current();
+-	struct list_elem* e;
+-
+-	if(list_empty(&cur_td->thread_file_list))
+-	{
+-		return NULL;
+-	}
+-	else
+-	{
+-		for(e = list_begin(&cur_td->thread_file_list); 
+-				e != list_end(&cur_td->thread_file_list);
+-				e = list_next(e))
+-		{
+-		
+-			struct proc_fd_list* proc_file = list_entry(e, struct proc_fd_list, elem);
+-
+-			if(proc_file->fd == fd)
+-			{
+-				return proc_file;
+-			}
+-		}
+-		
+-		return NULL;
+-	}
+-
+-}
+-
+diff --git a/source/userprog/syscall.h b/source/userprog/syscall.h
+index c4ee7ad..9059096 100644
+--- a/source/userprog/syscall.h
++++ b/source/userprog/syscall.h
+@@ -1,71 +1,6 @@
+ #ifndef USERPROG_SYSCALL_H
+ #define USERPROG_SYSCALL_H
+-#include "hash.h"
+-#include "lib/user/syscall.h"
+-#include "threads/interrupt.h"
+ 
+-#define NOT_LOADED 0
+-#define SUCCESSFUL_LOAD 1
+-#define FAILED_LOAD 2
+-
+-
+-/* Debug Logging */
+-//#define DEBUG true
+-
+-#ifdef DEBUG
+-#define DEBUG_PRINT(...)                       \
+-    do {                                    \
+-             printf(__VA_ARGS__);           \
+-    } while(0)
+-#else
+-#define	DEBUG_PRINT(...) \
+-		while(0)
+-#endif
+-
+-
+-/* Stdio defines */
+-#define STDIN_FILENO 0
+-#define STDOUT_FILENO 1
+-#define STDERR_FILENO 2
+-
+-// For Bounds Checking
+-#define USER_VIRTUAL_ADDR_BOTTOM 0x8048000
+-
+-#define MAX_ARGS 5
+-
+-
+-
+-// Stack Pointer
+-uint32_t *esp;
+-
+-/* Syscall Handler */
+ void syscall_init (void);
+-static void syscall_handler (struct intr_frame *frame);
+-
+-/* Helper functions */
+-static int new_fd(void);
+-static void check_userland_addr (const void *ptr);
+-static void check_userland_buffer (void *buffer, size_t size);
+-uint32_t get_stack_argument(struct intr_frame *frame, unsigned int index);
+-void close_all_files(void);
+-struct proc_fd_list* get_process_file(int fd);
+-int hexDump(const void *data, int size);
+-
+-
+-/* System calls */
+-void sys_exit(int status);
+-pid_t sys_exec(const char* cmd);
+-int sys_wait(pid_t pid);
+-int sys_create(const char* filename, unsigned size); 
+-int sys_remove(const char* filename);
+-int sys_open(const char* filename);
+-int sys_filesize(int fd);
+-int sys_read(int fd, char* buffer, unsigned size);
+-int sys_write(int fd, const void* buffer, unsigned size);
+-void sys_seek(int fd, unsigned pos);
+-int32_t sys_tell(int fd);
+-int sys_close(int fd);
+-void sys_munmap(struct init_frame *frame UNUSED);
+-void sys_mmap(struct init_frame *frame UNUSED);
+ 
+ #endif /* userprog/syscall.h */
+diff --git a/source/utils/pintos b/source/utils/pintos
+index ef03e37..16a725a 100755
+--- a/source/utils/pintos
++++ b/source/utils/pintos
+@@ -1,6 +1,6 @@
+ #! /usr/bin/perl -w
+ 
+-#use strict;
++use strict;
+ use POSIX;
+ use Fcntl;
+ use File::Temp 'tempfile';
+diff --git a/source/utils/pintos-gdb b/source/utils/pintos-gdb
+index 2167235..4ef38d3 100755
+--- a/source/utils/pintos-gdb
++++ b/source/utils/pintos-gdb
+@@ -1,7 +1,7 @@
+ #! /bin/sh
+ 
+ # Path to GDB macros file.  Customize for your site.
+-GDBMACROS=/home/seed/Downloads/os/Pintos/misc/gdb-macros
++GDBMACROS=/usr/class/cs140/pintos/pintos/src/misc/gdb-macros
+ 
+ # Choose correct GDB.
+ if command -v i386-elf-gdb >/dev/null 2>&1; then
+-- 
+2.18.0
+
+

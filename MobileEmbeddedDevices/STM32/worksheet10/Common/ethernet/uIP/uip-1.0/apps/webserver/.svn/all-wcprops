@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver
+END
+makestrings
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver/makestrings
+END
+http-strings.c
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver/http-strings.c
+END
+webserver.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver/webserver.h
+END
+http-strings.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver/http-strings.h
+END
+makefsdata
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver/makefsdata
+END
+httpd.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver/httpd.c
+END
+httpd-fsdata.c
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver/httpd-fsdata.c
+END
+httpd-cgi.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver/httpd-cgi.c
+END
+http-strings
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver/http-strings
+END
+httpd.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver/httpd.h
+END
+httpd-fsdata.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver/httpd-fsdata.h
+END
+httpd-cgi.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver/httpd-cgi.h
+END
+httpd-fs.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver/httpd-fs.c
+END
+httpd-fs.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver/httpd-fs.h
+END
+Makefile.webserver
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/bTbH6O__ir4lB7acwqjQWU/!svn/ver/3/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/apps/webserver/Makefile.webserver
+END
