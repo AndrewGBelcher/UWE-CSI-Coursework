@@ -4,24 +4,68 @@
 #include <stdlib.h>
 #include <string.h>
 
+// find highest number in file by parallel processing parsed data
+
 using namespace std;
 
 
 
 void process_buffer(char* buffer, size_t size) 
 {
+
+	int high;
 	int nums[size];
-	printf("size:%d\n");
 	int i = 0;
 	char *token;
+	char tmp[50];
+	int var;
+	int numcnt;
+  int th_id, nthreads;
 
-	//printf("%s",buffer);
+	memset(nums,0,size);
 
-	while ((token = strtok(buffer, " ")) != NULL) 
+	token = strtok (buffer, " ");
+	while (token != NULL)
 	{
-	    nums[i] = atoi(token);
-	    printf("num %d:%d token:%s\n",i,nums[i],buffer[i]);
+		sscanf (token, "%d ", &var);
+		nums[i] = var;
+		
+		i++;
+		numcnt++;
+		token = strtok (NULL, " ");
 	}
+
+	int d;
+	int numchk;
+
+	#pragma omp parallel private(th_id)
+	{
+    th_id = omp_get_thread_num();
+    #pragma omp parallel for private(d,numchk) shared(nums, high) schedule(static,1)
+		for(d = 0; d < numcnt; d++)
+		{
+
+			#pragma omp critical 
+			{
+				numchk = nums[d];
+
+				if(numchk > high)
+					high = numchk;
+			}
+		}
+		printf("high: %d from thread %d\n", high, th_id);
+		#pragma omp barrier    //    <----------- master waits until all threads finish before printing 
+		if(th_id == 0)
+		{
+		  nthreads = omp_get_num_threads();
+		  printf("There are %d threads\n",nthreads);
+		}
+
+   	}
+
+printf("high is:%d\n",high);
+	
+
 
 }
 
@@ -33,7 +77,11 @@ int main ()
   size_t result;
 
   f = fopen ( "ints.txt" , "r" );
-  if (f==NULL) {fputs ("File error",stderr); exit (1);}
+  if (f==NULL) 
+  {
+	fputs ("File error",stderr); 
+	exit (1);
+	}
 
   // obtain file size:
   fseek (f , 0 , SEEK_END);
