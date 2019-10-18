@@ -1,8 +1,8 @@
 /************************************************************************************
-*				Parallel AES-CBC-128 Weak Key Brute forcer
-*			(position 0-3, 4 bytes targeted, adjust to your needs)
+*		Parallel AES-CBC-128 Weak Key Brute forcer
+*	   (position 0-3, 4 bytes targeted, adjust to your needs)
 *
-*							Author: Andrew Belcher
+*			  Author: Andrew Belcher
 *************************************************************************************/
 #include <stdio.h>
 #include <string.h>
@@ -121,7 +121,7 @@ int main(void)
 
 	// Crypto materials
 	uint8_t key[0x10], iv[0x10];
-	uint8_t ct[0x10];// = {0x45,0x44,0xb0,0xbd,0x78,0x82,0x8d,0xd4,0x3d,0x12,0x5c,0xd5,0xcd,0x99,0xf6,0x89};
+	uint8_t ct[0x10];
 	uint8_t pt[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; // something easy to detect when key is found during decryption
 
 
@@ -148,10 +148,6 @@ int main(void)
 
 	memset(iv,0,16);
 
-	//AES_set_encrypt_key(key, 16, &enc_key);
-   // AES_cbc_encrypt(pt, ct, 16, &key, iv, AES_ENCRYPT);
-
-//	encrypt (pt, 16, key, iv,ct);
 	aes128cbc_enc(key, iv, pt, 16, ct); // encrypt ciphertext
 
 
@@ -160,7 +156,6 @@ int main(void)
 	hexDump(&key,16);
 
 	printf("\nDividing the workload...\n");
-
 
 
 	// Loops in parallel
@@ -192,9 +187,6 @@ int main(void)
 
 			// Decrypt ciphertext
 			aes128cbc (key_guess, iv, ct, 16, out);
-			//	encrypt (ct, 16, key_guess, iv,out);
-			//AES_cbc_encrypt(pt, ct, 16, &key, iv, AES_ENCRYPT);
-			//AES_cbc_encrypt(ct, out, 16, &key_guess, iv, AES_DECRYPT);
 
 			// Check if plaintext is 0s where we have bruteforced the correct symmetric key
 			if(!memcmp(out, pt, 16))
@@ -208,6 +200,7 @@ int main(void)
 				bk = 1;
 
 			}
+
 			index++;
 		}
 	}
