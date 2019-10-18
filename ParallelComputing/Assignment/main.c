@@ -15,6 +15,7 @@
 
 #include "aes.h"
 
+#define NUM_THREADS 5
 
 // AES Cipher Block Chain Decryption wrapper
 void aes128cbc(uint8_t *key, uint8_t *iv_in, uint8_t *in, uint64_t len, uint8_t *out)
@@ -127,17 +128,16 @@ int main(void)
 
 	// Parallel work load variables
 	uint32_t index = 0;
-	int num_threads = 6;
-	uint32_t index_list[num_threads];
-	uint32_t work_div_value = 0x100000000 / num_threads;
+	uint32_t index_list[NUM_THREADS];
+	uint32_t work_div_value = 0x100000000 / NUM_THREADS;
 
 	index_list[0] = work_div_value;
 
-	for(int i = 1; i < num_threads; i++)
+	for(int i = 1; i < NUM_THREADS; i++)
 		index_list[i] = work_div_value + index_list[i-1];
 
 	printf("max num of threads:%d\n",omp_get_max_threads());
-	printf("num of threads used:%d\n",num_threads);
+	printf("num of threads used:%d\n",NUM_THREADS);
 
 
 	// Setup crypto material and generate cipher text to run against
@@ -159,7 +159,7 @@ int main(void)
 
 
 	// Loops in parallel
-	#pragma omp parallel shared(bk,key,ct) private(index) num_threads(num_threads)
+	#pragma omp parallel shared(bk,key,ct) private(index) num_threads(NUM_THREADS)
 	{
 		int cur_thread = omp_get_thread_num();
 
