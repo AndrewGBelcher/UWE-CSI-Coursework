@@ -180,9 +180,9 @@ int main(void)
 
 			// Pull bytes from iterating index
 			key_guess[0] = (uint8_t)index&0xff; 
-			key_guess[1] = (uint8_t)(index >> 8); 
+			key_guess[1] = (uint8_t)(index >> 8)&0xff; 
 			key_guess[2] = (uint8_t)(index >> 16)&0xff; 
-			key_guess[3] = (index >> 24)&0xff; 
+			key_guess[3] = (uint8_t)(index >> 24)&0xff; 
 		
 
 			// Decrypt ciphertext
