@@ -1,8 +1,8 @@
 /************************************************************************************
-*		Parallel AES-CBC-128 Weak Key Brute forcer
-*	   (position 0-3, 4 bytes targeted, adjust to your needs)
+*				Parallel AES-CBC-128 Weak Key Brute forcer
+*			(position 0-3, 4 bytes targeted, adjust to your needs)
 *
-*			  Author: Andrew Belcher
+*							Author: Andrew Belcher
 *************************************************************************************/
 #include <stdio.h>
 #include <string.h>
@@ -15,7 +15,7 @@
 
 #include "aes.h"
 
-#define NUM_THREADS 5
+#define uint128_t __uint128_t
 
 // AES Cipher Block Chain Decryption wrapper
 void aes128cbc(uint8_t *key, uint8_t *iv_in, uint8_t *in, uint64_t len, uint8_t *out)
@@ -116,9 +116,62 @@ int hexDump(const void *data, size_t size)
 	return 0;
 }
 
-int main(void)
+void printHelp(void)
+{
+			printf("Please enter both options with sensible values:\n\t\t-t <thread number>\n\t\t-k <number of bytes to bruteforce in key>\n");
+			printf("\n\ni.e. brute -t 3 -k 3\n");
+			printf("\nThe key bytes count should be from 1-5\nAnd the thread count should be from 1-max number of threads for the machine\n");
+}
+
+int main(int argc, char *argv[])
 {
 	volatile bool bk = 0; // flow control aka break functionality shared across threads
+
+	int num_of_bytes_missing = 0;
+	int num_threads = 0;
+	uint8_t replace_bytes[16];
+
+	for(int i = 0; i < argc; i++)
+	{
+		if(!strcmp(argv[i], "-t") && i != argc-1)
+			num_threads = atoi(argv[i+1]);
+
+		if(!strcmp(argv[i], "-k") && i != argc-1)
+			num_of_bytes_missing = atoi(argv[i+1]);		
+
+		if(!strcmp(argv[i], "-b") && i != argc-1)
+		{
+			for (int p = 0; p < (strlen(argv[i+1]) / 2); p++) {
+				sscanf(argv[i+1] + 2*p, "%02x", &replace_bytes[p]);
+			}			
+		}
+
+
+		if(!strcmp(argv[i],"-h"))
+		{
+			printHelp();
+			exit(0);
+		}
+	}
+
+
+	if(num_of_bytes_missing > 5)
+	{
+		printf("Oh hello mr NSA!\nLet me just super cool the quantum cluster computer for you first...\n");
+		exit(1);
+	}
+	/*
+	if(num_threads > omp_get_max_threads()+20)
+	{
+		printf("You trying to freeze your PC bro?\n");
+		exit(2);
+	}*/
+
+	if(num_threads == 0 || num_of_bytes_missing == 0)
+	{
+		printHelp();
+		exit(3);
+	}
 
 	// Crypto materials
 	uint8_t key[0x10], iv[0x10];
@@ -127,24 +180,27 @@ int main(void)
 
 
 	// Parallel work load variables
-	uint32_t index = 0;
-	uint32_t index_list[NUM_THREADS];
-	uint32_t work_div_value = 0x100000000 / NUM_THREADS;
+	uint64_t index = 0;
+	uint64_t index_list[num_threads];
+	uint64_t byte_upper = 0x100;
+	uint64_t work_div_value = (byte_upper << (uint64_t)((num_of_bytes_missing-1)*8))/num_threads; 
 
-	index_list[0] = work_div_value;
+	printf("work divider value is 0x%016llx\n",work_div_value);
 
-	for(int i = 1; i < NUM_THREADS; i++)
+	index_list[0] = 0;
+
+	for(int i = 1; i < num_threads; i++)
 		index_list[i] = work_div_value + index_list[i-1];
 
 	printf("max num of threads:%d\n",omp_get_max_threads());
-	printf("num of threads used:%d\n",NUM_THREADS);
+	printf("num of threads used:%d\n",num_threads);
 
 
 	// Setup crypto material and generate cipher text to run against
 	srand(time(0));
 
 	for(int i=0; i < 16; i++)
-		key[i] = random()%256;// randomize key to guess
+		key[i] = replace_bytes[i];//random()%256;// randomize key to guess
 
 	memset(iv,0,16);
 
@@ -159,7 +215,7 @@ int main(void)
 
 
 	// Loops in parallel
-	#pragma omp parallel shared(bk,key,ct) private(index) num_threads(NUM_THREADS)
+	#pragma omp parallel shared(bk,key,ct) private(index) num_threads(num_threads)
 	{
 		int cur_thread = omp_get_thread_num();
 
@@ -173,17 +229,16 @@ int main(void)
 
 		// List how workload is divided
 		index = index_list[cur_thread];
-		printf("thread:%d index:%x\n",cur_thread,index);
+		printf("thread:%d index:0x%016llx\n",cur_thread,index);
 
 		while(!bk)
 		{
 
 			// Pull bytes from iterating index
-			key_guess[0] = (uint8_t)index&0xff; 
-			key_guess[1] = (uint8_t)(index >> 8)&0xff; 
-			key_guess[2] = (uint8_t)(index >> 16)&0xff; 
-			key_guess[3] = (uint8_t)(index >> 24)&0xff; 
-		
+			for(int i = 0; i < num_of_bytes_missing; i++)
+			{
+				key_guess[i] = (uint8_t)(index >> i*8)&0xff; 
+			}
 
 			// Decrypt ciphertext
 			aes128cbc (key_guess, iv, ct, 16, out);
