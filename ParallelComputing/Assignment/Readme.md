@@ -3,11 +3,11 @@
 ## How to use
 Requires Python 2.7 for benchmark.py with the following dependancies:
 ```
-	1. matplot
-	2. numpy
-	3. scipy
-	4. symfit
-	5. progress
+1. matplot
+2. numpy
+3. scipy
+4. symfit
+5. progress
 ```
 To install:
 ```
