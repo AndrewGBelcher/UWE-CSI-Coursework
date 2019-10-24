@@ -1,8 +1,8 @@
 /************************************************************************************
-*				Parallel AES-CBC-128 Weak Key Brute forcer
-*			(position 0-3, 4 bytes targeted, adjust to your needs)
+* Parallel AES-CBC-128 Weak Key Brute forcer
+* (note) position 0-3, 4 bytes targeted, adjust to your needs
 *
-*							Author: Andrew Belcher
+* Author: Andrew Belcher
 *************************************************************************************/
 #include <stdio.h>
 #include <string.h>
@@ -118,9 +118,9 @@ int hexDump(const void *data, size_t size)
 
 void printHelp(void)
 {
-			printf("Please enter both options with sensible values:\n\t\t-t <thread number>\n\t\t-k <number of bytes to bruteforce in key>\n");
-			printf("\n\ni.e. brute -t 3 -k 3\n");
-			printf("\nThe key bytes count should be from 1-5\nAnd the thread count should be from 1-max number of threads for the machine\n");
+	printf("Please enter both options with sensible values:\n\t\t-t <thread number>\n\t\t-k <number of bytes to bruteforce in key>\n");
+	printf("\n\ni.e. brute -t 3 -k 3\n");
+	printf("\nThe key bytes count should be from 1-5\nAnd the thread count should be from 1-max number of threads for the machine\n");
 }
 
 int main(int argc, char *argv[])
