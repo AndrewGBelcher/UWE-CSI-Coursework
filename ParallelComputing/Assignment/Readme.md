@@ -16,9 +16,9 @@ pip install matplot numpy scipy symfit progress
 
 Benchmark script should create two directories:
 ```
-1. **Logs** will contain the tests stdout prints to a file for inspection
+1. `**`Logs`**` will contain the tests stdout prints to a file for inspection
 
-2. **Graphs** will contain the generated matplot graphs that evaluate the 
+2. `**`Graphs`**` will contain the generated matplot graphs that evaluate the 
 	algorithms performace based on time of completion for the computing
 	resources available. 
 ```
