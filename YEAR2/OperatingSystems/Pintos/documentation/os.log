@@ -1,0 +1,688 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.11.4)  4 NOV 2020 15:00
+entering extended mode
+**d:/UWE-work/UWE-CSI-Coursework/OperatingSystems/Pintos/documentation/os.tex
+(d:/UWE-work/UWE-CSI-Coursework/OperatingSystems/Pintos/documentation/os.tex
+LaTeX2e <2020-10-01> patch level 1
+L3 programming layer <2020-10-05> xparse <2020-03-03> (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count175
+\c@section=\count176
+\c@subsection=\count177
+\c@subsubsection=\count178
+\c@paragraph=\count179
+\c@subparagraph=\count180
+\c@figure=\count181
+\c@table=\count182
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+\lst@mode=\count183
+\lst@gtempboxa=\box47
+\lst@token=\toks16
+\lst@length=\count184
+\lst@currlwidth=\dimen139
+\lst@column=\count185
+\lst@pos=\count186
+\lst@lostspace=\dimen140
+\lst@width=\dimen141
+\lst@newlines=\count187
+\lst@lineno=\count188
+\lst@maxwidth=\dimen142
+ (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count189
+\lst@skipnumbers=\count190
+\lst@framebox=\box48
+) (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
+ (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+ (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+)) (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+ (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen143
+\Gin@req@width=\dimen144
+) (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count191
+\l__pdf_internal_box=\box49
+) (d:/UWE-work\UWE-CSI-Coursework\OperatingSystems\Pintos\documentation\os.aux)
+\openout1 = `os.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+\c@lstlisting=\count192
+ (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count193
+\scratchdimen=\dimen145
+\scratchbox=\box50
+\nofMPsegments=\count194
+\nofMParguments=\count195
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count196
+\MPscratchDim=\dimen146
+\MPnumerator=\count197
+\makeMPintoPDFobject=\count198
+\everyMPtoPDFconversion=\toks18
+) (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 11.
+ [1
+
+{C:/Users/wildcard/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (d:/UWE-work\UWE-CSI-Coursework\OperatingSystems\Pintos\documentation\os.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 4.
+ [2])
+\tf@toc=\write3
+\openout3 = `os.toc'.
+
+ [3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 20--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--25
+
+ []
+
+[5]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 33.
+ (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) (C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+)
+Underfull \hbox (badness 10000) in paragraph at lines 35--38
+
+ []
+
+
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 44--45
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 51--52
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 58--59
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (81.00433pt too wide) in paragraph at lines 59--60
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--76
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
+
+ []
+
+
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 85--86
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--99
+
+ []
+
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 102.
+(C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 102.
+ [8]
+Underfull \hbox (badness 10000) in paragraph at lines 115--117
+
+ []
+
+
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 126--127
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 133--134
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 140.
+(C:\Users\wildcard\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
+File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 140.
+ [9]
+Overfull \hbox (57.00409pt too wide) in paragraph at lines 162--163
+[][][][][][][][][][][][][][][] 
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 169--190
+
+ []
+
+[11]
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 210--211
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 215--216
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--233
+
+ []
+
+
+Overfull \hbox (33.00385pt too wide) in paragraph at lines 234--235
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[12]
+Overfull \hbox (69.00421pt too wide) in paragraph at lines 245--246
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 251--252
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 284--288
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--288
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--303
+
+ []
+
+[14] [15]
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 316--317
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (99.00452pt too wide) in paragraph at lines 317--318
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 321--322
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (87.0044pt too wide) in paragraph at lines 327--328
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 332--333
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (87.0044pt too wide) in paragraph at lines 342--343
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (81.00433pt too wide) in paragraph at lines 344--346
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[16]
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 404--405
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[17]
+Overfull \hbox (36.05511pt too wide) in paragraph at lines 409--415
+ [] \OT1/cmr/m/n/10 Now that we have ap-plied the pre-vi-ously shown changes to \OT1/cmtt/m/n/10 load \OT1/cmr/m/n/10 and \OT1/cmtt/m/n/10 process_execute
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--415
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--415
+
+ []
+
+
+Overfull \hbox (99.00452pt too wide) in paragraph at lines 416--417
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--433
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--433
+
+ []
+
+[18]
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 447--448
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 456--457
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 457--458
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 458--459
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 459--460
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
+
+ []
+
+[21]
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 505--506
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (99.00452pt too wide) in paragraph at lines 509--510
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 513--514
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 525--526
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+[22] [23] [24] [25] [26]
+Overfull \hbox (87.0044pt too wide) in paragraph at lines 667--668
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 668--670
+[][][][][][][][][][][][][][][][] 
+ []
+
+[27]
+Overfull \hbox (87.0044pt too wide) in paragraph at lines 703--704
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[28]
+Overfull \hbox (87.0044pt too wide) in paragraph at lines 740--741
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[29]
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 764--765
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[30] [31]
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 818--819
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 819--821
+[][][][][][][][][][][][][][][][] 
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 828--831
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 828--831
+
+ []
+
+
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 840--842
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 853--855
+[][][][][][][][][][][][][][][][] 
+ []
+
+[33]
+Overfull \hbox (63.00415pt too wide) in paragraph at lines 876--877
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 877--879
+[][][][][][][][][][][][][][][][] 
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 886--889
+
+ []
+
+
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 890--891
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 911--913
+[][][][][][][][][][][][][][][][] 
+ []
+
+[35]
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 937--939
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 943--946
+
+ []
+
+
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 949--951
+[][][][][][][][][][][][][][][][] 
+ []
+
+[36]
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 985--987
+[][][][][][][][][][][][][][][][] 
+ []
+
+[37]
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 1024--1026
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.16531pt too wide) in paragraph at lines 1045--1046
+\OT1/cmr/m/n/10 As seen in our syscalls \OT1/cmtt/m/n/10 sys_exit\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 sys_exec\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 sys_wait \OT1/cmr/m/n/10 we redi-rect into \OT1/cmtt/m/n/10 process.c
+ []
+
+[38]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1046.
+
+Overfull \hbox (51.00401pt too wide) in paragraph at lines 1053--1054
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (3.0035pt too wide) in paragraph at lines 1055--1056
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (93.00441pt too wide) in paragraph at lines 1056--1057
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.00362pt too wide) in paragraph at lines 1057--1058
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (69.00415pt too wide) in paragraph at lines 1061--1062
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (99.00446pt too wide) in paragraph at lines 1062--1063
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (93.00441pt too wide) in paragraph at lines 1063--1064
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (75.00424pt too wide) in paragraph at lines 1064--1065
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (39.00385pt too wide) in paragraph at lines 1066--1067
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (111.00458pt too wide) in paragraph at lines 1067--1068
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (117.00462pt too wide) in paragraph at lines 1068--1069
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (57.00409pt too wide) in paragraph at lines 1069--1070
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[39] [40]
+Underfull \hbox (badness 10000) in paragraph at lines 1094--1095
+
+ []
+
+
+Overfull \hbox (9.61087pt too wide) in paragraph at lines 1098--1099
+\OT1/cmr/m/n/10 Using this we can lo-cate some of these lo-ca-tions, start-ing within \OT1/cmtt/m/n/10 process_execute\OT1/cmr/m/n/10 . 
+ []
+
+
+Overfull \hbox (87.0044pt too wide) in paragraph at lines 1108--1109
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (81.00433pt too wide) in paragraph at lines 1110--1111
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 1139--1141
+
+ []
+
+[42] [43]
+Overfull \hbox (63.00415pt too wide) in paragraph at lines 1225--1226
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[44]
+Overfull \hbox (6.33339pt too wide) in paragraph at lines 1241--1242
+\OT1/cmr/m/n/10 The first change to get exit code work-ing prop-erly is to mod-ify code in \OT1/cmtt/m/n/10 thead_exit
+ []
+
+
+Overfull \hbox (51.00403pt too wide) in paragraph at lines 1254--1255
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 1255--1256
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[45]
+Overfull \hbox (57.00409pt too wide) in paragraph at lines 1293--1294
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 1299.
+
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 1299--1300
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 1300--1301
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 1301--1302
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 1303--1304
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[46]
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 1347--1350
+\OT1/cmtt/m/n/10 hda: 1,008 sectors (504 kB), model "QM00001", serial "QEMU HARDDISK" 
+ []
+
+
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 1347--1350
+\OT1/cmtt/m/n/10 hdb: 21,168 sectors (10 MB), model "QM00002", serial "QEMU HARDDISK" 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1347--1350
+
+ []
+
+[47] [48] [49]
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 1406--1407
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[50] (d:/UWE-work\UWE-CSI-Coursework\OperatingSystems\Pintos\documentation\os.aux) ) 
+Here is how much of TeX's memory you used:
+ 3457 strings out of 480224
+ 49575 string characters out of 2878748
+ 544323 words of memory out of 3000000
+ 20026 multiletter control sequences out of 15000+200000
+ 540906 words of font info for 49 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 60i,7n,66p,996b,1544s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\wildcard\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcti1000.pk> <C:\Users\wildcard\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/wildcard/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/wildcard/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/wildcard/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/wildcard/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/wildcard/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/wildcard/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/wildcard/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/wildcard/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/wildcard/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/wildcard/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/wildcard/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on d:/UWE-work\UWE-CSI-Coursework\OperatingSystems\Pintos\documentation\os.pdf (50 pages, 266931 bytes).
+PDF statistics:
+ 220 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
